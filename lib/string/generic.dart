@@ -6,8 +6,8 @@ extension StringGeneric on String {
   ///
   /// Example:
   /// ```dart
-  /// "hello".repeat(2)                // "hellohello"
-  /// "cat".repeat(3, separator: ":")  // "cat:cat:cat"
+  /// "hello".repeat(2);                // "hellohello"
+  /// "cat".repeat(3, separator: ":");  // "cat:cat:cat"
   /// ```
   String repeat(int n, {String separator = ""}) {
     assert(n > 0, "n must be a positive value greater then 0");
@@ -28,8 +28,8 @@ extension StringGeneric on String {
   ///
   /// Example:
   /// ```dart
-  /// "hello".reverse()   // "olleh"
-  /// "flutter".reverse() // "rettulf"
+  /// "hello".reverse();   // "olleh"
+  /// "flutter".reverse(); // "rettulf"
   /// ```
   String reverse() {
     if (this.isEmpty) {
@@ -42,8 +42,8 @@ extension StringGeneric on String {
   ///
   /// Example:
   /// ```dart
-  /// "hello".toList() // ["h", "e", "l", "l", "o"]
-  /// "".toList()      // [ ]
+  /// "hello".toList(); // ["h", "e", "l", "l", "o"]
+  /// "".toList();      // [ ]
   /// ```
   List<String> toList() {
     return this.split("");

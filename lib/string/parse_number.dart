@@ -9,8 +9,8 @@ extension StringParseNumber on String {
   ///
   /// Example:
   /// ```dart
-  /// "42".toDouble()      // 42
-  /// "invalid".toDouble() // null
+  /// "42".toDouble();      // 42
+  /// "invalid".toDouble(); // null
   int toInt({int radix = 10}) {
     try {
       return int.parse(this, radix: radix);
@@ -25,8 +25,8 @@ extension StringParseNumber on String {
   ///
   /// Example:
   /// ```dart
-  /// "2.1".toDouble()     // 2.1
-  /// "invalid".toDouble() // null
+  /// "2.1".toDouble();     // 2.1
+  /// "invalid".toDouble(); // null
   /// ```
   double toDouble() {
     try {
