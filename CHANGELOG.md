@@ -1,3 +1,3 @@
-## [0.0.x] - Start supercharging dart
+## [0.0.1] - Start supercharging dart
 
 * Started working on a minimal set of features

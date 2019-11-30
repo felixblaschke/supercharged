@@ -1,8 +1,7 @@
 name: supercharged
 description: Supercharge your coding experience.
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/felixblaschke/supercharged
 
 environment:
   sdk: ">=2.6.0 <3.0.0"
