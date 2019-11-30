@@ -14,15 +14,38 @@ extension StringGeneric on String {
 
     var repeatedString = "";
 
-    for (int i=0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
       if (i > 0) {
         repeatedString += separator;
       }
       repeatedString += this;
-
     }
 
     return repeatedString;
   }
 
+  /// Reverses the string
+  ///
+  /// Example:
+  /// ```dart
+  /// "hello".reverse()   // "olleh"
+  /// "flutter".reverse() // "rettulf"
+  /// ```
+  String reverse() {
+    if (this.isEmpty) {
+      return "";
+    }
+    return this.toList().reversed.reduce((value, element) => value += element);
+  }
+
+  /// Transforms the string into a list of single characters
+  ///
+  /// Example:
+  /// ```dart
+  /// "hello".toList() // ["h", "e", "l", "l", "o"]
+  /// "".toList()      // [ ]
+  /// ```
+  List<String> toList() {
+    return this.split("");
+  }
 }

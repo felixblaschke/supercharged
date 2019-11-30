@@ -12,4 +12,16 @@ void main() {
     expect(() => "abab".repeat(-2), throwsAssertionError);
     expect("hello".repeat(3, separator: "-"), equals("hello-hello-hello"));
   });
+
+  test("string reverse", () {
+    expect("ab".reverse(), equals("ba"));
+    expect("hallo".reverse(), equals("ollah"));
+    expect("a".reverse(), equals("a"));
+    expect("".reverse(), equals(""));
+  });
+
+  test("string toList", () {
+    expect("".toList(), equals([]));
+    expect("hello".toList(), equals(["h", "e", "l", "l", "o"]));
+  });
 }
