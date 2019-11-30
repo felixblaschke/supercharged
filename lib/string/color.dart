@@ -10,7 +10,7 @@ extension StringColor on String {
   /// It takes six char representation (RRGGBB) or three char presentation ("RGB")
   /// with or without a leading hash (#).
   ///
-  /// Usage:
+  /// Example:
   /// ```
   /// "#ff00ff".toColor() // pink
   /// "ff0000".toColor()  // red
