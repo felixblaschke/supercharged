@@ -39,21 +39,6 @@ void main() {
           "negative": [1, 2],
           "positive": [3, 4]
         }));
-
-    List<Person> persons = [
-      Person(name: "John", age: 21),
-      Person(name: "Carl", age: 18),
-      Person(name: "Peter", age: 56),
-      Person(name: "Sarah", age: 61)
-    ];
-    var map = persons.groupBy((p) => p.age < 40 ? "young" : "old",
-        valueTransform: (p) => p.name);
-    print(map);
   });
 }
 
-class Person {
-  String name;
-  int age;
-  Person({this.name, this.age});
-}
