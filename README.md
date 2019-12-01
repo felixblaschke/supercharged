@@ -1,14 +1,9 @@
 # supercharged
 
-A new Flutter package.
+**Supercharged** is a Flutter package to **increase your dart coding experience** by introducing type extensions.
 
-## Getting Started
+This project is focused on **great documentation**, **easy usage** and a full **test coverage** to enable building **enterprise level apps**.
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+## Current status
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+Waiting for the public Flutter release that is bundled with Dart 2.6.
