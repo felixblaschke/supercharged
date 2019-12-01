@@ -21,26 +21,25 @@ void main() {
   });
 
   test("string parseJSON with reviver", () {
-    // TODO needs more work
-    /*
+
     var jsonString = jsonEncode([_Score(20), _Score(40)], toEncodable: (obj) {
-      if (obj.isType(_Score)) {
-        return "@score:${(obj as _Score).score}";
+      if (obj is _Score) {
+        return "@score:${obj.score}";
       }
       return null;
     });
     List<_Score> scoreList = jsonString.parseJSON(reviver: (key, value) {
-      if (value.isType(String) && (value as String).startsWith("@score")) {
-        return _Score((value as String).allAfter(":").toInt());
+      if (value is String && value.startsWith("@score")) {
+        return _Score(value .allAfter(":").toInt());
       }
-      if (value.isType(List) && (value as List)[0].isType(_Score)) {
-        return (value as List).map((e) => e as _Score);
+      if (value is List && value[0] is _Score) {
+        return value.map((e) => e as _Score).toList();
       }
-      print(value.runtimeType);
       return value;
     });
-    expect(scoreList, equals([_Score(20), _Score(40)]));
-     */
+    expect(scoreList.length, equals(2));
+    expect(scoreList[0].score, equals(20));
+    expect(scoreList[1].score, equals(40));
   });
 }
 
