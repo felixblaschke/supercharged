@@ -1,5 +1,4 @@
 extension StringParseNumber on String {
-
   /// Parses string and returns integer value.
   ///
   /// You can set an optional [radix] to specify the numeric base.
@@ -35,6 +34,4 @@ extension StringParseNumber on String {
       return null;
     }
   }
-
-
 }

@@ -1,6 +1,7 @@
 import 'dart:ui';
-import 'parse_number.dart';
+
 import 'generic.dart';
+import 'parse_number.dart';
 
 extension StringColor on String {
   /// Converts string in hex representation into a [Color].

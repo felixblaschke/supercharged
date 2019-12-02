@@ -1,5 +1,4 @@
 extension StringGeneric on String {
-
   /// Repeats the string [n] times
   ///
   /// You can set an optional [separator] that is put in between each repetition

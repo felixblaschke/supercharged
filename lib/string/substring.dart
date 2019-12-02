@@ -1,4 +1,3 @@
-
 extension StringSubstring on String {
   /// Searches the string for the first occurrence of a [pattern] and returns
   /// everything after that occurrence.
@@ -59,5 +58,4 @@ extension StringSubstring on String {
   String allBetween(Pattern startPattern, Pattern endPattern) {
     return this.allAfter(startPattern).allBefore(endPattern);
   }
-
 }
