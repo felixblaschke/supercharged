@@ -18,7 +18,7 @@ void main() {
         }));
 
     expect(
-        ["dog", "hamster", "cat", "coyote", "beaver", "fish"].groupBy(
+        {"dog", "hamster", "cat", "coyote", "beaver", "fish"}.groupBy(
                 (el) =>
             el.length <= 4
                 ? "short animal name"

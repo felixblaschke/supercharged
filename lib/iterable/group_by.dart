@@ -1,6 +1,6 @@
 
 
-extension ListGroupBy<T, K, V> on List<T> {
+extension IterableGroupBy<T, K, V> on Iterable<T> {
   /// Groups the elements of the list into a map by a key
   /// that is defined by a [keySelector] function.
   ///
