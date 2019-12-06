@@ -4,6 +4,7 @@ extension StringJson on String {
   /// De-string-ifies a JSON string back into a JSON object
   ///
   /// You can optionally set a [reviver] function to deserialize non-basic types.
+  /// See [jsonDecode].
   ///
   /// Example:
   /// ```dart

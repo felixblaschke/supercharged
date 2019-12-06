@@ -15,5 +15,4 @@ void main() {
     expect(3.until(5).toList(), equals([3, 4]));
     expect(5.until(3).toList(), equals([5, 4]));
   });
-
 }

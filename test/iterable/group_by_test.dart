@@ -3,7 +3,7 @@ import 'package:supercharged/supercharged.dart';
 
 void main() {
   test("list group by (without value transform)", () {
-    expect(() => [1,2,3].groupBy(null), throwsArgumentError);
+    expect(() => [1, 2, 3].groupBy(null), throwsArgumentError);
 
     expect(
         [1, 2, 3, 4].groupBy((el) => el < 3 ? "small" : "large"),
@@ -21,10 +21,7 @@ void main() {
 
     expect(
         {"dog", "hamster", "cat", "coyote", "beaver", "fish"}.groupBy(
-                (el) =>
-            el.length <= 4
-                ? "short animal name"
-                : "long animal name"),
+            (el) => el.length <= 4 ? "short animal name" : "long animal name"),
         equals({
           "short animal name": ["dog", "cat", "fish"],
           "long animal name": ["hamster", "coyote", "beaver"]
@@ -43,4 +40,3 @@ void main() {
         }));
   });
 }
-

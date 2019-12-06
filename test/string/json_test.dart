@@ -21,7 +21,6 @@ void main() {
   });
 
   test("string parseJSON with reviver", () {
-
     var jsonString = jsonEncode([_Score(20), _Score(40)], toEncodable: (obj) {
       if (obj is _Score) {
         return "@score:${obj.score}";
@@ -30,7 +29,7 @@ void main() {
     });
     List<_Score> scoreList = jsonString.parseJSON(reviver: (key, value) {
       if (value is String && value.startsWith("@score")) {
-        return _Score(value .allAfter(":").toInt());
+        return _Score(value.allAfter(":").toInt());
       }
       if (value is List && value[0] is _Score) {
         return value.map((e) => e as _Score).toList();
@@ -47,6 +46,7 @@ class _Score {
   int score;
 
   _Score(this.score);
+
   @override
   String toString() {
     return "Instance of _Score (Score: $score)";
