@@ -2,6 +2,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:supercharged/supercharged.dart';
 
 void main() {
+  test("int times null", () {
+    expect(() => 10.times(null), throwsArgumentError);
+  });
+
   test("int times 0", () {
     var i = 0;
     0.times(() => i++);

@@ -11,6 +11,7 @@ extension StringSubstring on String {
   /// "i   like cats".allAfter(RegExp("\\s+")) // "like cats"
   /// ```
   String allAfter(Pattern pattern) {
+    ArgumentError.checkNotNull(pattern, "pattern");
     var matchIterator = pattern.allMatches(this).iterator;
 
     if (matchIterator.moveNext()) {
@@ -32,6 +33,7 @@ extension StringSubstring on String {
   /// "i like turtles".allBefore("like") // "i "
   /// ```
   String allBefore(Pattern pattern) {
+    ArgumentError.checkNotNull(pattern, "pattern");
     var matchIterator = pattern.allMatches(this).iterator;
 
     Match match;

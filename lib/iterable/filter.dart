@@ -10,6 +10,7 @@ extension IterableFilter<T> on Iterable<T> {
   ///
   /// This method is an alias for [where].
   Iterable<T> filter(bool Function(T element) test) {
+    ArgumentError.checkNotNull(test, "test");
     return this.where(test);
   }
 

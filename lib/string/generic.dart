@@ -1,3 +1,5 @@
+import 'package:supercharged/error/throw_if.dart';
+
 extension StringGeneric on String {
   /// Repeats the string [n] times
   ///
@@ -9,7 +11,9 @@ extension StringGeneric on String {
   /// "cat".repeat(3, separator: ":");  // "cat:cat:cat"
   /// ```
   String repeat(int n, {String separator = ""}) {
-    assert(n > 0, "n must be a positive value greater then 0");
+    ArgumentError.checkNotNull(n, "n");
+    throwIfNot(n > 0,
+        () => ArgumentError("n must be a positive value greater then 0"));
 
     var repeatedString = "";
 

@@ -26,6 +26,9 @@ extension IterableGroupBy<T, K, V> on Iterable<T> {
   /// ```
   groupBy(K Function(T element) keySelector,
       {V Function(T element) valueTransform}) {
+
+    ArgumentError.checkNotNull(keySelector);
+
     if (valueTransform == null) {
       valueTransform = (element) => element as V;
     }

@@ -6,6 +6,7 @@ extension IntTimes on int {
   /// Example:
   /// 3.times(() => print("Hello")); // Hello... Hello... Hello
   void times(Function() action) {
+    ArgumentError.checkNotNull(action, "action");
     0.until(this).forEach((_) => action());
   }
 }
