@@ -6,3 +6,5 @@ export 'get_element.dart';
 export 'for_each_indexed.dart';
 export 'aggregation.dart';
 export 'min_max.dart';
+export 'int.dart';
+export 'double.dart';
