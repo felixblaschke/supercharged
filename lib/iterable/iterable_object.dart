@@ -41,10 +41,16 @@ extension IterableObjectSupercharged<T, K, V> on Iterable<T> {
     return this.sumByDouble(selector) / this.length;
   }
 
-  // TODO doc
-  Iterable<List<T>> chunked(int chunkSize) {
-    ArgumentError.checkNotNull(chunkSize, "chunkSize");
-    if (chunkSize <= 0) {
+  /// Splits the elements into lists of the specified [size].
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3, 4, 5, 6].chunked(2); // [[1, 2], [3, 4], [5, 6]]
+  /// [1, 2, 3].chunked(2);          // [[1, 2], [3]]
+  /// ```
+  Iterable<List<T>> chunked(int size) {
+    ArgumentError.checkNotNull(size, "chunkSize");
+    if (size <= 0) {
       throw ArgumentError("chunkSize must be positive integer greater than 0.");
     }
 
@@ -52,10 +58,10 @@ extension IterableObjectSupercharged<T, K, V> on Iterable<T> {
       return Iterable.empty();
     }
 
-    var countOfChunks = (this.length / chunkSize.toDouble()).ceil();
+    var countOfChunks = (this.length / size.toDouble()).ceil();
 
     return Iterable.generate(countOfChunks, (int index) {
-      return this.skip(index * chunkSize).take(chunkSize).toList();
+      return this.skip(index * size).take(size).toList();
     });
   }
 
