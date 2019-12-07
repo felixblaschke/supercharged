@@ -1,4 +1,4 @@
-extension IntRange on int {
+extension IntSupercharged on int {
   /// Creates an [Iterable<int>] that contains all values from current integer
   /// until (including) the value [n].
   ///
@@ -32,6 +32,16 @@ extension IntRange on int {
     } else {
       return Iterable.empty();
     }
+  }
+
+
+  /// Executes the function [action] for [this] times.
+  ///
+  /// Example:
+  /// 3.times(() => print("Hello")); // Hello... Hello... Hello
+  void times(Function() action) {
+    ArgumentError.checkNotNull(action, "action");
+    0.until(this).forEach((_) => action());
   }
 
 

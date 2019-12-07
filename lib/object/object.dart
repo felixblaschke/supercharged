@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-extension ObjectJson on Object {
+extension ObjectSupercharged on Object {
   /// Converts object into a JSON string.
   ///
   /// Use [toEncodable] to convert types that are not a number, boolean,

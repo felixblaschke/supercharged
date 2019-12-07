@@ -1,36 +1,33 @@
-import 'aggregation.dart';
-import 'min_max.dart';
+import 'iterable_object.dart';
 
-extension IterableDouble on Iterable<double> {
-
+extension IterableIntSupercharged on Iterable<int> {
   /// Returns the sum of all elements.
   ///
   /// Example:
   /// ```dart
-  /// [2.0, 6.0, 4.0, 8.0].sum(); // 20.0
+  /// [2, 6, 4, 8].sum(); // 20
   /// ```
-  double sum() {
-    return this.sumByDouble((n) => n);
+  int sum() {
+    return this.sumBy((n) => n);
   }
 
   /// Returns the average value (arithmetic mean) of all elements.
   ///
   /// Example:
   /// ```dart
-  /// [2.0, 4.0, 6.0, 8.0].average(); // 5.0
+  /// [2, 4, 6, 8].average(); // 5.0
   /// ```
   double average() {
     return this.averageBy((n) => n.toDouble());
   }
 
-
   /// Returns the largest value of all elements
   ///
   /// Example:
   /// ```dart
-  /// [9.0, 42.0, 3.0].max(); // 42.0
+  /// [9, 42, 3].max(); // 42
   /// ```
-  double max() {
+  int max() {
     return this.maxBy((a, b) => a.compareTo(b));
   }
 
@@ -38,10 +35,11 @@ extension IterableDouble on Iterable<double> {
   ///
   /// Example:
   /// ```dart
-  /// [17.0, 13.0, 92.0].min(); // 13.0
+  /// [17, 13, 92].min(); // 13
   /// ```
-  double min() {
+  int min() {
     return this.minBy((a, b) => a.compareTo(b));
   }
+
 
 }
