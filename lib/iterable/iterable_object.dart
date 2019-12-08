@@ -88,7 +88,6 @@ extension IterableObjectSupercharged<T, K, V> on Iterable<T> {
         .reduce((value, element) => value + element);
   }
 
-
   /// Returns a new [Iterable] with all elements that satisfy the
   /// predicate [test].
   ///
@@ -102,7 +101,6 @@ extension IterableObjectSupercharged<T, K, V> on Iterable<T> {
     ArgumentError.checkNotNull(test, "test");
     return this.where(test);
   }
-
 
   /// Applies the function [funcIndexValue] to each element of this collection
   /// in iteration order. The function receives the element index as first
@@ -122,7 +120,6 @@ extension IterableObjectSupercharged<T, K, V> on Iterable<T> {
       funcIndexValue(index++, iterator.current);
     }
   }
-
 
   /// Returns the [index]th element. If the index is out of bounds the [orElse]
   /// supplier function is called to provide a value.
@@ -229,7 +226,6 @@ extension IterableObjectSupercharged<T, K, V> on Iterable<T> {
   /// ```
   groupBy(K Function(T element) keySelector,
       {V Function(T element) valueTransform}) {
-
     ArgumentError.checkNotNull(keySelector);
 
     if (valueTransform == null) {
@@ -247,6 +243,54 @@ extension IterableObjectSupercharged<T, K, V> on Iterable<T> {
       map[key].add(valueTransform(element));
     });
 
+    return map;
+  }
+
+  /// Returns a map that contains [MapEntry]s provided by a [transform] function.
+  ///
+  /// If two elements share the same key, the last one gets added to the map.
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3].associate((e) => MapEntry("key_$e", e * 100)); // {"key_1": 100, "key_2": 200, "key_3": 300}
+  /// ```
+  Map<K, V> associate(MapEntry<K, V> Function(T element) transform) {
+    ArgumentError.checkNotNull(transform, "transform");
+    return Map.fromEntries(this.map(transform));
+  }
+
+  /// Returns a map where every [element] is associated by a key produced from
+  /// the [keySelector] function.
+  ///
+  /// If two elements share the same key, the last one gets added to the map.
+  ///
+  /// Example:
+  /// ```dart
+  /// ["a", "ab", "abc"].associateBy((e) => e.length); // {1: "a", 2: "ab", 3: "abc"}
+  /// ```
+  Map<K, T> associateBy(K Function(T element) keySelector) {
+    ArgumentError.checkNotNull(keySelector, "keySelector");
+    Map<K, T> map = Map();
+    this.forEach((element) {
+      var key = keySelector(element);
+      map[key] = element;
+    });
+    return map;
+  }
+
+  /// Returns a map where every [element] is used as a key that is associated
+  /// with a value produced by the [valueSelector] function.
+  ///
+  /// Example:
+  /// ```dart
+  /// ["a", "ab", "abc"].associateBy((e) => e.length); // {"a": 1, "ab": 2, "abc": 3}
+  /// ```
+  Map<T, V> associateWith(V Function(T element) valueSelector) {
+    ArgumentError.checkNotNull(valueSelector, "valueSelector");
+    Map<T, V> map = Map();
+    this.forEach((element) {
+      map[element] = valueSelector(element);
+    });
     return map;
   }
 
