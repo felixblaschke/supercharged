@@ -40,6 +40,4 @@ extension IterableIntSupercharged on Iterable<int> {
   int min() {
     return this.minBy((a, b) => a.compareTo(b));
   }
-
-
 }

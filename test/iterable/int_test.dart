@@ -18,5 +18,4 @@ void main() {
   test("iterable<int> min", () {
     expect([21, 11, 31].min(), equals(11));
   });
-
 }

@@ -1,7 +1,6 @@
 import 'iterable_object.dart';
 
 extension IterableDoubleSupercharged on Iterable<double> {
-
   /// Returns the sum of all elements.
   ///
   /// Example:
@@ -22,7 +21,6 @@ extension IterableDoubleSupercharged on Iterable<double> {
     return this.averageBy((n) => n.toDouble());
   }
 
-
   /// Returns the largest value of all elements
   ///
   /// Example:
@@ -42,5 +40,4 @@ extension IterableDoubleSupercharged on Iterable<double> {
   double min() {
     return this.minBy((a, b) => a.compareTo(b));
   }
-
 }

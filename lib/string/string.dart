@@ -4,7 +4,6 @@ import 'dart:ui';
 import 'package:supercharged/error/throw_if.dart';
 
 extension StringSupercharged on String {
-
   /// Repeats the string [n] times
   ///
   /// You can set an optional [separator] that is put in between each repetition
@@ -17,7 +16,7 @@ extension StringSupercharged on String {
   String repeat(int n, {String separator = ""}) {
     ArgumentError.checkNotNull(n, "n");
     throwIfNot(n > 0,
-            () => ArgumentError("n must be a positive value greater then 0"));
+        () => ArgumentError("n must be a positive value greater then 0"));
 
     var repeatedString = "";
 
@@ -233,7 +232,6 @@ extension StringSupercharged on String {
     return _HTML_COLOR_NAMES[name.toLowerCase()].toColor();
   }
 }
-
 
 const _HTML_COLOR_NAMES = {
   "aliceblue": "#f0f8ff",

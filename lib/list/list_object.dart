@@ -1,3 +1,1 @@
-extension ListObjectSupercharged<T> on List<T> {
-
-}
+extension ListObjectSupercharged<T> on List<T> {}

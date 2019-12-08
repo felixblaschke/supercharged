@@ -10,6 +10,4 @@ void main() {
     expect(20.hours(), equals(Duration(hours: 20)));
     expect(20.days(), equals(Duration(days: 20)));
   });
-
-
 }
