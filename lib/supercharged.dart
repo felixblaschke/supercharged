@@ -9,4 +9,5 @@ export 'iterable/iterable_double.dart';
 export 'iterable/iterable_mapentry.dart';
 export 'map/map.dart';
 export 'int/int.dart';
+export 'double/double.dart';
 export 'error/throw_if.dart';

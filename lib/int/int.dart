@@ -34,7 +34,6 @@ extension IntSupercharged on int {
     }
   }
 
-
   /// Executes the function [action] for [this] times.
   ///
   /// Example:
@@ -44,5 +43,63 @@ extension IntSupercharged on int {
     0.until(this).forEach((_) => action());
   }
 
+  /// Returns a [Duration] representing the current value as microseconds.
+  ///
+  /// Example:
+  /// ```dart
+  /// 200.microseconds(); // Duration(microseconds: 200);
+  /// ```
+  Duration microseconds() {
+    return Duration(microseconds: this);
+  }
 
+  /// Returns a [Duration] representing the current value as milliseconds.
+  ///
+  /// Example:
+  /// ```dart
+  /// 1000.milliseconds(); // Duration(milliseconds: 1000);
+  /// ```
+  Duration milliseconds() {
+    return Duration(milliseconds: this);
+  }
+
+  /// Returns a [Duration] representing the current value as seconds.
+  ///
+  /// Example:
+  /// ```dart
+  /// 30.seconds(); // Duration(seconds: 1000);
+  /// ```
+  Duration seconds() {
+    return Duration(seconds: this);
+  }
+
+  /// Returns a [Duration] representing the current value as minutes.
+  ///
+  /// Example:
+  /// ```dart
+  /// 15.minutes(); // Duration(minutes: 15);
+  /// ```
+  Duration minutes() {
+    return Duration(minutes: this);
+  }
+
+  /// Returns a [Duration] representing the current value as hours.
+  ///
+  /// Example:
+  /// ```dart
+  /// 24.hours(); // Duration(hours: 24);
+  /// ```
+  Duration hours() {
+    return Duration(hours: this);
+  }
+
+  /// Returns a [Duration] representing the current value as hours.
+  ///
+  /// Example:
+  /// ```dart
+  /// 14.days(); // Duration(days: 14);
+  /// ```
+  Duration days() {
+    return Duration(days: this);
+  }
 }
