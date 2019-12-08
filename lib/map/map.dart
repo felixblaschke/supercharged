@@ -14,4 +14,17 @@ extension MapSupercharged<K, V> on Map<K, V> {
     return this.entries.filter(test);
   }
 
+  /// Returns the number of entries that matches the [test].
+  ///
+  /// If not [test] is specified it will count every entries.
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3, 13, 14, 15].count();             // 6
+  /// [1, 2, 3, 13, 14, 15].count((n) => n > 9); // 3
+  /// ```
+  int count([bool Function(MapEntry<K,V> element) test]) {
+    return this.entries.count(test);
+  }
+
 }

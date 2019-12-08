@@ -69,9 +69,7 @@ extension IterableObjectSupercharged<T, K, V> on Iterable<T> {
   ///
   /// If not [test] is specified it will count every element.
   ///
-  /// Returns number of matched elements as integer.
-  ///
-  /// Example
+  /// Example:
   /// ```dart
   /// [1, 2, 3, 13, 14, 15].count();             // 6
   /// [1, 2, 3, 13, 14, 15].count((n) => n > 9); // 3
