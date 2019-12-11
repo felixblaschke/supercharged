@@ -1,10 +1,10 @@
 name: supercharged
 description: Supercharged is a Flutter package to increase your dart coding experience by introducing type extensions.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/felixblaschke/supercharged
 
 environment:
-  sdk: ">=2.6.0 <3.0.0"
+  sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   flutter:
