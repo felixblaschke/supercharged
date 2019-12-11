@@ -6,4 +6,4 @@ This project is focused on **great documentation**, **easy usage** and a full **
 
 ## Current status
 
-Waiting for the public Flutter release that is bundled with Dart 2.6.
+Finalizing package for first release.
