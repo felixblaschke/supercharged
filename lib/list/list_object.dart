@@ -1,3 +1,3 @@
 part of supercharged;
 
-extension ListObjectSupercharged<T> on List<T> {}
+extension List_<T> on List<T> {}

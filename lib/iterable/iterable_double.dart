@@ -1,6 +1,6 @@
 part of supercharged;
 
-extension IterableDoubleSupercharged on Iterable<double> {
+extension IterableOfDouble_ on Iterable<double> {
   /// Returns the sum of all elements.
   ///
   /// Example:

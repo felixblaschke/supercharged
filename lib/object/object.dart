@@ -1,6 +1,6 @@
 part of supercharged;
 
-extension ObjectSupercharged on Object {
+extension Object_ on Object {
   /// Converts object into a JSON string.
   ///
   /// Use [toEncodable] to convert types that are not a number, boolean,

@@ -1,6 +1,6 @@
 part of supercharged;
 
-extension IntSupercharged on int {
+extension Int_ on int {
   /// Creates an [Iterable<int>] that contains all values from current integer
   /// until (including) the value [n].
   ///
@@ -40,7 +40,7 @@ extension IntSupercharged on int {
   ///
   /// Example:
   /// 3.times(() => print("Hello")); // Hello... Hello... Hello
-  void times(Function() action) {
+  void times(void Function() action) {
     ArgumentError.checkNotNull(action, "action");
     0.until(this).forEach((_) => action());
   }
@@ -51,7 +51,7 @@ extension IntSupercharged on int {
   /// ```dart
   /// 200.microseconds(); // Duration(microseconds: 200);
   /// ```
-  Duration microseconds() {
+  Duration get microseconds {
     return Duration(microseconds: this);
   }
 
@@ -61,7 +61,7 @@ extension IntSupercharged on int {
   /// ```dart
   /// 1000.milliseconds(); // Duration(milliseconds: 1000);
   /// ```
-  Duration milliseconds() {
+  Duration get milliseconds {
     return Duration(milliseconds: this);
   }
 
@@ -71,7 +71,7 @@ extension IntSupercharged on int {
   /// ```dart
   /// 30.seconds(); // Duration(seconds: 1000);
   /// ```
-  Duration seconds() {
+  Duration get seconds {
     return Duration(seconds: this);
   }
 
@@ -81,7 +81,7 @@ extension IntSupercharged on int {
   /// ```dart
   /// 15.minutes(); // Duration(minutes: 15);
   /// ```
-  Duration minutes() {
+  Duration get minutes {
     return Duration(minutes: this);
   }
 
@@ -91,7 +91,7 @@ extension IntSupercharged on int {
   /// ```dart
   /// 24.hours(); // Duration(hours: 24);
   /// ```
-  Duration hours() {
+  Duration get hours {
     return Duration(hours: this);
   }
 
@@ -101,7 +101,7 @@ extension IntSupercharged on int {
   /// ```dart
   /// 14.days(); // Duration(days: 14);
   /// ```
-  Duration days() {
+   Duration get days {
     return Duration(days: this);
   }
 }

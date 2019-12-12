@@ -1,8 +1,10 @@
 # supercharged
 
-**Supercharged** is a Flutter package to **increase your dart coding experience** by introducing type extensions.
+**Supercharged** brings **all the comfort features** from languages like Kotlin to **all Flutter developers**.
 
-This project is focused on **great documentation**, **easy usage** and a full **test coverage** to enable building **enterprise level apps**.
+- 💪 **fully tested**
+- 📝 **well documented**
+- 💼 **enterprise-ready**
 
 ## Current status
 

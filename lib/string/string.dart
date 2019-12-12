@@ -1,6 +1,6 @@
 part of supercharged;
 
-extension StringSupercharged on String {
+extension String_ on String {
   /// Repeats the string [n] times
   ///
   /// You can set an optional [separator] that is put in between each repetition

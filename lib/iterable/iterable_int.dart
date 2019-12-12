@@ -1,6 +1,6 @@
 part of supercharged;
 
-extension IterableIntSupercharged on Iterable<int> {
+extension IterableOfInt_ on Iterable<int> {
   /// Returns the sum of all elements.
   ///
   /// Example:

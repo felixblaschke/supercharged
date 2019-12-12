@@ -1,6 +1,6 @@
 part of supercharged;
 
-extension IterableObjectSupercharged<T, K, V> on Iterable<T> {
+extension Iterable_<T, K, V> on Iterable<T> {
   /// Returns the sum of all values produced by the [selector] function that is
   /// applied to each element.
   ///
