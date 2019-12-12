@@ -1,4 +1,4 @@
-import 'dart:convert';
+part of supercharged;
 
 extension ObjectSupercharged on Object {
   /// Converts object into a JSON string.

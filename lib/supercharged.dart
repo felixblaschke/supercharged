@@ -1,13 +1,16 @@
 library supercharged;
 
-export 'double/double.dart';
-export 'error/throw_if.dart';
-export 'int/int.dart';
-export 'iterable/iterable_double.dart';
-export 'iterable/iterable_int.dart';
-export 'iterable/iterable_mapentry.dart';
-export 'iterable/iterable_object.dart';
-export 'list/list_object.dart';
-export 'map/map.dart';
-export 'object/object.dart';
-export 'string/string.dart';
+import 'dart:convert';
+import 'dart:ui';
+
+part 'double/double.dart';
+part 'error/throw_if.dart';
+part 'int/int.dart';
+part 'iterable/iterable_double.dart';
+part 'iterable/iterable_int.dart';
+part 'iterable/iterable_mapentry.dart';
+part 'iterable/iterable_object.dart';
+part 'list/list_object.dart';
+part 'map/map.dart';
+part 'object/object.dart';
+part 'string/string.dart';

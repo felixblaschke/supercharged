@@ -1,4 +1,4 @@
-import 'iterable_object.dart';
+part of supercharged;
 
 extension IterableDoubleSupercharged on Iterable<double> {
   /// Returns the sum of all elements.

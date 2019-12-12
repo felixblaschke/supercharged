@@ -1,3 +1,5 @@
+part of supercharged;
+
 /// Throws an [Error] if predicate [test] is satisfied
 ///
 /// Example:

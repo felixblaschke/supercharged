@@ -1,3 +1,5 @@
+part of supercharged;
+
 extension IntSupercharged on int {
   /// Creates an [Iterable<int>] that contains all values from current integer
   /// until (including) the value [n].

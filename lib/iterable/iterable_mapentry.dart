@@ -1,3 +1,5 @@
+part of supercharged;
+
 extension IterableMapEntrySupercharged<K, V> on Iterable<MapEntry<K, V>> {
   /// Transform the `Iterable<MapEntry>` into a map
   ///

@@ -1,4 +1,4 @@
-import 'iterable_object.dart';
+part of supercharged;
 
 extension IterableIntSupercharged on Iterable<int> {
   /// Returns the sum of all elements.

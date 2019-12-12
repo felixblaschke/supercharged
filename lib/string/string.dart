@@ -1,7 +1,4 @@
-import 'dart:convert';
-import 'dart:ui';
-
-import 'package:supercharged/error/throw_if.dart';
+part of supercharged;
 
 extension StringSupercharged on String {
   /// Repeats the string [n] times

@@ -1,4 +1,4 @@
-import '../iterable/iterable_object.dart';
+part of supercharged;
 
 extension MapSupercharged<K, V> on Map<K, V> {
   /// Returns a new [Iterable<MapEntry<K,V>>] with all elements that satisfy the

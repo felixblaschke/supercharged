@@ -1,3 +1,5 @@
+part of supercharged;
+
 extension DoubleSupercharged on double {
   /// Returns a [Duration] representing the current value as seconds.
   ///
