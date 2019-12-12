@@ -101,7 +101,7 @@ extension Int_ on int {
   /// ```dart
   /// 14.days(); // Duration(days: 14);
   /// ```
-   Duration get days {
+  Duration get days {
     return Duration(days: this);
   }
 }
