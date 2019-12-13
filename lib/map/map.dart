@@ -25,4 +25,19 @@ extension Map_<K, V> on Map<K, V> {
   int count([bool Function(MapEntry<K, V> element) test]) {
     return this.entries.count(test);
   }
+
+  /// Converts this map into a JSON string.
+  ///
+  /// Use optional parameter [toEncodable] to convert types that are not a
+  /// number, boolean, string, null, list or a map with string keys.
+  ///
+  /// See [jsonEncode].
+  ///
+  /// Example:
+  /// ```dart
+  /// {"a": 1, "b": 2}.toJSON(); // """{"a":1,"b":2}"""
+  /// ```
+  String toJSON({Object toEncodable(Object nonEncodable)}) {
+    return jsonEncode(this, toEncodable: toEncodable);
+  }
 }

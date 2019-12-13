@@ -49,7 +49,7 @@ extension Int_ on int {
   ///
   /// Example:
   /// ```dart
-  /// 200.microseconds(); // Duration(microseconds: 200);
+  /// 200.microseconds; // Duration(microseconds: 200);
   /// ```
   Duration get microseconds {
     return Duration(microseconds: this);
@@ -59,7 +59,7 @@ extension Int_ on int {
   ///
   /// Example:
   /// ```dart
-  /// 1000.milliseconds(); // Duration(milliseconds: 1000);
+  /// 1000.milliseconds; // Duration(milliseconds: 1000);
   /// ```
   Duration get milliseconds {
     return Duration(milliseconds: this);
@@ -69,7 +69,7 @@ extension Int_ on int {
   ///
   /// Example:
   /// ```dart
-  /// 30.seconds(); // Duration(seconds: 1000);
+  /// 30.seconds; // Duration(seconds: 1000);
   /// ```
   Duration get seconds {
     return Duration(seconds: this);
@@ -79,7 +79,7 @@ extension Int_ on int {
   ///
   /// Example:
   /// ```dart
-  /// 15.minutes(); // Duration(minutes: 15);
+  /// 15.minutes; // Duration(minutes: 15);
   /// ```
   Duration get minutes {
     return Duration(minutes: this);
@@ -89,7 +89,7 @@ extension Int_ on int {
   ///
   /// Example:
   /// ```dart
-  /// 24.hours(); // Duration(hours: 24);
+  /// 24.hours; // Duration(hours: 24);
   /// ```
   Duration get hours {
     return Duration(hours: this);
@@ -99,7 +99,7 @@ extension Int_ on int {
   ///
   /// Example:
   /// ```dart
-  /// 14.days(); // Duration(days: 14);
+  /// 14.days; // Duration(days: 14);
   /// ```
   Duration get days {
     return Duration(days: this);

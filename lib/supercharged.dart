@@ -12,5 +12,4 @@ part 'iterable/iterable_mapentry.dart';
 part 'iterable/iterable_object.dart';
 part 'list/list_object.dart';
 part 'map/map.dart';
-part 'object/object.dart';
 part 'string/string.dart';

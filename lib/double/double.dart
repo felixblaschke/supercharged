@@ -5,7 +5,7 @@ extension Double_ on double {
   ///
   /// Example:
   /// ```dart
-  /// 30.seconds(); // Duration(seconds: 1000);
+  /// 30.seconds; // Duration(seconds: 1000);
   /// ```
   Duration get seconds {
     return Duration(microseconds: (1000000 * this).round());
@@ -15,7 +15,7 @@ extension Double_ on double {
   ///
   /// Example:
   /// ```dart
-  /// 15.minutes(); // Duration(minutes: 15);
+  /// 15.minutes; // Duration(minutes: 15);
   /// ```
   Duration get minutes {
     return Duration(milliseconds: (1000 * 60 * this).round());
@@ -25,7 +25,7 @@ extension Double_ on double {
   ///
   /// Example:
   /// ```dart
-  /// 24.hours(); // Duration(hours: 24);
+  /// 24.hours; // Duration(hours: 24);
   /// ```
   Duration get hours {
     return Duration(milliseconds: (1000 * 60 * 60 * this).round());
@@ -35,7 +35,7 @@ extension Double_ on double {
   ///
   /// Example:
   /// ```dart
-  /// 14.days(); // Duration(days: 14);
+  /// 14.days; // Duration(days: 14);
   /// ```
   Duration get days {
     return Duration(milliseconds: (1000 * 60 * 60 * 24 * this).round());

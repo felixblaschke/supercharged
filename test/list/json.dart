@@ -2,10 +2,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:supercharged/supercharged.dart';
 
 void main() {
-  test("object json", () {
-    expect(1.0.toJSON(), equals("1.0"));
+  test("list json", () {
     expect([1, 2, 3].toJSON(), equals("[1,2,3]"));
-    expect({"a": 1, "b": 2}.toJSON(), equals("""{"a":1,"b":2}"""));
   });
 
   test("object json toEncodable", () {
