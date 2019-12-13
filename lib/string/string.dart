@@ -32,10 +32,10 @@ extension String_ on String {
   ///
   /// Example:
   /// ```dart
-  /// "hello".reverse();   // "olleh"
-  /// "flutter".reverse(); // "rettulf"
+  /// "hello".reverse;   // "olleh"
+  /// "flutter".reverse; // "rettulf"
   /// ```
-  String reverse() {
+  String get reverse {
     if (this.isEmpty) {
       return "";
     }

@@ -15,10 +15,10 @@ void main() {
   });
 
   test("string reverse", () {
-    expect("ab".reverse(), equals("ba"));
-    expect("hallo".reverse(), equals("ollah"));
-    expect("a".reverse(), equals("a"));
-    expect("".reverse(), equals(""));
+    expect("ab".reverse, equals("ba"));
+    expect("hallo".reverse, equals("ollah"));
+    expect("a".reverse, equals("a"));
+    expect("".reverse, equals(""));
   });
 
   test("string toList", () {
