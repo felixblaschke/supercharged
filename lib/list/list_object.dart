@@ -1,5 +1,6 @@
 part of supercharged;
 
+/// Supercharged extensions on [List].
 extension List_<T> on List<T> {
   /// Converts this list into a JSON string.
   ///

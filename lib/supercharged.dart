@@ -1,3 +1,11 @@
+/// Supercharged brings all the comfort features from
+/// languages like Kotlin to all Flutter developers.
+///
+/// Start supercharging your code by importing it:
+/// ```dart
+/// import 'package:supercharged/supercharged.dart';
+/// ```
+
 library supercharged;
 
 import 'dart:convert';

@@ -1,5 +1,6 @@
 part of supercharged;
 
+/// Supercharged extensions on [Map].
 extension Map_<K, V> on Map<K, V> {
   /// Returns a new [Iterable<MapEntry<K,V>>] with all elements that satisfy the
   /// predicate [test].

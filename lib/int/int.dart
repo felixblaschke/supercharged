@@ -1,5 +1,6 @@
 part of supercharged;
 
+/// Supercharged extensions on [int] numbers.
 extension Int_ on int {
   /// Creates an [Iterable<int>] that contains all values from current integer
   /// until (including) the value [n].

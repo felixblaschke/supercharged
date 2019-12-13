@@ -1,5 +1,6 @@
 part of supercharged;
 
+/// Supercharged extensions on [String].
 extension String_ on String {
   /// Repeats the string [n] times
   ///

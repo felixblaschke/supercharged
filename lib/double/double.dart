@@ -1,5 +1,6 @@
 part of supercharged;
 
+/// Supercharged extensions on [double] numbers.
 extension Double_ on double {
   /// Returns a [Duration] representing the current value as seconds.
   ///

@@ -1,5 +1,6 @@
 part of supercharged;
 
+/// Supercharged extensions on [Iterable<int>] like [List<int>] and [Set<int>].
 extension IterableOfInt_ on Iterable<int> {
   /// Returns the sum of all elements.
   ///
