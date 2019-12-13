@@ -15,7 +15,7 @@ extension Map_<K, V> on Map<K, V> {
 
   /// Returns the number of entries that matches the [test].
   ///
-  /// If not [test] is specified it will count every entries.
+  /// If [test] is not specified it will count every entry.
   ///
   /// Example:
   /// ```dart
