@@ -21,7 +21,39 @@ For more details have a look at the [install tab](https://pub.dev/packages/super
 
 ## 🌞 Highlights
 
-Insert hightlights here...
+Transform any string to **[colors](https://pub.dev/documentation/supercharged/latest/supercharged/String_/toColor.html)**
+```dart
+"#ff00ff".toColor(); // painless hex to color
+"red".toColor(); // supports all web color names
+```
+
+Helpful [substring](https://pub.dev/documentation/supercharged/latest/supercharged/String_/allAfter.html) functions:
+```dart
+"mode:production".allAfter(":"); // "production"
+"<html>".allBetween("<", ">"); // "html"`
+"flutter is cool".allBefore(" is"); // "flutter"
+```
+
+[Parse](https://pub.dev/documentation/supercharged/latest/supercharged/String_/toDouble.html) user input:
+```dart
+"2.1".toDouble(); // 2.1
+"42".toInt(); // 
+```
+
+Effordless [aggregation](https://pub.dev/documentation/supercharged/latest/supercharged/IterableOfInt_/sum.html) for int and double:
+```dart
+[1,2,3].sum(); // 6
+[1,2,3].average(); // 2
+```
+
+Advanced [aggregation](https://pub.dev/documentation/supercharged/latest/supercharged/Iterable_/sumBy.html):
+```dart
+persons = [Person(age: 20), Person(age: 30), Person(age: 40)];
+persons.sumBy((p) => p.age); // 90
+persons.averageBy((p) => p.age); // 30
+persons.count((p) => p.age < 35); // 2
+```
+
 
 ## 📑 APIs
 
