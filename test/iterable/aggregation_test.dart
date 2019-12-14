@@ -19,7 +19,7 @@ void main() {
   test("iterable averageBy", () {
     expect(() => [1, 2, 3].averageBy(null), throwsArgumentError);
     expect([].averageBy((n) => n), isNull);
-    expect([1, 2, 3].averageBy((n) => n.toDouble()), equals(2.0));
-    expect([9, 6, 3].averageBy((n) => 0.5 * n), equals(3.0));
+    expect([1, 2, 3].averageBy((n) => n), equals(2.0));
+    expect([9.0, 6.0, 3.0].averageBy((n) => 0.5 * n), equals(3.0));
   });
 }

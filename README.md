@@ -42,10 +42,10 @@ Helpful [substring](https://pub.dev/documentation/supercharged/latest/supercharg
 
 Effortless [aggregation](https://pub.dev/documentation/supercharged/latest/supercharged/IterableOfInt_.html) for `Iterable<int>` and `Iterable<double>`:
 ```dart
-[1,2,3].sum(); // 6
-[1,2,3].average(); // 2
-[1,2,3].min(); // 1
-[1,2,3].max(); // 3
+[1, 2, 3].sum(); // 6
+[1, 2, 3].average(); // 2
+[1, 2, 3].min(); // 1
+[1, 2, 3].max(); // 3
 ```
 
 Advanced [aggregation](https://pub.dev/documentation/supercharged/latest/supercharged/Iterable_/sumBy.html) for any `Iterable`:
@@ -66,8 +66,8 @@ Safely [access](https://pub.dev/documentation/supercharged/latest/supercharged/I
 [].firstOrElse(() => Placeholder()); // Produce default values
 [].lastOrElse(() => Placeholder());  // on the fly
 
-[1,2,3].elementAtOrNull(4); // Never go out of bounds
-[1,2,3].elementAtOrElse(4, () => Placeholder());
+[1, 2, 3].elementAtOrNull(4); // Never go out of bounds
+[1, 2, 3].elementAtOrElse(4, () => 0);
 ```
 
 [Group up data](https://pub.dev/documentation/supercharged/latest/supercharged/Iterable_/groupBy.html) to match view:

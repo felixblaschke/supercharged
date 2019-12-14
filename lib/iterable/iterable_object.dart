@@ -22,9 +22,9 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```dart
   /// [1.5, 2.5].sumByDouble((d) => 0.5 * d); // 2.0
   /// ```
-  double sumByDouble(double Function(T) selector) {
+  double sumByDouble(num Function(T) selector) {
     ArgumentError.checkNotNull(selector, "selector");
-    return this.fold(0.0, (value, element) => value + selector(element));
+    return this.fold(0.0, (value, element) => value + selector(element).toDouble());
   }
 
   /// Returns the average value (arithmetic mean) of all values produces by the
@@ -32,10 +32,10 @@ extension Iterable_<T, K, V> on Iterable<T> {
   ///
   /// Example:
   /// ```dart
-  /// [1, 2, 3].averageBy((n) => n.toDouble);                 // 2.0
-  /// ["cat", "horse"].averageBy((s) => s.length.toDouble()); // 4.0
+  /// [1, 2, 3].averageBy((n) => n);               // 2.0
+  /// ["cat", "horse"].averageBy((s) => s.length); // 4.0
   /// ```
-  double averageBy(double Function(T) selector) {
+  double averageBy(num Function(T) selector) {
     ArgumentError.checkNotNull(selector, "selector");
     if (this.length == 0) {
       return null;

@@ -19,7 +19,7 @@ extension IterableOfInt_ on Iterable<int> {
   /// [2, 4, 6, 8].average(); // 5.0
   /// ```
   double average() {
-    return this.averageBy((n) => n.toDouble());
+    return this.averageBy((n) => n);
   }
 
   /// Returns the largest value of all elements
