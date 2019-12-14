@@ -113,7 +113,7 @@ list.forEachIndexed((index, value) {
 
 ## 📑 API documentation
 
-[API Dokumentation](https://pub.dev/documentation/supercharged/latest/supercharged/supercharged-library.html)
+You can discover all **58 features** in the [API documentation](https://pub.dev/documentation/supercharged/latest/supercharged/supercharged-library.html):
 
 - [double](https://pub.dev/documentation/supercharged/latest/supercharged/Double_.html)
 - [int](https://pub.dev/documentation/supercharged/latest/supercharged/Int_.html)
@@ -128,4 +128,7 @@ list.forEachIndexed((index, value) {
 
 ## 📈 Improve
 
-You got an idea for a feature or anything to improve. Write an [issue on GitHub](https://github.com/felixblaschke/supercharged/issues). 
+Supercharged will **improve** in future updates. Help me by reporting bugs, **submit new ideas** for features or anything else that you want to share.
+
+- Just [write an issue](https://github.com/felixblaschke/supercharged/issues) on GitHub. ✏️
+- And don't forget to hit the **like button** for this package ✌️
