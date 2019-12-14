@@ -24,7 +24,8 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```
   double sumByDouble(num Function(T) selector) {
     ArgumentError.checkNotNull(selector, "selector");
-    return this.fold(0.0, (value, element) => value + selector(element).toDouble());
+    return this
+        .fold(0.0, (value, element) => value + selector(element).toDouble());
   }
 
   /// Returns the average value (arithmetic mean) of all values produces by the
