@@ -116,7 +116,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   ///   print("$index : $value"); // "0 : a", "1: b", "2: c"
   /// });
   /// ```
-  forEachIndexed(void Function(int index, T element) funcIndexValue) {
+  void forEachIndexed(void Function(int index, T element) funcIndexValue) {
     ArgumentError.checkNotNull(funcIndexValue, "funcIndexValue");
     var index = 0;
     var iterator = this.iterator;
@@ -228,7 +228,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   ///        valueTransform: (p) => p.name);
   /// // map = {"young": ["John", "Carl"], "old": ["Peter", "Sarah"]}
   /// ```
-  groupBy(K Function(T element) keySelector,
+  Map<K, List<V>> groupBy(K Function(T element) keySelector,
       {V Function(T element) valueTransform}) {
     ArgumentError.checkNotNull(keySelector);
 
