@@ -1,7 +1,7 @@
 # ⚡️ Supercharged
 
 [![Pub](https://img.shields.io/pub/v/supercharged.svg)](https://pub.dartlang.org/packages/supercharged)
-
+[![Tests](https://github.com/felixblaschke/supercharged/workflows/Tests/badge.svg)](https://github.com/felixblaschke/supercharged/actions?query=workflow%3ATests)
 
 **Supercharged** brings **all the comfort features** from languages like Kotlin to **all Flutter developers**.
 
