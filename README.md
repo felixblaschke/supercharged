@@ -21,7 +21,7 @@ For more details have a look at the [install tab](https://pub.dev/packages/super
 
 ## 🌞 Highlights
 
-Transform any string to **[colors](https://pub.dev/documentation/supercharged/latest/supercharged/String_/toColor.html)**
+Transform any `String` to **[colors](https://pub.dev/documentation/supercharged/latest/supercharged/String_/toColor.html)**
 ```dart
 "#ff00ff".toColor(); // painless hex to color
 "red".toColor(); // supports all web color names
@@ -40,22 +40,78 @@ Helpful [substring](https://pub.dev/documentation/supercharged/latest/supercharg
 "42".toInt(); // 
 ```
 
-Effordless [aggregation](https://pub.dev/documentation/supercharged/latest/supercharged/IterableOfInt_/sum.html) for int and double:
+Effortless [aggregation](https://pub.dev/documentation/supercharged/latest/supercharged/IterableOfInt_.html) for `Iterable<int>` and `Iterable<double>`:
 ```dart
 [1,2,3].sum(); // 6
 [1,2,3].average(); // 2
+[1,2,3].min(); // 1
+[1,2,3].max(); // 3
 ```
 
-Advanced [aggregation](https://pub.dev/documentation/supercharged/latest/supercharged/Iterable_/sumBy.html):
+Advanced [aggregation](https://pub.dev/documentation/supercharged/latest/supercharged/Iterable_/sumBy.html) for any `Iterable`:
 ```dart
-persons = [Person(age: 20), Person(age: 30), Person(age: 40)];
+var persons = [Person(age: 20), Person(age: 30), Person(age: 40)];
 persons.sumBy((p) => p.age); // 90
 persons.averageBy((p) => p.age); // 30
 persons.count((p) => p.age < 35); // 2
+persons.minBy((a,b) => a.age.compareTo(b.age)); // Person(age: 20)
+persons.maxBy((a,b) => a.age.compareTo(b.age)); // Person(age: 40)
 ```
 
+Safely [access](https://pub.dev/documentation/supercharged/latest/supercharged/Iterable_/firstOrNull.html) `Iterable`:
+```dart
+[].firstOrNull(); // return null instead
+[].lastOrNull();  // of throwing error
 
-## 📑 APIs
+[].firstOrElse(() => Placeholder()); // Produce default values
+[].lastOrElse(() => Placeholder());  // on the fly
+
+[1,2,3].elementAtOrNull(4); // Never go out of bounds
+[1,2,3].elementAtOrElse(4, () => Placeholder());
+```
+
+[Group up data](https://pub.dev/documentation/supercharged/latest/supercharged/Iterable_/groupBy.html) to match view:
+```dart
+var persons = [
+    Person(name: "John", age: 21),
+    Person(name: "Carl", age: 18),
+    Person(name: "Peter", age: 56),
+    Person(name: "Sarah", age: 61)
+];
+
+persons.groupBy(
+    (p) => p.age < 40 ? "young" : "old",
+    valueTransform: (p) => p.name
+); // {"young": ["John", "Carl"], "old": ["Peter", "Sarah"]}
+```
+
+[Chunking](https://pub.dev/documentation/supercharged/latest/supercharged/Iterable_/chunked.html) for easy pagination:
+```dart
+["a", "b", "c", "d", "e"].chunked(3); // [ ["a", "b", "c"], ["d", "e"] ]
+```
+
+More natural [durations](https://pub.dev/documentation/supercharged/latest/supercharged/Int_/minutes.html):
+```dart
+var duration = 5.minutes + 30.seconds;
+duration += 0.5.hours;
+```
+
+[Replace](https://pub.dev/documentation/supercharged/latest/supercharged/Int_/rangeTo.html) your classic for loop:
+```dart
+0.rangeTo(5); // [0, 1, 2, 3, 4, 5]
+3.rangeTo(1); // [3, 2, 1]
+
+var list = ["dog", "cat", "mouse"];
+0.until(list.length); // [0, 1, 2]
+
+list.forEachIndexed((index, value) {
+    // index: 0, value: "dog"
+    // index: 1, value: "cat"
+    // index: 2, value: "mouse"
+});
+```
+
+## 📑 API documentation
 
 [API Dokumentation](https://pub.dev/documentation/supercharged/latest/supercharged/supercharged-library.html)
 
