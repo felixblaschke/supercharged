@@ -1,3 +1,3 @@
-## until [0.0.10] - Start supercharging dart
+## 1.0.0
 
-* Experimenting with api
+* Initial release
