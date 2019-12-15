@@ -96,7 +96,7 @@ extension Int_ on int {
     return Duration(hours: this);
   }
 
-  /// Returns a [Duration] representing the current value as hours.
+  /// Returns a [Duration] representing the current value as days.
   ///
   /// Example:
   /// ```dart

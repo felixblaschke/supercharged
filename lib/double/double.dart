@@ -32,7 +32,7 @@ extension Double_ on double {
     return Duration(milliseconds: (1000 * 60 * 60 * this).round());
   }
 
-  /// Returns a [Duration] representing the current value as hours.
+  /// Returns a [Duration] representing the current value as days.
   ///
   /// Example:
   /// ```dart
