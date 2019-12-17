@@ -47,12 +47,16 @@ extension Iterable_<T, K, V> on Iterable<T> {
 
   /// Splits the elements into lists of the specified [size].
   ///
+  /// You can specify an optional [fill] function that produces values
+  /// that fill up the last chunk to match the chunk size.
+  ///
   /// Example:
   /// ```dart
-  /// [1, 2, 3, 4, 5, 6].chunked(2); // [[1, 2], [3, 4], [5, 6]]
-  /// [1, 2, 3].chunked(2);          // [[1, 2], [3]]
+  /// [1, 2, 3, 4, 5, 6].chunked(2);        // [[1, 2], [3, 4], [5, 6]]
+  /// [1, 2, 3].chunked(2);                 // [[1, 2], [3]]
+  /// [1, 2, 3].chunked(2, fill: () => 99); // [[1, 2], [3, 99]]
   /// ```
-  Iterable<List<T>> chunked(int size) {
+  Iterable<List<T>> chunked(int size, {T Function() fill}) {
     ArgumentError.checkNotNull(size, "chunkSize");
     if (size <= 0) {
       throw ArgumentError("chunkSize must be positive integer greater than 0.");
@@ -65,7 +69,15 @@ extension Iterable_<T, K, V> on Iterable<T> {
     var countOfChunks = (this.length / size.toDouble()).ceil();
 
     return Iterable.generate(countOfChunks, (int index) {
-      return this.skip(index * size).take(size).toList();
+      var chunk = this.skip(index * size).take(size).toList();
+
+      if (fill != null) {
+        while (chunk.length < size) {
+          chunk.add(fill());
+        }
+      }
+
+      return chunk;
     });
   }
 
@@ -307,9 +319,11 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```
   T minBy(Comparator<T> comparator) {
     ArgumentError.checkNotNull(comparator, "comparator");
-    var values = this.toList();
-    values.sort(comparator);
-    return values.firstOrNull();
+    if (this.isEmpty) {
+      return null;
+    }
+    return this.reduce(
+        (value, element) => comparator(value, element) < 0 ? value : element);
   }
 
   /// Returns the maximum value based on the [comparator] function.
@@ -321,8 +335,10 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```
   T maxBy(Comparator<T> comparator) {
     ArgumentError.checkNotNull(comparator, "comparator");
-    var values = this.toList();
-    values.sort(comparator);
-    return values.lastOrNull();
+    if (this.isEmpty) {
+      return null;
+    }
+    return this.reduce(
+        (value, element) => comparator(value, element) > 0 ? value : element);
   }
 }
