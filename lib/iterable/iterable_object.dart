@@ -341,4 +341,17 @@ extension Iterable_<T, K, V> on Iterable<T> {
     return this.reduce(
         (value, element) => comparator(value, element) > 0 ? value : element);
   }
+
+  /// Returns this as sorted list using the [comparator] function.
+  ///
+  /// Example:
+  /// ```dart
+  /// [3, 1, 5, 9, 7].sortedBy((a,b) => a.compareTo(b)); // [1, 3, 5, 7, 9]
+  /// ```
+  List<T> sortedBy(Comparator<T> comparator) {
+    ArgumentError.checkNotNull(comparator, "comparator");
+    var list = this.toList();
+    list.sort(comparator);
+    return list;
+  }
 }
