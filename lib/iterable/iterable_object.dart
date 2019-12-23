@@ -354,4 +354,32 @@ extension Iterable_<T, K, V> on Iterable<T> {
     list.sort(comparator);
     return list;
   }
+
+  /// Returns this as sorted list using the [valueProvider] function that produces
+  /// numerical values as base for sorting.
+  ///
+  /// Example:
+  /// ```dart
+  /// [2, 1, 3].sortedByNum((n) => n); // [1, 2, 3]
+  /// persons.sortedByNum((p) => p.age).reversed; // oldest persons first
+  /// ```
+  List<T> sortedByNum(num Function(T element) valueProvider) {
+    ArgumentError.checkNotNull(valueProvider, "valueProvider");
+    return this
+        .sortedBy((a, b) => valueProvider(a).compareTo(valueProvider(b)));
+  }
+
+  /// Returns this as sorted list using the [valueProvider] function that produces
+  /// character values as base for sorting.
+  ///
+  /// Example:
+  /// ```dart
+  /// ["c", "b", "a"].sortedByNum((c) => c); // ["a", "b", "c"]
+  /// persons.sortedByString((p) => p.name); // sort persons alphabetically
+  /// ```
+  List<T> sortedByString(String Function(T element) valueProvider) {
+    ArgumentError.checkNotNull(valueProvider, "valueProvider");
+    return this
+        .sortedBy((a, b) => valueProvider(a).compareTo(valueProvider(b)));
+  }
 }
