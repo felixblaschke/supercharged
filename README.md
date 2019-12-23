@@ -88,6 +88,7 @@ persons.groupBy(
 [Chunking](https://pub.dev/documentation/supercharged/latest/supercharged/Iterable_/chunked.html) for easy pagination:
 ```dart
 ["a", "b", "c", "d", "e"].chunked(3); // [ ["a", "b", "c"], ["d", "e"] ]
+["a", "b", "c"].chunked(2, fill: () => ""); // [ ["a", "b"], ["c", ""] ]
 ```
 
 More natural [durations](https://pub.dev/documentation/supercharged/latest/supercharged/Int_/minutes.html):
@@ -96,7 +97,28 @@ var duration = 5.minutes + 30.seconds;
 duration += 0.5.hours;
 ```
 
-[Replace](https://pub.dev/documentation/supercharged/latest/supercharged/Int_/rangeTo.html) your classic for loop:
+Simplified data sorting:
+```dart
+ persons = [
+    Person(name: "John", age: 21),
+    Person(name: "Carl", age: 18),
+    Person(name: "Peter", age: 56),
+    Person(name: "Sarah", age: 61)
+  ];
+
+  persons.sortedByNum((p) => p.age); // list sorted by age
+  persons.sortedByString((p) => p.name); // list sorted by name
+  persons  // sorted with comparator
+      .sortedBy((a, b) => a.name.compareTo(b.name));
+
+  persons // sorting is fully integrated into processing chain
+      .filter((p) => p.name.length < 5)
+      .sortedByNum((p) => p.age)
+      .map((p) => p.name)
+      .toList();
+```
+
+[Replace](https://pub.dev/documentation/supercharged/latest/supercharged/Int_/rangeTo.html) your classic for-loop:
 ```dart
 0.rangeTo(5); // [0, 1, 2, 3, 4, 5]
 3.rangeTo(1); // [3, 2, 1]
@@ -113,7 +135,7 @@ list.forEachIndexed((index, value) {
 
 ## 📑 API documentation
 
-You can discover all **58 features** in the [API documentation](https://pub.dev/documentation/supercharged/latest/supercharged/supercharged-library.html).
+You can discover all **60 features** in the [API documentation](https://pub.dev/documentation/supercharged/latest/supercharged/supercharged-library.html).
 Each feature is **well documented** with an **example**.
 
 Feel free to quickly **jump** into a topic:

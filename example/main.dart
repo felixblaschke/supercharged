@@ -52,10 +52,30 @@ main() {
 
   // Chunking for easy pagination:
   ["a", "b", "c", "d", "e"].chunked(3); // [ ["a", "b", "c"], ["d", "e"] ]
+  ["a", "b", "c"].chunked(2, fill: () => ""); // [ ["a", "b"], ["c", ""] ]
 
   // More natural durations:
   var duration = 5.minutes + 30.seconds;
   duration += 0.5.hours;
+
+  // Simplified data sorting:
+  persons = [
+    Person(name: "John", age: 21),
+    Person(name: "Carl", age: 18),
+    Person(name: "Peter", age: 56),
+    Person(name: "Sarah", age: 61)
+  ];
+
+  persons.sortedByNum((p) => p.age); // list sorted by age
+  persons.sortedByString((p) => p.name); // list sorted by name
+  persons
+      .sortedBy((a, b) => a.name.compareTo(b.name)); // sorted with comparator
+
+  persons // sorting is fully integrated into processing chain
+      .filter((p) => p.name.length < 5)
+      .sortedByNum((p) => p.age)
+      .map((p) => p.name)
+      .toList();
 
   // Replace your classic for loop:
   0.rangeTo(5); // [0, 1, 2, 3, 4, 5]
@@ -78,5 +98,4 @@ class Person {
   Person({this.age, this.name = ""});
 }
 
-class Placeholder {
-}
+class Placeholder {}

@@ -1,7 +1,9 @@
 ## next
 
-- **New:** Iterable `chunked` method has additional parameter `fill`
 - **New:** Iterable `sortedBy` method 
+- **New:** Iterable `sortedByNum` method 
+- **New:** Iterable `sortedByString` method 
+- **New:** Iterable `chunked` method has additional parameter `fill`
 - **Improved:** More efficient implementation for `minBy` and `maxBy`
 - **Fixed:** typo in API documentation
 
