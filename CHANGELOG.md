@@ -1,4 +1,4 @@
-## next
+## 1.1.0
 
 - **New:** Iterable `sortedBy` method 
 - **New:** Iterable `sortedByNum` method 
