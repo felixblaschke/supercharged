@@ -13,6 +13,13 @@ void main() {
         equals([1, 3, 5, 7, 9]));
   });
 
+  test("iterable sortedBy dont modify origin list", () {
+    var list = [3, 2, 1];
+    var sortedList = list.sortedBy((a, b) => a.compareTo(b));
+    expect(list, equals([3, 2, 1]));
+    expect(sortedList, equals([1, 2, 3]));
+  });
+
   test("iterable sortedByNum", () {
     expect(() => [0, 1, 2].sortedByNum(null), throwsArgumentError);
     expect([].sortedByNum((n) => n), equals([]));
