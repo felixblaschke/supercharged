@@ -135,7 +135,7 @@ list.forEachIndexed((index, value) {
 
 ## 📑 API documentation
 
-You can discover all **60 features** in the [API documentation](https://pub.dev/documentation/supercharged/latest/supercharged/supercharged-library.html).
+You can discover all **61 features** in the [API documentation](https://pub.dev/documentation/supercharged/latest/supercharged/supercharged-library.html).
 Each feature is **well documented** with an **example**.
 
 Feel free to quickly **jump** into a topic:

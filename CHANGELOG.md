@@ -1,3 +1,7 @@
+## next
+
+- **New:** Iterable `lastIndex` getter
+
 ## 1.1.0
 
 - **New:** Iterable `sortedBy` method 

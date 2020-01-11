@@ -382,4 +382,21 @@ extension Iterable_<T, K, V> on Iterable<T> {
     return this
         .sortedBy((a, b) => valueProvider(a).compareTo(valueProvider(b)));
   }
+
+  /// Returns the last accessible index. If collection is empty this returns
+  /// `null`.
+  ///
+  /// Example:
+  /// ```dart
+  /// var list = ["a", "b", "c"];
+  /// list.lastIndex; // 2
+  /// list[list.lastIndex]; // "c"
+  /// ```
+  int get lastIndex {
+    if (this.isNotEmpty) {
+      return this.length - 1;
+    } else {
+      return null;
+    }
+  }
 }
