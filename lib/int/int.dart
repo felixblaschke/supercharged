@@ -11,6 +11,7 @@ extension Int_ on int {
   /// 3.rangeTo(1); // [3, 2, 1]
   /// ```
   Iterable<int> rangeTo(int n) {
+    ArgumentError.checkNotNull(n, "n");
     int count = (n - this).abs() + 1;
     int direction = (n - this).sign;
     int i = this - direction;
@@ -28,6 +29,7 @@ extension Int_ on int {
   /// 3.until(1); // [3, 2]
   /// ```
   Iterable<int> until(int n) {
+    ArgumentError.checkNotNull(n, "n");
     if (this < n) {
       return this.rangeTo(n - 1);
     } else if (this > n) {

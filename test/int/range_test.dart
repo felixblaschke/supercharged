@@ -3,6 +3,7 @@ import 'package:supercharged/supercharged.dart';
 
 void main() {
   test("int rangeTo", () {
+    expect(() => 0.rangeTo(null), throwsArgumentError);
     expect(0.rangeTo(10).toList(), equals([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
     expect(5.rangeTo(5).toList(), equals([5]));
     expect(3.rangeTo(5).toList(), equals([3, 4, 5]));
@@ -10,6 +11,7 @@ void main() {
   });
 
   test("int until", () {
+    expect(() => 0.until(null), throwsArgumentError);
     expect(0.until(10).toList(), equals([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]));
     expect(5.until(5).toList(), equals([]));
     expect(3.until(5).toList(), equals([3, 4]));
