@@ -1,6 +1,10 @@
 ## next
 
+- **New:** DateTime `+` operator
+- **New:** DateTime `-` operator
 - **New:** Iterable `lastIndex` getter
+- **Improved:** Added `null` check for int ``until``
+- **Improved:** Added `null` check for int ``times``
 
 ## 1.1.0
 
