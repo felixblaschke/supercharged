@@ -3,7 +3,11 @@ import 'package:supercharged/supercharged.dart';
 
 void main() {
   test("duration", () {
-    expect(12.minutes.fromNow(), equals(DateTime.now().add(12.minutes)));
-    expect(12.minutes.ago(), equals(DateTime.now().subtract(12.minutes)));
+    expect(isAboutTheSame(12.minutes.fromNow(), DateTime.now().add(12.minutes)), isTrue);
+    expect(isAboutTheSame(12.minutes.ago(), DateTime.now().subtract(12.minutes)), isTrue);
   });
+}
+
+bool isAboutTheSame(DateTime a, DateTime b) {
+  return (a.millisecondsSinceEpoch - b.millisecondsSinceEpoch).abs() < 100;
 }
