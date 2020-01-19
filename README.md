@@ -97,7 +97,7 @@ var duration = 5.minutes + 30.seconds;
 duration += 0.5.hours;
 ```
 
-Simplified data sorting:
+Simplified [data sorting](https://pub.dev/documentation/supercharged/latest/supercharged/Iterable_/sortedByNum.html):
 ```dart
  persons = [
     Person(name: "John", age: 21),
