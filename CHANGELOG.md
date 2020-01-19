@@ -2,6 +2,8 @@
 
 - **New:** DateTime `+` operator
 - **New:** DateTime `-` operator
+- **New:** Duration `fromNow` method
+- **New:** Duration `ago` method
 - **New:** Iterable `lastIndex` getter
 - **Improved:** Added `null` check for int ``until``
 - **Improved:** Added `null` check for int ``times``

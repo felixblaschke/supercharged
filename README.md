@@ -91,10 +91,13 @@ persons.groupBy(
 ["a", "b", "c"].chunked(2, fill: () => ""); // [ ["a", "b"], ["c", ""] ]
 ```
 
-More natural [durations](https://pub.dev/documentation/supercharged/latest/supercharged/Int_/minutes.html):
+More natural [durations](https://pub.dev/documentation/supercharged/latest/supercharged/Int_/minutes.html) and dates:
 ```dart
 var duration = 5.minutes + 30.seconds;
 duration += 0.5.hours;
+
+var future = 2.days.fromNow() + 20.minutes;
+var past = 15.minutes.ago();
 ```
 
 Simplified [data sorting](https://pub.dev/documentation/supercharged/latest/supercharged/Iterable_/sortedByNum.html):

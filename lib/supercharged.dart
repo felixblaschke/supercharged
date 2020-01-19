@@ -13,6 +13,7 @@ import 'dart:ui';
 
 part 'datetime/datetime.dart';
 part 'double/double.dart';
+part 'duration/duration.dart';
 part 'error/throw_if.dart';
 part 'int/int.dart';
 part 'iterable/iterable_double.dart';

@@ -54,9 +54,12 @@ main() {
   ["a", "b", "c", "d", "e"].chunked(3); // [ ["a", "b", "c"], ["d", "e"] ]
   ["a", "b", "c"].chunked(2, fill: () => ""); // [ ["a", "b"], ["c", ""] ]
 
-  // More natural durations:
+  // More natural durations and dates:
   var duration = 5.minutes + 30.seconds;
   duration += 0.5.hours;
+
+  var future = 2.days.fromNow() + 20.minutes;
+  var past = 15.minutes.ago();
 
   // Simplified data sorting:
   persons = [
