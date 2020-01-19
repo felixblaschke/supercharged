@@ -11,6 +11,7 @@ library supercharged;
 import 'dart:convert';
 import 'dart:ui';
 
+part 'datetime/datetime.dart';
 part 'double/double.dart';
 part 'error/throw_if.dart';
 part 'int/int.dart';
