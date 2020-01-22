@@ -5,8 +5,9 @@
 - **New:** Duration `fromNow` method
 - **New:** Duration `ago` method
 - **New:** Iterable `lastIndex` getter
-- **Improved:** Added `null` check for int ``until``
-- **Improved:** Added `null` check for int ``times``
+- **Improved:** Added `null` check for int `until`
+- **Improved:** Added `null` check for int `times`
+- **Improved:** Removed implicit casts
 
 ## 1.1.0
 
