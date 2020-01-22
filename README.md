@@ -11,7 +11,7 @@
 
 ## ⛏️ Getting started
 
-Add the dependency `supercharged: ^1.0.0` to your project and start using **Supercharged** everywhere:
+Add the dependency `supercharged: ^1.1.0` to your project and start using **Supercharged** everywhere:
 ```dart
 import 'package:supercharged/supercharged.dart';
 ```
@@ -138,7 +138,7 @@ list.forEachIndexed((index, value) {
 
 ## 📑 API documentation
 
-You can discover all **61 features** in the [API documentation](https://pub.dev/documentation/supercharged/latest/supercharged/supercharged-library.html).
+You can discover all **65 features** in the [API documentation](https://pub.dev/documentation/supercharged/latest/supercharged/supercharged-library.html).
 Each feature is **well documented** with an **example**.
 
 Feel free to quickly **jump** into a topic:
@@ -152,6 +152,8 @@ Feel free to quickly **jump** into a topic:
 - [List](https://pub.dev/documentation/supercharged/latest/supercharged/List_.html)
 - [Map](https://pub.dev/documentation/supercharged/latest/supercharged/Map_.html)
 - [String](https://pub.dev/documentation/supercharged/latest/supercharged/String_.html)
+- [Duration](https://pub.dev/documentation/supercharged/latest/supercharged/Duration_.html)
+- [DateTime](https://pub.dev/documentation/supercharged/latest/supercharged/DateTime_.html)
 
 
 ## 📈 Improve
