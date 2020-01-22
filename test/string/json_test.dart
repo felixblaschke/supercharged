@@ -35,7 +35,7 @@ void main() {
         return value.map((e) => e as _Score).toList();
       }
       return value;
-    });
+    }) as List<_Score>;
     expect(scoreList.length, equals(2));
     expect(scoreList[0].score, equals(20));
     expect(scoreList[1].score, equals(40));

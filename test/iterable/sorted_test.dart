@@ -3,7 +3,7 @@ import 'package:supercharged/supercharged.dart';
 
 void main() {
   test("iterable sortedBy", () {
-    expect([].sortedBy((a, b) => a.compareTo(b)), equals([]));
+    expect(<int>[].sortedBy((a, b) => a.compareTo(b)), equals([]));
     expect(() => [0, 1, 2].sortedBy(null), throwsArgumentError);
     expect([3, 1, 5, 9, 7].sortedBy((a, b) => a.compareTo(b)),
         equals([1, 3, 5, 7, 9]));
@@ -22,7 +22,7 @@ void main() {
 
   test("iterable sortedByNum", () {
     expect(() => [0, 1, 2].sortedByNum(null), throwsArgumentError);
-    expect([].sortedByNum((n) => n), equals([]));
+    expect(<int>[].sortedByNum((n) => n), equals([]));
     expect([2, 1, 3].sortedByNum((n) => n), equals([1, 2, 3]));
 
     expect(
@@ -34,7 +34,7 @@ void main() {
 
   test("iterable sortedByString", () {
     expect(() => [0, 1, 2].sortedByString(null), throwsArgumentError);
-    expect([].sortedByString((n) => n), equals([]));
+    expect(<String>[].sortedByString((n) => n), equals([]));
     expect([2, 1, 3].sortedByString((n) => "a$n"), equals([1, 2, 3]));
 
     expect(

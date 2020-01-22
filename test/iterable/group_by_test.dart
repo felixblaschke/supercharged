@@ -27,7 +27,7 @@ void main() {
           "long animal name": ["hamster", "coyote", "beaver"]
         }));
 
-    expect([].groupBy((el) => el < 3 ? "small" : "large"), equals({}));
+    expect(<int>[].groupBy((el) => el < 3 ? "small" : "large"), equals({}));
   });
 
   test("list group by (with value transform)", () {
