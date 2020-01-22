@@ -38,7 +38,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```
   double averageBy(num Function(T) selector) {
     ArgumentError.checkNotNull(selector, "selector");
-    if (this.length == 0) {
+    if (this.isEmpty) {
       return null;
     }
 
@@ -62,7 +62,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
       throw ArgumentError("chunkSize must be positive integer greater than 0.");
     }
 
-    if (this.length == 0) {
+    if (this.isEmpty) {
       return Iterable.empty();
     }
 
@@ -95,7 +95,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
       test = (_) => true;
     }
 
-    if (this.length == 0) {
+    if (this.isEmpty) {
       return 0;
     }
 
