@@ -42,7 +42,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
       return null;
     }
 
-    return this.sumByDouble(selector) / this.length;
+    return (this as List<T>).sumByDouble(selector) / this.length;
   }
 
   /// Splits the elements into lists of the specified [size].
@@ -164,7 +164,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ["a", "b"].elementAtOrNull(2); // null
   /// ```
   T elementAtOrNull(int index) {
-    return this.elementAtOrElse(index, () => null);
+    return (this as List<T>).elementAtOrElse(index, () => null);
   }
 
   /// Returns the first element. If there is no first element the [orElse]
@@ -177,7 +177,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```
   T firstOrElse(T Function() orElse) {
     ArgumentError.checkNotNull(orElse, "orElse");
-    return this.firstWhere((_) => true, orElse: orElse);
+    return (this as List<T>).firstWhere((_) => true, orElse: orElse);
   }
 
   /// Returns the first element. If there is no first element it will
@@ -189,7 +189,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// [].firstOrNull();         // null
   /// ```
   T firstOrNull() {
-    return this.firstOrElse(() => null);
+    return (this as List<T>).firstOrElse(() => null);
   }
 
   /// Returns the last element. If there is no last element the [orElse]
@@ -214,7 +214,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// [].lastOrElse();         // null
   /// ```
   T lastOrNull() {
-    return this.lastOrElse(() => null);
+    return (this as List<T>).lastOrElse(() => null);
   }
 
   /// Groups the elements of the list into a map by a key
@@ -365,7 +365,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```
   List<T> sortedByNum(num Function(T element) valueProvider) {
     ArgumentError.checkNotNull(valueProvider, "valueProvider");
-    return this
+    return (this as List<T>)
         .sortedBy((a, b) => valueProvider(a).compareTo(valueProvider(b)));
   }
 
@@ -379,7 +379,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```
   List<T> sortedByString(String Function(T element) valueProvider) {
     ArgumentError.checkNotNull(valueProvider, "valueProvider");
-    return this
+    return (this as List<T>)
         .sortedBy((a, b) => valueProvider(a).compareTo(valueProvider(b)));
   }
 
