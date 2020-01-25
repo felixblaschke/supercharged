@@ -11,7 +11,7 @@ extension Map_<K, V> on Map<K, V> {
   /// ```
   Iterable<MapEntry<K, V>> filter(bool Function(MapEntry<K, V>) test) {
     ArgumentError.checkNotNull(test, "test");
-    return this.entries.filter(test);
+    return entries.filter(test);
   }
 
   /// Returns the number of entries that matches the [test].
@@ -24,7 +24,7 @@ extension Map_<K, V> on Map<K, V> {
   /// [1, 2, 3, 13, 14, 15].count((n) => n > 9); // 3
   /// ```
   int count([bool Function(MapEntry<K, V> element) test]) {
-    return this.entries.count(test);
+    return entries.count(test);
   }
 
   /// Converts this map into a JSON string.

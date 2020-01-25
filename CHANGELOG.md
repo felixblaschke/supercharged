@@ -7,7 +7,7 @@
 - **New:** Iterable `lastIndex` getter
 - **Improved:** Added `null` check for int `until`
 - **Improved:** Added `null` check for int `times`
-- **Improved:** Removed implicit casts
+- **Improved:** Removed implicit casts and improved usage of strong types
 
 ## 1.1.0
 

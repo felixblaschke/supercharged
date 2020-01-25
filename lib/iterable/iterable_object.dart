@@ -1,7 +1,7 @@
 part of supercharged;
 
 /// Supercharged extensions on [Iterables] like [List] and [Set].
-extension Iterable_<T, K, V> on Iterable<T> {
+extension Iterable_<T> on Iterable<T> {
   /// Returns the sum of all values produced by the [selector] function that is
   /// applied to each element.
   ///
@@ -12,7 +12,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```
   int sumBy(int Function(T) selector) {
     ArgumentError.checkNotNull(selector, "selector");
-    return this.fold(0, (value, element) => value + selector(element));
+    return map(selector).fold(0, (prev, curr) => prev + curr);
   }
 
   /// Returns the sum of all values produced by the [selector] function that is
@@ -24,8 +24,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```
   double sumByDouble(num Function(T) selector) {
     ArgumentError.checkNotNull(selector, "selector");
-    return this
-        .fold(0.0, (value, element) => value + selector(element).toDouble());
+    return map(selector).fold(0.0, (prev, curr) => prev + curr);
   }
 
   /// Returns the average value (arithmetic mean) of all values produces by the
@@ -38,11 +37,11 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```
   double averageBy(num Function(T) selector) {
     ArgumentError.checkNotNull(selector, "selector");
-    if (this.isEmpty) {
+    if (isEmpty) {
       return null;
     }
 
-    return (this as List<T>).sumByDouble(selector) / this.length;
+    return sumByDouble(selector) / length;
   }
 
   /// Splits the elements into lists of the specified [size].
@@ -62,14 +61,14 @@ extension Iterable_<T, K, V> on Iterable<T> {
       throw ArgumentError("chunkSize must be positive integer greater than 0.");
     }
 
-    if (this.isEmpty) {
+    if (isEmpty) {
       return Iterable.empty();
     }
 
-    var countOfChunks = (this.length / size.toDouble()).ceil();
+    var countOfChunks = (length / size.toDouble()).ceil();
 
     return Iterable.generate(countOfChunks, (int index) {
-      var chunk = this.skip(index * size).take(size).toList();
+      var chunk = skip(index * size).take(size).toList();
 
       if (fill != null) {
         while (chunk.length < size) {
@@ -95,7 +94,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
       test = (_) => true;
     }
 
-    if (this.isEmpty) {
+    if (isEmpty) {
       return 0;
     }
 
@@ -115,7 +114,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// This method is an alias for [where].
   Iterable<T> filter(bool Function(T element) test) {
     ArgumentError.checkNotNull(test, "test");
-    return this.where(test);
+    return where(test);
   }
 
   /// Applies the function [funcIndexValue] to each element of this collection
@@ -131,9 +130,9 @@ extension Iterable_<T, K, V> on Iterable<T> {
   void forEachIndexed(void Function(int index, T element) funcIndexValue) {
     ArgumentError.checkNotNull(funcIndexValue, "funcIndexValue");
     var index = 0;
-    var iterator = this.iterator;
-    while (iterator.moveNext()) {
-      funcIndexValue(index++, iterator.current);
+    var iter = iterator;
+    while (iter.moveNext()) {
+      funcIndexValue(index++, iter.current);
     }
   }
 
@@ -150,7 +149,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
     ArgumentError.checkNotNull(orElse, "orElse");
 
     try {
-      return this.elementAt(index);
+      return elementAt(index);
     } catch (error) {
       return orElse();
     }
@@ -164,7 +163,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ["a", "b"].elementAtOrNull(2); // null
   /// ```
   T elementAtOrNull(int index) {
-    return (this as List<T>).elementAtOrElse(index, () => null);
+    return elementAtOrElse(index, () => null);
   }
 
   /// Returns the first element. If there is no first element the [orElse]
@@ -177,7 +176,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```
   T firstOrElse(T Function() orElse) {
     ArgumentError.checkNotNull(orElse, "orElse");
-    return (this as List<T>).firstWhere((_) => true, orElse: orElse);
+    return firstWhere((_) => true, orElse: orElse);
   }
 
   /// Returns the first element. If there is no first element it will
@@ -189,7 +188,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// [].firstOrNull();         // null
   /// ```
   T firstOrNull() {
-    return (this as List<T>).firstOrElse(() => null);
+    return firstOrElse(() => null);
   }
 
   /// Returns the last element. If there is no last element the [orElse]
@@ -202,7 +201,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```
   T lastOrElse(T Function() orElse) {
     ArgumentError.checkNotNull(orElse, "orElse");
-    return this.lastWhere((_) => true, orElse: orElse);
+    return lastWhere((_) => true, orElse: orElse);
   }
 
   /// Returns the last element. If there is no last element it will
@@ -214,7 +213,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// [].lastOrElse();         // null
   /// ```
   T lastOrNull() {
-    return (this as List<T>).lastOrElse(() => null);
+    return lastOrElse(() => null);
   }
 
   /// Groups the elements of the list into a map by a key
@@ -240,7 +239,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   ///        valueTransform: (p) => p.name);
   /// // map = {"young": ["John", "Carl"], "old": ["Peter", "Sarah"]}
   /// ```
-  Map<K, List<V>> groupBy(K Function(T element) keySelector,
+  Map<K, List<V>> groupBy<K, V>(K Function(T element) keySelector,
       {V Function(T element) valueTransform}) {
     ArgumentError.checkNotNull(keySelector);
 
@@ -250,7 +249,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
 
     Map<K, List<V>> map = {};
 
-    this.forEach((element) {
+    forEach((element) {
       var key = keySelector(element);
 
       if (!map.containsKey(key)) {
@@ -270,9 +269,9 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```dart
   /// [1, 2, 3].associate((e) => MapEntry("key_$e", e * 100)); // {"key_1": 100, "key_2": 200, "key_3": 300}
   /// ```
-  Map<K, V> associate(MapEntry<K, V> Function(T element) transform) {
+  Map<K, V> associate<K, V>(MapEntry<K, V> Function(T element) transform) {
     ArgumentError.checkNotNull(transform, "transform");
-    return Map.fromEntries(this.map(transform));
+    return Map.fromEntries(map(transform));
   }
 
   /// Returns a map where every [element] is associated by a key produced from
@@ -284,10 +283,10 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```dart
   /// ["a", "ab", "abc"].associateBy((e) => e.length); // {1: "a", 2: "ab", 3: "abc"}
   /// ```
-  Map<K, T> associateBy(K Function(T element) keySelector) {
+  Map<K, T> associateBy<K>(K Function(T element) keySelector) {
     ArgumentError.checkNotNull(keySelector, "keySelector");
     Map<K, T> map = Map();
-    this.forEach((element) {
+    forEach((element) {
       var key = keySelector(element);
       map[key] = element;
     });
@@ -301,10 +300,10 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```dart
   /// ["a", "ab", "abc"].associateBy((e) => e.length); // {"a": 1, "ab": 2, "abc": 3}
   /// ```
-  Map<T, V> associateWith(V Function(T element) valueSelector) {
+  Map<T, V> associateWith<V>(V Function(T element) valueSelector) {
     ArgumentError.checkNotNull(valueSelector, "valueSelector");
     Map<T, V> map = Map();
-    this.forEach((element) {
+    forEach((element) {
       map[element] = valueSelector(element);
     });
     return map;
@@ -319,10 +318,10 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```
   T minBy(Comparator<T> comparator) {
     ArgumentError.checkNotNull(comparator, "comparator");
-    if (this.isEmpty) {
+    if (isEmpty) {
       return null;
     }
-    return this.reduce(
+    return reduce(
         (value, element) => comparator(value, element) < 0 ? value : element);
   }
 
@@ -335,10 +334,10 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```
   T maxBy(Comparator<T> comparator) {
     ArgumentError.checkNotNull(comparator, "comparator");
-    if (this.isEmpty) {
+    if (isEmpty) {
       return null;
     }
-    return this.reduce(
+    return reduce(
         (value, element) => comparator(value, element) > 0 ? value : element);
   }
 
@@ -350,7 +349,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```
   List<T> sortedBy(Comparator<T> comparator) {
     ArgumentError.checkNotNull(comparator, "comparator");
-    var list = this.toList();
+    var list = toList();
     list.sort(comparator);
     return list;
   }
@@ -365,8 +364,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```
   List<T> sortedByNum(num Function(T element) valueProvider) {
     ArgumentError.checkNotNull(valueProvider, "valueProvider");
-    return (this as List<T>)
-        .sortedBy((a, b) => valueProvider(a).compareTo(valueProvider(b)));
+    return sortedBy((a, b) => valueProvider(a).compareTo(valueProvider(b)));
   }
 
   /// Returns this as sorted list using the [valueProvider] function that produces
@@ -379,8 +377,7 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// ```
   List<T> sortedByString(String Function(T element) valueProvider) {
     ArgumentError.checkNotNull(valueProvider, "valueProvider");
-    return (this as List<T>)
-        .sortedBy((a, b) => valueProvider(a).compareTo(valueProvider(b)));
+    return sortedBy((a, b) => valueProvider(a).compareTo(valueProvider(b)));
   }
 
   /// Returns the last accessible index. If collection is empty this returns
@@ -393,8 +390,8 @@ extension Iterable_<T, K, V> on Iterable<T> {
   /// list[list.lastIndex]; // "c"
   /// ```
   int get lastIndex {
-    if (this.isNotEmpty) {
-      return this.length - 1;
+    if (isNotEmpty) {
+      return length - 1;
     } else {
       return null;
     }

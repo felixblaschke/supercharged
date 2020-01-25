@@ -36,10 +36,10 @@ extension String_ on String {
   /// "flutter".reverse; // "rettulf"
   /// ```
   String get reverse {
-    if (this.isEmpty) {
+    if (isEmpty) {
       return "";
     }
-    return this.toList().reversed.reduce((value, element) => value += element);
+    return toList().reversed.reduce((value, element) => value += element);
   }
 
   /// Transforms the string into a list of single characters
@@ -50,7 +50,7 @@ extension String_ on String {
   /// "".toList();      // [ ]
   /// ```
   List<String> toList() {
-    return this.split("");
+    return split("");
   }
 
   /// De-string-ifies a JSON string back into a JSON object
@@ -85,7 +85,7 @@ extension String_ on String {
     if (matchIterator.moveNext()) {
       var match = matchIterator.current;
       var length = match.end - match.start;
-      return this.substring(match.start + length);
+      return substring(match.start + length);
     }
     return "";
   }
@@ -110,7 +110,7 @@ extension String_ on String {
     }
 
     if (match != null) {
-      return this.substring(0, match.start);
+      return substring(0, match.start);
     }
     return "";
   }
@@ -126,7 +126,7 @@ extension String_ on String {
   /// "i like turtles".allBetween("i ", " turtles") // "like"
   /// ```
   String allBetween(Pattern startPattern, Pattern endPattern) {
-    return this.allAfter(startPattern).allBefore(endPattern);
+    return allAfter(startPattern).allBefore(endPattern);
   }
 
   /// Parses string and returns integer value.

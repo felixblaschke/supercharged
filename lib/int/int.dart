@@ -31,9 +31,9 @@ extension Int_ on int {
   Iterable<int> until(int n) {
     ArgumentError.checkNotNull(n, "n");
     if (this < n) {
-      return this.rangeTo(n - 1);
+      return rangeTo(n - 1);
     } else if (this > n) {
-      return this.rangeTo(n + 1);
+      return rangeTo(n + 1);
     } else {
       return Iterable.empty();
     }

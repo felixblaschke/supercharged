@@ -9,7 +9,7 @@ extension IterableOfDouble_ on Iterable<double> {
   /// [2.0, 6.0, 4.0, 8.0].sum(); // 20.0
   /// ```
   double sum() {
-    return this.sumByDouble((n) => n);
+    return sumByDouble((n) => n);
   }
 
   /// Returns the average value (arithmetic mean) of all elements.
@@ -19,7 +19,7 @@ extension IterableOfDouble_ on Iterable<double> {
   /// [2.0, 4.0, 6.0, 8.0].average(); // 5.0
   /// ```
   double average() {
-    return this.averageBy((n) => n);
+    return averageBy((n) => n);
   }
 
   /// Returns the largest value of all elements
@@ -29,7 +29,7 @@ extension IterableOfDouble_ on Iterable<double> {
   /// [9.0, 42.0, 3.0].max(); // 42.0
   /// ```
   double max() {
-    return this.maxBy((a, b) => a.compareTo(b));
+    return maxBy((a, b) => a.compareTo(b));
   }
 
   /// Returns the lowest value of all elements
@@ -39,6 +39,6 @@ extension IterableOfDouble_ on Iterable<double> {
   /// [17.0, 13.0, 92.0].min(); // 13.0
   /// ```
   double min() {
-    return this.minBy((a, b) => a.compareTo(b));
+    return minBy((a, b) => a.compareTo(b));
   }
 }

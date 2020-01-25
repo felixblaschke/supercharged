@@ -11,7 +11,7 @@ void main() {
 
   test("iterable sumByDouble", () {
     expect(() => [1, 2, 3].sumByDouble(null), throwsArgumentError);
-    expect(<int>[].sumByDouble((n) => n), equals(0.0));
+    expect(<double>[].sumByDouble((n) => n), equals(0.0));
     expect([1.5, 2.5, 3.5].sumByDouble((n) => n), equals(7.5));
     expect([8, 4, 2].sumByDouble((n) => 0.5 * n), equals(7));
   });
