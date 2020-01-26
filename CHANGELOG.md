@@ -1,4 +1,4 @@
-## next
+## 1.2.0
 
 - **New:** DateTime `+` operator
 - **New:** DateTime `-` operator
