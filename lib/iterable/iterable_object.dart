@@ -397,6 +397,23 @@ extension Iterable_<T> on Iterable<T> {
     }
   }
 
+  /// Lazily returns all values without the first one.
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3].withoutFirst(); // [2, 3]
+  /// [].withoutFirst(); // [];
+  /// ```
+  Iterable<T> withoutFirst() sync* {
+    var iter = iterator;
+
+    iter.moveNext(); // eat the first
+
+    while (iter.moveNext()) {
+      yield iter.current;
+    }
+  }
+
   /// Lazily returns all values without the last one.
   ///
   /// Example:

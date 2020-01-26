@@ -7,6 +7,7 @@
 - **New:** Duration `fromNow` method
 - **New:** Duration `ago` method
 - **New:** Iterable `lastIndex` getter
+- **New:** Iterable `withoutFirst` method
 - **New:** Iterable `withoutLast` method
 - **Improved:** Added `null` check for int `until`
 - **Improved:** Added `null` check for int `times`
