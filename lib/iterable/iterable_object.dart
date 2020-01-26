@@ -396,4 +396,31 @@ extension Iterable_<T> on Iterable<T> {
       return null;
     }
   }
+
+  /// Lazily returns all values without the last one.
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3].withoutLast(); // [1, 2]
+  /// [].withoutLast(); // [];
+  /// ```
+  Iterable<T> withoutLast() sync* {
+    var iter = iterator;
+
+    bool hasFirst = iter.moveNext();
+
+    if (!hasFirst) {
+      return;
+    }
+
+    while (true) {
+      var value = iter.current;
+      bool isLastOne = !iter.moveNext();
+      if (!isLastOne) {
+        yield value;
+      } else {
+        break;
+      }
+    }
+  }
 }
