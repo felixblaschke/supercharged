@@ -2,9 +2,12 @@
 
 - **New:** DateTime `+` operator
 - **New:** DateTime `-` operator
+- **New:** DateTime `rangeTo` method
+- **New:** DateTime `until` method
 - **New:** Duration `fromNow` method
 - **New:** Duration `ago` method
 - **New:** Iterable `lastIndex` getter
+- **New:** Iterable `withoutLast` method
 - **Improved:** Added `null` check for int `until`
 - **Improved:** Added `null` check for int `times`
 - **Improved:** Removed implicit casts and improved usage of strong types
