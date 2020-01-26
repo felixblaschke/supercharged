@@ -61,6 +61,10 @@ main() {
   var future = 2.days.fromNow() + 20.minutes;
   var past = 15.minutes.ago();
 
+  var allDaysOf2020 = DateTime(2020).until(DateTime(2021));
+  var allFullHoursOfFirstJanuary2020 =
+      DateTime(2020, 1, 1).until(DateTime(2020, 1, 2), by: 1.hours);
+
   // Simplified data sorting:
   persons = [
     Person(name: "John", age: 21),
