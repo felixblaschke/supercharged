@@ -23,4 +23,73 @@ extension DateTime_ on DateTime {
     ArgumentError.checkNotNull(duration, "duration");
     return subtract(duration);
   }
+
+  /// Returns a lazy [Iterable<DateTime>] that contains all dates from [this]
+  /// to [to] including the dates [this] and [to].
+  ///
+  /// The steps between the dates can be specified by setting [by] which defaults
+  /// to one day.
+  ///
+  /// See also [until].
+  ///
+  /// Example:
+  /// ```dart
+  /// // 2020/01/01, 2020/01/02 ... 2021/01/01
+  /// DateTime(2020).rangeTo(DateTime(2021));
+  ///
+  /// // 2020/01/01 00:00, 2020/01/01 01:00 ... 2020/02/01 00:00
+  /// DateTime(2020, 1, 1).rangeTo(DateTime(2020, 1, 2), by: 1.hours);
+  /// ```
+  Iterable<DateTime> rangeTo(DateTime to,
+      {Duration by = const Duration(days: 1)}) sync* {
+    ArgumentError.checkNotNull(to, "to");
+    ArgumentError.checkNotNull(by, "by");
+
+    yield this;
+
+    if (isAtSameMomentAs(to)) return;
+
+    if (isBefore(to)) {
+      var value = this + by;
+      yield value;
+
+      var count = 1;
+      while (value.isBefore(to)) {
+        value = this + (by * ++count);
+        yield value;
+      }
+    } else {
+      var value = this - by;
+      yield value;
+
+      var count = 1;
+      while (value.isAfter(to)) {
+        value = this - (by * ++count);
+        yield value;
+      }
+    }
+  }
+
+  /// Returns a lazy [Iterable<DateTime>] that contains all dates from [this]
+  /// to [to] including [this] but excluding [to].
+  ///
+  /// The steps between the dates can be specified by setting [by] which defaults
+  /// to one day.
+  ///
+  /// See also [rangeTo].
+  ///
+  /// Example:
+  /// ```dart
+  /// // all days of 2020 (2020/01/01 ... 2020/12/31);
+  /// DateTime(2020).until(DateTime(2021));
+  ///
+  /// // all full hours of 2020/01/01
+  /// DateTime(2020, 1, 1).until(DateTime(2020, 1, 2), by: 1.hours);
+  /// ```
+  Iterable<DateTime> until(DateTime to,
+      {Duration by = const Duration(days: 1)}) sync* {
+    for (var date in rangeTo(to, by: by).withoutLast()) {
+      yield date;
+    }
+  }
 }
