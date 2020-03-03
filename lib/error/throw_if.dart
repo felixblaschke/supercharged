@@ -4,7 +4,7 @@ part of supercharged;
 ///
 /// Example:
 /// ```dart
-/// throwIfNot(n > 1, () => ArgumentError("n must be greater than 0");
+/// throwIf(n < 1, () => ArgumentError("n must be greater than 0"));
 /// ```
 void throwIf(bool test, Error Function() errorFactoryFunc) {
   return throwIfNot(!test, errorFactoryFunc);
@@ -14,7 +14,7 @@ void throwIf(bool test, Error Function() errorFactoryFunc) {
 ///
 /// Example:
 /// ```dart
-/// throwIfNot(n > 1, () => ArgumentError("n must be greater than 0");
+/// throwIfNot(n > 1, () => ArgumentError("n must be greater than 0"));
 /// ```
 void throwIfNot(bool test, Error Function() errorFactoryFunc) {
   if (!test) {
