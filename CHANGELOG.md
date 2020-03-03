@@ -1,3 +1,7 @@
+## 1.2.1
+
+- **Fixed:** typo in API documentation
+
 ## 1.2.0
 
 - **New:** DateTime `+` operator
