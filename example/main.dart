@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:supercharged/supercharged.dart';
 
 main() {
@@ -83,6 +84,10 @@ main() {
       .sortedByNum((p) => p.age)
       .map((p) => p.name)
       .toList();
+
+  // Solid tween shortcuts for animations
+  100.0.tweenTo(200.0); // Tween(begin: 100.0, end: 200.0)
+  Colors.red.tweenTo(Colors.blue); // ColorTween(...)
 
   // Replace your classic for loop:
   0.rangeTo(5); // [0, 1, 2, 3, 4, 5]

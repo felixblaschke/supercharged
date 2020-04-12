@@ -18,4 +18,15 @@ extension Duration_ on Duration {
   /// 10.minutes.ago(); // DateTime 10 minutes ago from now
   /// ```
   DateTime ago() => DateTime.now() - this;
+
+  /// Divides [this] by [otherDuration] and returns a fraction.
+  ///
+  /// Example:
+  /// ```
+  /// 1.minutes() / 2.minutes(); // 0.5
+  /// ```
+  double operator /(Duration otherDuration) {
+    return this.inMicroseconds.toDouble() /
+        otherDuration.inMicroseconds.toDouble();
+  }
 }

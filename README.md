@@ -125,6 +125,12 @@ Simplified [data sorting](https://pub.dev/documentation/supercharged/latest/supe
       .toList();
 ```
 
+Solid tween shortcuts for animations:
+```dart
+100.0.tweenTo(200.0); // Tween(begin: 100.0, end: 200.0)
+Colors.red.tweenTo(Colors.blue); // ColorTween(...)
+```
+
 [Replace](https://pub.dev/documentation/supercharged/latest/supercharged/Int_/rangeTo.html) your classic for-loop:
 ```dart
 0.rangeTo(5); // [0, 1, 2, 3, 4, 5]

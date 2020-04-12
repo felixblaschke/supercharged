@@ -1,3 +1,10 @@
+## 1.3.0
+
+- **New:** int `tweenTo` method
+- **New:** double `tweenTo` method
+- **New:** Color `tweenTo` method
+- **New:** Duration `/` operator
+
 ## 1.2.1
 
 - **Fixed:** typo in API documentation

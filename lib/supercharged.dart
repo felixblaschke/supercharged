@@ -11,6 +11,9 @@ library supercharged;
 import 'dart:convert';
 import 'dart:ui';
 
+import 'package:flutter/widgets.dart';
+
+part 'color/color.dart';
 part 'datetime/datetime.dart';
 part 'double/double.dart';
 part 'duration/duration.dart';
