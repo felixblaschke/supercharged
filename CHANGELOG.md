@@ -1,3 +1,8 @@
+## 1.4.0
+
+- **New:** Animatable `animatedBy` method
+- **New:** Animatable `curved` method
+
 ## 1.3.0
 
 - **New:** int `tweenTo` method

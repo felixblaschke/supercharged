@@ -129,6 +129,7 @@ Solid tween shortcuts for animations:
 ```dart
 100.0.tweenTo(200.0); // Tween(begin: 100.0, end: 200.0)
 Colors.red.tweenTo(Colors.blue); // ColorTween(...)
+0.0.tweenTo(100.0).curved(Curves.easeInOut); // Apply accelleration
 ```
 
 [Replace](https://pub.dev/documentation/supercharged/latest/supercharged/Int_/rangeTo.html) your classic for-loop:

@@ -1,6 +1,6 @@
 name: supercharged
 description: Supercharged brings all the comfort features from languages like Kotlin to all Flutter developers.
-version: 1.3.0
+version: 1.4.0
 homepage: https://github.com/felixblaschke/supercharged
 
 environment:

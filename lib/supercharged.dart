@@ -13,6 +13,7 @@ import 'dart:ui';
 
 import 'package:flutter/widgets.dart';
 
+part 'animatable/animatable.dart';
 part 'color/color.dart';
 part 'datetime/datetime.dart';
 part 'double/double.dart';
