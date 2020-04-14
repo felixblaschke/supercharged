@@ -11,7 +11,7 @@
 
 ## ⛏️ Getting started
 
-Add the dependency `supercharged: ^1.2.0` to your project and start using **Supercharged** everywhere:
+Add the dependency `supercharged: ^1.4.0` to your project and start using **Supercharged** everywhere:
 ```dart
 import 'package:supercharged/supercharged.dart';
 ```
