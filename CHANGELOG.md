@@ -1,3 +1,7 @@
+## 1.5.0
+
+- **New:** DateTime `duration` method
+
 ## 1.4.0
 
 - **New:** Animatable `animatedBy` method

@@ -92,4 +92,14 @@ extension DateTime_ on DateTime {
       yield date;
     }
   }
+
+  /// Returns the [Duration] from 01.01.1970 (epoch/unix time) until this.
+  ///
+  /// Example:
+  /// ```dart
+  /// DateTime.now().duration(); // Duration from 01.01.1970 until now
+  /// ```
+  Duration duration() {
+    return Duration(milliseconds: this.millisecondsSinceEpoch);
+  }
 }
