@@ -85,13 +85,13 @@ void main() {
   });
 
   test("datetime duration1", () {
-    var date = DateTime(2020, 1, 1);
+    var date = DateTime.utc(2020, 1, 1);
     var duration = date.duration();
-    expect(duration, 438287.hours);
+    expect(duration, 438288.hours);
   });
 
   test("datetime duration2", () {
-    var date = DateTime(1960, 3, 31, 14, 32, 32);
+    var date = DateTime.utc(1960, 3, 31, 14, 32, 32);
     var duration = date.duration();
     expect(duration, -85497.hours - 27.minutes - 28.seconds);
   });
