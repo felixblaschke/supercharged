@@ -1,3 +1,6 @@
+## 1.5.1
+- **Fixed:** Unit test for DateTime `duration` method
+
 ## 1.5.0
 
 - **New:** DateTime `duration` method
