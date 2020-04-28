@@ -1,3 +1,6 @@
+# 📝 Examples
+
+```dart
 import 'package:flutter/material.dart';
 import 'package:supercharged/supercharged.dart';
 
@@ -111,3 +114,4 @@ class Person {
 }
 
 class Placeholder {}
+```
