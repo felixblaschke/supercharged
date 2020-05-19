@@ -117,4 +117,14 @@ extension Int_ on int {
   IntTween tweenTo(int end) {
     return IntTween(begin: this, end: end);
   }
+
+  /// Returns a [bool] if [this] value is between [start, end] values
+  ///
+  /// Example:
+  /// ```dart
+  /// 100.between(99, 202) // true;
+  /// ```
+  bool between(int start, int end) {
+    return this >= start && this <= end;
+  }
 }
