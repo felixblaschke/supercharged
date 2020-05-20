@@ -118,19 +118,21 @@ extension Int_ on int {
     return IntTween(begin: this, end: end);
   }
 
-  /// Returns a [bool] if [this] value is between [start, end] values
+  /// Returns a [bool] if [this] value is between [first, second] values, first
+  /// could be greater then second, in this case compared (second, first) interval
   ///
   /// Example:
   /// ```dart
   /// 100.between(99, 202) // true;
+  /// 100.between(202, 99) // true;
   /// ```
-  bool between(int start, int end) {
-    ArgumentError.checkNotNull(start, "start");
-    ArgumentError.checkNotNull(end, "end");
-    if (end <= start)
+  bool between(int first, int second) {
+    ArgumentError.checkNotNull(first, "first");
+    ArgumentError.checkNotNull(second, "second");
+    if (first == second)
       throw ArgumentError.value(
-          end, "end value", "end must be greater then start");
-
-    return this >= start && this <= end;
+          first, "first == second", "first must not be equal to second");
+    if (first > second) return this >= second && this <= first;
+    return this >= first && this <= second;
   }
 }
