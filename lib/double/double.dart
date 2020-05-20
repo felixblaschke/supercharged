@@ -63,7 +63,8 @@ extension Double_ on double {
   bool between(double first, double second) {
     ArgumentError.checkNotNull(first, "first");
     ArgumentError.checkNotNull(second, "second");
-    if (first > second) return this >= second && this <= first;
-    return this >= first && this <= second;
+    final lower = min(first, second);
+    final upper = max(first, second);
+    return this >= lower && this <= upper;
   }
 }
