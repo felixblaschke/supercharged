@@ -1,3 +1,8 @@
+## 1.6.0
+
+- **New:** double `between` method
+- **New:** int `between` method
+
 ## 1.5.1
 - **Fixed:** Unit test for DateTime `duration` method
 
