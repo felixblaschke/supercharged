@@ -51,4 +51,20 @@ extension Double_ on double {
   Tween<double> tweenTo(double end) {
     return Tween<double>(begin: this, end: end);
   }
+
+  /// Returns a [bool] if [this] value is between [first, second] values, first
+  /// could be greater then second, in this case compared (second, first) interval
+  ///
+  /// Example:
+  /// ```dart
+  /// 100.between(99, 202) // true;
+  /// 100.between(202, 99) // true;
+  /// ```
+  bool between(double first, double second) {
+    ArgumentError.checkNotNull(first, "first");
+    ArgumentError.checkNotNull(second, "second");
+    final lower = min(first, second);
+    final upper = max(first, second);
+    return this >= lower && this <= upper;
+  }
 }

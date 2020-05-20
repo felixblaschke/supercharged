@@ -10,6 +10,7 @@ library supercharged;
 
 import 'dart:convert';
 import 'dart:ui';
+import 'dart:math';
 
 import 'package:flutter/widgets.dart';
 
