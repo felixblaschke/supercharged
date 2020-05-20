@@ -63,9 +63,6 @@ extension Double_ on double {
   bool between(double first, double second) {
     ArgumentError.checkNotNull(first, "first");
     ArgumentError.checkNotNull(second, "second");
-    if (first == second)
-      throw ArgumentError.value(
-          first, "first == second", "first must not be equal to second");
     if (first > second) return this >= second && this <= first;
     return this >= first && this <= second;
   }
