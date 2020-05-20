@@ -125,6 +125,12 @@ extension Int_ on int {
   /// 100.between(99, 202) // true;
   /// ```
   bool between(int start, int end) {
+    ArgumentError.checkNotNull(start, "start");
+    ArgumentError.checkNotNull(end, "end");
+    if (end <= start)
+      throw ArgumentError.value(
+          end, "end value", "end must be greater then start");
+
     return this >= start && this <= end;
   }
 }
