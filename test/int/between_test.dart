@@ -14,5 +14,6 @@ void main() {
     expect(1.between(-1, 1), equals(true));
     expect(1.between(10, -1), equals(true));
     expect(1000.between(500, 1500), equals(true));
+    expect(1000000000.between(500000000, 1500000000), equals(true));
   });
 }
