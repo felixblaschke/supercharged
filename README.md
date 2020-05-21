@@ -11,13 +11,10 @@
 
 ## ⛏️ Getting started
 
-Add the dependency `supercharged: ^1.4.0` to your project and start using **Supercharged** everywhere:
+Add the dependency `supercharged: ^1.X.X` ([find recent version](https://pub.dev/packages/supercharged#-installing-tab-)) to your project and start using **Supercharged** everywhere:
 ```dart
 import 'package:supercharged/supercharged.dart';
 ```
-
-For more details have a look at the [install tab](https://pub.dev/packages/supercharged#-installing-tab-).
-
 
 ## 🌞 Highlights
 
@@ -34,10 +31,11 @@ Helpful [substring](https://pub.dev/documentation/supercharged/latest/supercharg
 "flutter is cool".allBefore(" is"); // "flutter"
 ```
 
-[Parse](https://pub.dev/documentation/supercharged/latest/supercharged/String_/toDouble.html) user input:
+[Handle](https://pub.dev/documentation/supercharged/latest/supercharged/String_/toDouble.html) user input:
 ```dart
 "2.1".toDouble(); // 2.1
-"42".toInt(); // 
+"42".toInt(); // 42
+12.between(0, 30); // true
 ```
 
 Effortless [aggregation](https://pub.dev/documentation/supercharged/latest/supercharged/IterableOfInt_.html) for `Iterable<int>` and `Iterable<double>`:
@@ -149,7 +147,7 @@ list.forEachIndexed((index, value) {
 
 ## 📑 API documentation
 
-You can discover all **68 features** in the [API documentation](https://pub.dev/documentation/supercharged/latest/supercharged/supercharged-library.html).
+You can discover all **78 features** in the [API documentation](https://pub.dev/documentation/supercharged/latest/supercharged/supercharged-library.html).
 Each feature is **well documented** with an **example**.
 
 Feel free to quickly **jump** into a topic:
@@ -165,7 +163,8 @@ Feel free to quickly **jump** into a topic:
 - [String](https://pub.dev/documentation/supercharged/latest/supercharged/String_.html)
 - [Duration](https://pub.dev/documentation/supercharged/latest/supercharged/Duration_.html)
 - [DateTime](https://pub.dev/documentation/supercharged/latest/supercharged/DateTime_.html)
-
+- [Animatable](https://pub.dev/documentation/supercharged/latest/supercharged/Animatable_.html)
+- [Color](https://pub.dev/documentation/supercharged/latest/supercharged/Color_.html)
 
 ## 📈 Improve
 
