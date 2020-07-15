@@ -102,4 +102,17 @@ extension DateTime_ on DateTime {
   Duration duration() {
     return Duration(milliseconds: this.millisecondsSinceEpoch);
   }
+
+  /// Returns the [bool] wheather the given date are inside iterval or not.
+  ///
+  /// Example:
+  /// ```dart
+  /// DateTime.isBetween(DateTime(1989, 7, 20), DateTime(1989, 7, 22));
+  /// //the interval is inclusive (now.isBetween(now, now) // true)
+  /// ```
+  bool isBetween(DateTime from, DateTime to) {
+    return this.isAfter(from) && this.isBefore(to) ||
+        this == to ||
+        this == from;
+  }
 }

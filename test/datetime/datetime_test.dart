@@ -95,6 +95,20 @@ void main() {
     var duration = date.duration();
     expect(duration, -85497.hours - 27.minutes - 28.seconds);
   });
+
+  test("datetime isBetween", () {
+    var dateFromOne = DateTime.utc(1959, 3, 31, 14, 32, 32);
+    var dateFromTwo = DateTime.utc(1960, 3, 31, 14, 32, 32);
+    var dateTo = DateTime.utc(1960, 3, 31, 14, 32, 32);
+    expect(true,
+        DateTime.utc(1960, 3, 31, 14, 32, 32).isBetween(dateFromOne, dateTo));
+    expect(true,
+        DateTime.utc(1960, 3, 31, 14, 32, 32).isBetween(dateFromTwo, dateTo));
+    expect(false,
+        DateTime.utc(1970, 3, 31, 14, 32, 32).isBetween(dateFromOne, dateTo));
+    expect(false,
+        DateTime.utc(1950, 3, 31, 14, 32, 32).isBetween(dateFromOne, dateTo));
+  });
 }
 
 expectDates(
