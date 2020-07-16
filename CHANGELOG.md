@@ -1,6 +1,8 @@
 ## 1.7.0
 
 - **New:** DateTime `isBetween` method
+- **Changed:** double `between` renamed to `isBetween`
+- **Changed:** int `between` renamed to `isBetween`
 
 ## 1.6.0
 

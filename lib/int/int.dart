@@ -118,16 +118,21 @@ extension Int_ on int {
     return IntTween(begin: this, end: end);
   }
 
+  @Deprecated("Use isBetween() instead")
+  bool between(num first, num second) {
+    return this.isBetween(first, second);
+  }
+
   /// Returns a [bool] if [this] value is between (including) the two
   /// numeric values [first] and [second].
   ///
   /// Example:
   /// ```dart
-  /// 100.between(50, 150) // true;
-  /// 100.between(50.0, 150.0) // true;
-  /// 100.between(100, 100) // true;
+  /// 100.isBetween(50, 150) // true;
+  /// 100.isBetween(50.0, 150.0) // true;
+  /// 100.isBetween(100, 100) // true;
   /// ```
-  bool between(num first, num second) {
+  bool isBetween(num first, num second) {
     ArgumentError.checkNotNull(first, "first");
     ArgumentError.checkNotNull(second, "second");
     if (first <= second) {
