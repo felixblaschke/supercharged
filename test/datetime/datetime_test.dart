@@ -108,6 +108,19 @@ void main() {
         false);
     expect(
         DateTime(1960, 3, 31, 14, 32, 32).isBetween(dateFromTwo, dateTo), true);
+    expect(
+        DateTime(2000, 1, 2)
+            .isBetween(DateTime(2000, 1, 1), DateTime(2000, 1, 31)),
+        true);
+    expect(
+        DateTime(2000, 1, 1)
+            .isBetween(DateTime(2000, 1, 1), DateTime(2000, 1, 1)),
+        true);
+    expect(() => DateTime.now().isBetween(null, DateTime.now()),
+        throwsArgumentError);
+    expect(() => DateTime.now().isBetween(DateTime.now(), null),
+        throwsArgumentError);
+    expect(() => DateTime.now().isBetween(null, null), throwsArgumentError);
   });
 }
 

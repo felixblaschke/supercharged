@@ -1,3 +1,7 @@
+## 1.7.0
+
+- **New:** DateTime `isBetween` method
+
 ## 1.6.0
 
 - **New:** double `between` method

@@ -107,11 +107,14 @@ extension DateTime_ on DateTime {
   ///
   /// Example:
   /// ```dart
-  /// DateTime.isBetween(DateTime(1989, 7, 20), DateTime(1989, 7, 22));
-  /// //the interval is inclusive (now.isBetween(now, now) // true)
+  /// DateTime(2000, 1, 2).isBetween(DateTime(2000, 1, 1), DateTime(2000, 1, 31)); // true
+  /// DateTime(2000, 1, 1).isBetween(DateTime(2000, 1, 1), DateTime(2000, 1, 1)); // true
   /// ```
   bool isBetween(DateTime from, DateTime to) {
+    ArgumentError.checkNotNull(from, "from");
+    ArgumentError.checkNotNull(to, "to");
     return (this.isAfter(from) && this.isBefore(to)) ||
-        (this == to || this == from);
+        this == from ||
+        this == to;
   }
 }
