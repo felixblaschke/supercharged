@@ -111,8 +111,7 @@ extension DateTime_ on DateTime {
   /// //the interval is inclusive (now.isBetween(now, now) // true)
   /// ```
   bool isBetween(DateTime from, DateTime to) {
-    return this.isAfter(from) && this.isBefore(to) ||
-        this == to ||
-        this == from;
+    return (this.isAfter(from) && this.isBefore(to)) ||
+        (this == to || this == from);
   }
 }
