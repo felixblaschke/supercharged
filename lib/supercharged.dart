@@ -15,6 +15,7 @@ import 'dart:math';
 import 'package:flutter/widgets.dart';
 
 part 'animatable/animatable.dart';
+part 'animation/animation.dart';
 part 'color/color.dart';
 part 'datetime/datetime.dart';
 part 'double/double.dart';
