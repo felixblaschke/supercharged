@@ -3,7 +3,7 @@ part of supercharged;
 /// Supercharged extension on [Animation] objects.
 extension Animation_ on Animation<double> {
   /// Returns an [Animation] after applying [CurveTween] based on begin and end.
-  /// Optionally can passe [Curve] as well by pass curve object at last parameter.
+  /// Optionally a [Curve] can also be passed by passing curve parameter after the arguments.
   ///
   /// Example:
   /// ```dart
@@ -16,8 +16,8 @@ extension Animation_ on Animation<double> {
     ));
   }
 
-  /// Returns an [Animation] after applying [CurveTween]. You can just pass curve
-  /// object.
+  /// Returns an [Animation] after applying [CurveTween] that can just pass as first
+  /// argument.
   ///
   /// Example:
   /// ```dart
