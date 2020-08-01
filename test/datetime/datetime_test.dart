@@ -124,7 +124,7 @@ void main() {
   });
 }
 
-expectDates(
+void expectDates(
     {Iterable<DateTime> dates, DateTime first, DateTime last, int length}) {
   expect(dates.first, equals(first));
   expect(dates.last, equals(last));

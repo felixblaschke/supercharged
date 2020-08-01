@@ -1,7 +1,7 @@
 part of supercharged;
 
 /// Supercharged extensions on [Iterables] like [List] and [Set].
-extension Iterable_<T> on Iterable<T> {
+extension IterableSC<T> on Iterable<T> {
   /// Returns the sum of all values produced by the [selector] function that is
   /// applied to each element.
   ///
@@ -90,16 +90,13 @@ extension Iterable_<T> on Iterable<T> {
   /// [1, 2, 3, 13, 14, 15].count((n) => n > 9); // 3
   /// ```
   int count([bool Function(T element) test]) {
-    if (test == null) {
-      test = (_) => true;
-    }
+    test ??= (_) => true;
 
     if (isEmpty) {
       return 0;
     }
 
-    return this
-        .map((element) => test(element) ? 1 : 0)
+    return map((element) => test(element) ? 1 : 0)
         .reduce((value, element) => value + element);
   }
 
@@ -243,11 +240,9 @@ extension Iterable_<T> on Iterable<T> {
       {V Function(T element) valueTransform}) {
     ArgumentError.checkNotNull(keySelector);
 
-    if (valueTransform == null) {
-      valueTransform = (element) => element as V;
-    }
+    valueTransform ??= (element) => element as V;
 
-    Map<K, List<V>> map = {};
+    var map = <K, List<V>>{};
 
     forEach((element) {
       var key = keySelector(element);
@@ -285,7 +280,7 @@ extension Iterable_<T> on Iterable<T> {
   /// ```
   Map<K, T> associateBy<K>(K Function(T element) keySelector) {
     ArgumentError.checkNotNull(keySelector, "keySelector");
-    Map<K, T> map = Map();
+    var map = <K, T>{};
     forEach((element) {
       var key = keySelector(element);
       map[key] = element;
@@ -302,7 +297,7 @@ extension Iterable_<T> on Iterable<T> {
   /// ```
   Map<T, V> associateWith<V>(V Function(T element) valueSelector) {
     ArgumentError.checkNotNull(valueSelector, "valueSelector");
-    Map<T, V> map = Map();
+    var map = <T, V>{};
     forEach((element) {
       map[element] = valueSelector(element);
     });
@@ -424,7 +419,7 @@ extension Iterable_<T> on Iterable<T> {
   Iterable<T> withoutLast() sync* {
     var iter = iterator;
 
-    bool hasFirst = iter.moveNext();
+    var hasFirst = iter.moveNext();
 
     if (!hasFirst) {
       return;
@@ -432,7 +427,7 @@ extension Iterable_<T> on Iterable<T> {
 
     while (true) {
       var value = iter.current;
-      bool isLastOne = !iter.moveNext();
+      var isLastOne = !iter.moveNext();
       if (!isLastOne) {
         yield value;
       } else {

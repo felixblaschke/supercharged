@@ -1,7 +1,7 @@
 part of supercharged;
 
 /// Supercharged extensions on [Iterable<MapEntry>] like [List<MapEntry>] and [Set<MapEntry>].
-extension IterableOfMapEntry_<K, V> on Iterable<MapEntry<K, V>> {
+extension IterableOfMapEntrySC<K, V> on Iterable<MapEntry<K, V>> {
   /// Transform the `Iterable<MapEntry>` into a map
   ///
   /// Example:

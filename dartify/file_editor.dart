@@ -5,10 +5,10 @@ class FileEditor {
   List<String> document;
 
   FileEditor(this.path) {
-    document = File(path).readAsStringSync().split("\n");
+    document = File(path).readAsStringSync().split('\n');
   }
 
-  replaceLine(RegExp matcher, String replacement) {
+  void replaceLine(RegExp matcher, String replacement) {
     document = document.map((line) {
       if (matcher.hasMatch(line)) {
         return replacement;
@@ -17,14 +17,14 @@ class FileEditor {
     }).toList();
   }
 
-  removeTaggedLines(String name) {
-    var processedDocument = new List<String>();
+  void removeTaggedLines(String name) {
+    var processedDocument = <String>[];
     var isInsideFlutterBlock = false;
 
     document.forEach((line) {
-      if (line.contains("// @codegen begin block $name") || line.contains("# @codegen begin block $name")) {
+      if (line.contains('// @codegen begin block $name') || line.contains('# @codegen begin block $name')) {
         isInsideFlutterBlock = true;
-      } else if (line.contains("// @codegen end block $name") || line.contains("# @codegen end block $name")) {
+      } else if (line.contains('// @codegen end block $name') || line.contains('# @codegen end block $name')) {
         isInsideFlutterBlock = false;
       } else {
         if (!isInsideFlutterBlock) {
@@ -37,11 +37,11 @@ class FileEditor {
   }
 
   void printDocument() {
-    print(document.join("\n"));
+    print(document.join('\n'));
   }
 
   void save() {
-     File(path).writeAsStringSync(document.join("\n"));
+     File(path).writeAsStringSync(document.join('\n'));
   }
 
 }

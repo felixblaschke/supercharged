@@ -4,7 +4,7 @@ part of supercharged;
 
 
 /// Supercharged extension on [Color] objects.
-extension Color_ on Color {
+extension ColorSC on Color {
   /// Returns a [ColorTween] from [this] color to the given [end] color
   ///
   /// Example:

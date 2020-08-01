@@ -1,7 +1,7 @@
 part of supercharged;
 
 /// Supercharged extensions on [String].
-extension String_ on String {
+extension StringSC on String {
   /// Repeats the string [n] times
   ///
   /// You can set an optional [separator] that is put in between each repetition
@@ -18,7 +18,7 @@ extension String_ on String {
 
     var repeatedString = "";
 
-    for (int i = 0; i < n; i++) {
+    for (var i = 0; i < n; i++) {
       if (i > 0) {
         repeatedString += separator;
       }
@@ -63,7 +63,7 @@ extension String_ on String {
   /// jsonString.parseJSON();
   /// "[1, 2, 3]".parseJSON(); // [1, 2, 3]
   /// ```
-  dynamic parseJSON({Object reviver(Object key, Object value)}) {
+  dynamic parseJSON({Object Function(Object key, Object value) reviver}) {
     return jsonDecode(this, reviver: reviver);
   }
 

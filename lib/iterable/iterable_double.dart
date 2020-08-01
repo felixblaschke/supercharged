@@ -1,7 +1,7 @@
 part of supercharged;
 
 /// Supercharged extensions on [Iterable<double>] like [List<double>] and [Set<double>].
-extension IterableOfDouble_ on Iterable<double> {
+extension IterableOfDoubleSC on Iterable<double> {
   /// Returns the sum of all elements.
   ///
   /// Example:

@@ -1,7 +1,7 @@
 part of supercharged;
 
 /// Supercharged extensions on [Map].
-extension Map_<K, V> on Map<K, V> {
+extension MapSC<K, V> on Map<K, V> {
   /// Returns a new [Iterable<MapEntry<K,V>>] with all elements that satisfy the
   /// predicate [test].
   ///
@@ -38,7 +38,7 @@ extension Map_<K, V> on Map<K, V> {
   /// ```dart
   /// {"a": 1, "b": 2}.toJSON(); // """{"a":1,"b":2}"""
   /// ```
-  String toJSON({Object toEncodable(Object nonEncodable)}) {
+  String toJSON({Object Function(Object nonEncodable) toEncodable}) {
     return jsonEncode(this, toEncodable: toEncodable);
   }
 }

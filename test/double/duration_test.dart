@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:supercharged/supercharged.dart';
 
 void main() {
-  test("double duration", () {
+  test('double duration', () {
     expect(1.5.seconds, equals(Duration(milliseconds: 1500)));
     expect(0.5.minutes, equals(Duration(seconds: 30)));
     expect(1.5.hours, equals(Duration(hours: 1, minutes: 30)));

@@ -1,7 +1,7 @@
 part of supercharged;
 
 /// Supercharged extensions on [int] numbers.
-extension Int_ on int {
+extension IntSC on int {
   /// Creates an [Iterable<int>] that contains all values from current integer
   /// until (including) the value [n].
   ///
@@ -12,9 +12,9 @@ extension Int_ on int {
   /// ```
   Iterable<int> rangeTo(int n) {
     ArgumentError.checkNotNull(n, "n");
-    int count = (n - this).abs() + 1;
-    int direction = (n - this).sign;
-    int i = this - direction;
+    var count = (n - this).abs() + 1;
+    var direction = (n - this).sign;
+    var i = this - direction;
     return Iterable.generate(count, (int index) {
       return i += direction;
     });
@@ -122,7 +122,7 @@ extension Int_ on int {
 
   @Deprecated("Use isBetween() instead")
   bool between(num first, num second) {
-    return this.isBetween(first, second);
+    return isBetween(first, second);
   }
 
   /// Returns a [bool] if [this] value is between (including) the two

@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:supercharged/supercharged.dart';
 
 void main() {
-  test("animatable curve", () {
+  test('animatable curve', () {
     final tween = 0.0.tweenTo(100.0).curved(Curves.easeInOut);
 
     expect(tween.transform(0.0), 0.0);

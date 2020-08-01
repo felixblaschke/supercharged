@@ -14,7 +14,7 @@ void main() {
       }
       return null;
     });
-    expect(jsonString, equals("""["@person(Jack)","@person(Ana)"]"""));
+    expect(jsonString, equals('["@person(Jack)","@person(Ana)"]'));
   });
 }
 

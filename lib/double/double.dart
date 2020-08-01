@@ -1,7 +1,7 @@
 part of supercharged;
 
 /// Supercharged extensions on [double] numbers.
-extension Double_ on double {
+extension DoubleSC on double {
   /// Returns a [Duration] representing the current value as seconds.
   ///
   /// Example:
@@ -58,7 +58,7 @@ extension Double_ on double {
 
   @Deprecated("Use isBetween() instead")
   bool between(num first, num second) {
-    return this.isBetween(first, second);
+    return isBetween(first, second);
   }
 
   /// Returns a [bool] if [this] value is between (including) the two

@@ -1,6 +1,6 @@
 part of supercharged;
 
-extension Duration_ on Duration {
+extension DurationSC on Duration {
   /// Returns a [DateTime] object with the current date and time having this
   /// duration added.
   ///
@@ -26,7 +26,7 @@ extension Duration_ on Duration {
   /// 1.minutes() / 2.minutes(); // 0.5
   /// ```
   double operator /(Duration otherDuration) {
-    return this.inMicroseconds.toDouble() /
+    return inMicroseconds.toDouble() /
         otherDuration.inMicroseconds.toDouble();
   }
 }

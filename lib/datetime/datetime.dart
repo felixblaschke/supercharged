@@ -1,7 +1,7 @@
 part of supercharged;
 
 /// Supercharged extension on [DateTime] objects.
-extension DateTime_ on DateTime {
+extension DateTimeSC on DateTime {
   /// Returns a new [DateTime] object having added the given [duration].
   ///
   /// Example:
@@ -100,7 +100,7 @@ extension DateTime_ on DateTime {
   /// DateTime.now().duration(); // Duration from 01.01.1970 until now
   /// ```
   Duration duration() {
-    return Duration(milliseconds: this.millisecondsSinceEpoch);
+    return Duration(milliseconds: millisecondsSinceEpoch);
   }
 
   /// Returns the [bool] wheather the given date are inside iterval or not.
@@ -113,7 +113,7 @@ extension DateTime_ on DateTime {
   bool isBetween(DateTime from, DateTime to) {
     ArgumentError.checkNotNull(from, "from");
     ArgumentError.checkNotNull(to, "to");
-    return (this.isAfter(from) && this.isBefore(to)) ||
+    return (isAfter(from) && isBefore(to)) ||
         this == from ||
         this == to;
   }

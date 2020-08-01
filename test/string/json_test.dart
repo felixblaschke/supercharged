@@ -27,7 +27,7 @@ void main() {
       }
       return null;
     });
-    List<_Score> scoreList = jsonString.parseJSON(reviver: (key, value) {
+    var scoreList = jsonString.parseJSON(reviver: (key, value) {
       if (value is String && value.startsWith("@score")) {
         return _Score(value.allAfter(":").toInt());
       }
