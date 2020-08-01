@@ -4,7 +4,7 @@ import 'file_editor.dart';
 
 void main() async {
   FileEditor("pubspec.yaml")
-    ..replaceLine(RegExp(r"^name:"), "name: supercharged_for_dart")
+    ..replaceLine(RegExp(r"^name:"), "name: supercharged_dart")
     ..replaceLine(RegExp(r"^description:"), "description: Supercharged brings all the comfort features from languages like Kotlin to all Dart developers.")
     ..removeTaggedLines("flutter")
     ..save();
