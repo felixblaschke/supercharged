@@ -11,11 +11,10 @@ void main() async {
   Directory("test").deleteSync(recursive: true);
 
   Directory("lib").listSync(recursive: true).forEach((file) {
+    if (file.path.endsWith(".dart")) {
       FileEditor(file.path)
         ..removeTaggedLines("flutter")
         ..save();
+    }
   });
-
-
-
 }
