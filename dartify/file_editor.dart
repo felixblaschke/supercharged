@@ -22,9 +22,9 @@ class FileEditor {
     var isInsideFlutterBlock = false;
 
     document.forEach((line) {
-      if (line.contains("// @codegen begin block $name")) {
+      if (line.contains("// @codegen begin block $name") || line.contains("# @codegen begin block $name")) {
         isInsideFlutterBlock = true;
-      } else if (line.contains("// @codegen end block $name")) {
+      } else if (line.contains("// @codegen end block $name") || line.contains("# @codegen end block $name")) {
         isInsideFlutterBlock = false;
       } else {
         if (!isInsideFlutterBlock) {

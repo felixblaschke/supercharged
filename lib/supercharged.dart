@@ -9,10 +9,12 @@
 library supercharged;
 
 import 'dart:convert';
-import 'dart:ui';
 import 'dart:math';
 
+// @codegen begin block flutter
+import 'dart:ui';
 import 'package:flutter/widgets.dart';
+// @codegen end block flutter
 
 part 'animatable/animatable.dart';
 part 'color/color.dart';
