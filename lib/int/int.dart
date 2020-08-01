@@ -108,6 +108,7 @@ extension Int_ on int {
     return Duration(days: this);
   }
 
+// @codegen begin block flutter
   /// Returns a [IntTween] from [this] value to the given [end] value
   ///
   /// Example:
@@ -117,6 +118,7 @@ extension Int_ on int {
   IntTween tweenTo(int end) {
     return IntTween(begin: this, end: end);
   }
+// @codegen end block flutter
 
   @Deprecated("Use isBetween() instead")
   bool between(num first, num second) {

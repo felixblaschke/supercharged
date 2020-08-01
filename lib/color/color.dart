@@ -1,5 +1,8 @@
 part of supercharged;
 
+// @codegen begin block flutter
+
+
 /// Supercharged extension on [Color] objects.
 extension Color_ on Color {
   /// Returns a [ColorTween] from [this] color to the given [end] color
@@ -12,3 +15,5 @@ extension Color_ on Color {
     return ColorTween(begin: this, end: end);
   }
 }
+
+// @codegen end block flutter

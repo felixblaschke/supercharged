@@ -1,5 +1,7 @@
 part of supercharged;
 
+// @codegen begin block flutter
+
 /// Supercharged extension on [Animatable] objects.
 extension Animatable_<T> on Animatable<T> {
   /// Assigns this to an [AnimationController] specified by [controller] that
@@ -27,3 +29,5 @@ extension Animatable_<T> on Animatable<T> {
     return chain(CurveTween(curve: curve));
   }
 }
+
+// @codegen end block flutter

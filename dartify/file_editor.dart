@@ -17,6 +17,29 @@ class FileEditor {
     }).toList();
   }
 
+  removeTaggedLines(String name) {
+    var processedDocument = new List<String>();
+    var isInsideFlutterBlock = false;
+
+    document.forEach((line) {
+      if (line.contains("// @codegen begin block $name")) {
+        isInsideFlutterBlock = true;
+      } else if (line.contains("// @codegen end block $name")) {
+        isInsideFlutterBlock = false;
+      } else {
+        if (!isInsideFlutterBlock) {
+          processedDocument.add(line);
+        }
+      }
+    });
+
+    document = processedDocument;
+  }
+
+  void printDocument() {
+    print(document.join("\n"));
+  }
+
   void save() {
      File(path).writeAsStringSync(document.join("\n"));
   }
