@@ -2,7 +2,7 @@
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:supercharged/supercharged.dart';
+import 'package:supercharged_dart/supercharged_dart.dart';
 
 main() {
   // Transform any String to colors

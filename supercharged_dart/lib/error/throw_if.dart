@@ -1,4 +1,4 @@
-part of supercharged;
+part of supercharged_dart;
 
 /// Throws an [Error] if predicate [test] is satisfied
 ///

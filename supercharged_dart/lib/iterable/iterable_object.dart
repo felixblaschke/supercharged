@@ -1,4 +1,4 @@
-part of supercharged;
+part of supercharged_dart;
 
 /// Supercharged extensions on [Iterables] like [List] and [Set].
 extension IterableSC<T> on Iterable<T> {

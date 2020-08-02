@@ -1,5 +1,5 @@
-import 'package:flutter_test/flutter_test.dart';
-import 'package:supercharged/supercharged.dart';
+import 'package:test/test.dart';
+import 'package:supercharged_dart/supercharged_dart.dart';
 
 void main() {
   test('parse int', () {

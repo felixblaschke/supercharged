@@ -1,4 +1,4 @@
-part of supercharged;
+part of supercharged_dart;
 
 extension DurationSC on Duration {
   /// Returns a [DateTime] object with the current date and time having this

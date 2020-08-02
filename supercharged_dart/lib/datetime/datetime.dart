@@ -1,4 +1,4 @@
-part of supercharged;
+part of supercharged_dart;
 
 /// Supercharged extension on [DateTime] objects.
 extension DateTimeSC on DateTime {

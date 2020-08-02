@@ -1,4 +1,4 @@
-part of supercharged;
+part of supercharged_dart;
 
 /// Supercharged extensions on [Iterable<int>] like [List<int>] and [Set<int>].
 extension IterableOfIntSC on Iterable<int> {

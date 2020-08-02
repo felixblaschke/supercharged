@@ -1,4 +1,4 @@
-part of supercharged;
+part of supercharged_dart;
 
 /// Supercharged extensions on [double] numbers.
 extension DoubleSC on double {
@@ -41,20 +41,6 @@ extension DoubleSC on double {
   Duration get days {
     return Duration(milliseconds: (1000 * 60 * 60 * 24 * this).round());
   }
-
-
-
-  /// Returns a [Tween<double>] from [this] value to the given [end] value
-  ///
-  /// Example:
-  /// ```dart
-  /// 100.0.tweenTo(200.0) // Tween(begin: 100.0, end: 200.0);
-  /// ```
-  Tween<double> tweenTo(double end) {
-    return Tween<double>(begin: this, end: end);
-  }
-
-
 
   @Deprecated('Use isBetween() instead')
   bool between(num first, num second) {
