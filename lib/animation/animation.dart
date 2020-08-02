@@ -1,7 +1,7 @@
 part of supercharged;
 
 /// Supercharged extension on [Animation] objects.
-extension Animation_ on Animation<double> {
+extension AnimationSC on Animation<double> {
   /// Returns an [Animation] after applying [CurveTween] based on begin and end.
   /// Optionally a [Curve] can also be passed by passing curve parameter after the arguments.
   ///

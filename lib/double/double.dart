@@ -42,7 +42,7 @@ extension DoubleSC on double {
     return Duration(milliseconds: (1000 * 60 * 60 * 24 * this).round());
   }
 
-// @codegen begin block flutter
+
 
   /// Returns a [Tween<double>] from [this] value to the given [end] value
   ///
@@ -53,7 +53,7 @@ extension DoubleSC on double {
   Tween<double> tweenTo(double end) {
     return Tween<double>(begin: this, end: end);
   }
-// @codegen end block flutter
+
 
 
   @Deprecated('Use isBetween() instead')

@@ -1,6 +1,6 @@
 part of supercharged;
 
-// @codegen begin block flutter
+
 
 /// Supercharged extension on [Animatable] objects.
 extension AnimatableSC<T> on Animatable<T> {
@@ -30,4 +30,3 @@ extension AnimatableSC<T> on Animatable<T> {
   }
 }
 
-// @codegen end block flutter
