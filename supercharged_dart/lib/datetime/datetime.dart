@@ -113,8 +113,6 @@ extension DateTimeSC on DateTime {
   bool isBetween(DateTime from, DateTime to) {
     ArgumentError.checkNotNull(from, 'from');
     ArgumentError.checkNotNull(to, 'to');
-    return (isAfter(from) && isBefore(to)) ||
-        this == from ||
-        this == to;
+    return (isAfter(from) && isBefore(to)) || this == from || this == to;
   }
 }

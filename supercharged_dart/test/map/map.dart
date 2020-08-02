@@ -15,7 +15,7 @@ void main() {
     expect(map.count((e) => e.value < 0), equals(1));
     expect(map.count((e) => e.value == 42), equals(0));
 
-    var emptyMap = <String,int>{};
+    var emptyMap = <String, int>{};
     expect(emptyMap.count(), equals(0));
     expect(emptyMap.count((e) => e.value >= 0), equals(0));
   });
