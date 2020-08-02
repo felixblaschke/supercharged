@@ -26,7 +26,6 @@ extension DurationSC on Duration {
   /// 1.minutes() / 2.minutes(); // 0.5
   /// ```
   double operator /(Duration otherDuration) {
-    return inMicroseconds.toDouble() /
-        otherDuration.inMicroseconds.toDouble();
+    return inMicroseconds.toDouble() / otherDuration.inMicroseconds.toDouble();
   }
 }

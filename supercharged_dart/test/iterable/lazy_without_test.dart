@@ -19,5 +19,4 @@ void main() {
     expect([1, 2, 3].withoutLast().withoutFirst(), equals([2]));
     expect([].withoutFirst().withoutLast(), equals([]));
   });
-
 }
