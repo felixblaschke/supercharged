@@ -1,10 +1,7 @@
 part of supercharged;
 
-
-
-
-/// Supercharged extension on [Color] objects.
-extension ColorSC on Color {
+/// Supercharged Flutter extension on [Color] objects.
+extension ColorSCF on Color {
   /// Returns a [ColorTween] from [this] color to the given [end] color
   ///
   /// Example:
@@ -15,5 +12,3 @@ extension ColorSC on Color {
     return ColorTween(begin: this, end: end);
   }
 }
-
-

@@ -1,7 +1,7 @@
 part of supercharged;
 
-/// Supercharged extension on [Animation] objects.
-extension AnimationSC on Animation<double> {
+/// Supercharged Flutter extension on [Animation] objects.
+extension AnimationSCF on Animation<double> {
   /// Returns an [Animation] after applying [CurveTween] based on begin and end.
   /// Optionally a [Curve] can also be passed by passing curve parameter after the arguments.
   ///
