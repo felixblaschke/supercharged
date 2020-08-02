@@ -1,4 +1,4 @@
-part of supercharged;
+part of supercharged_dart;
 
 /// Supercharged extensions on [List].
 extension ListSC<T> on List<T> {

@@ -3,22 +3,14 @@
 ///
 /// Start supercharging your code by importing it:
 /// ```dart
-/// import 'package:supercharged/supercharged.dart';
+/// import 'package:supercharged_dart/supercharged_dart.dart';
 /// ```
 
-library supercharged;
+library supercharged_dart;
 
 import 'dart:convert';
 import 'dart:math';
 
-
-import 'dart:ui';
-import 'package:flutter/widgets.dart';
-
-
-part 'animatable/animatable.dart';
-part 'animation/animation.dart';
-part 'color/color.dart';
 part 'datetime/datetime.dart';
 part 'double/double.dart';
 part 'duration/duration.dart';

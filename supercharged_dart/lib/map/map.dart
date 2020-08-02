@@ -1,4 +1,4 @@
-part of supercharged;
+part of supercharged_dart;
 
 /// Supercharged extensions on [Map].
 extension MapSC<K, V> on Map<K, V> {
