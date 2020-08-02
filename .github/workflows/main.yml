@@ -3,7 +3,8 @@ name: Tests
 on: [push]
 
 jobs:
-  build:
+  tests_supercharged:
+    name: "Tests supercharged"
 
     runs-on: ubuntu-latest
 
@@ -15,6 +16,7 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
+      - run: cd supercharged
       - run: rm -rf example/
       - run: flutter pub get
       - run: flutter test
