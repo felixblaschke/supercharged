@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   tests:
+    name: Unit tests
     runs-on: ubuntu-latest
 
     steps:
@@ -14,12 +15,20 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
-      - run: flutter pub get
+
+      - name: supercharged_dart / get dependencies
+        run: flutter pub get
         working-directory: ./supercharged_dart
-      - run: flutter test
+
+      - name: supercharged_dart / run tests
+        run: flutter pub run test
         working-directory: ./supercharged_dart
-      - run: flutter pub get
+
+      - name: supercharged / get dependencies
+        run: flutter pub get
         working-directory: ./supercharged
-      - run: flutter test
+
+      - name: supercharged / run tests
+        run: flutter test
         working-directory: ./supercharged
 
