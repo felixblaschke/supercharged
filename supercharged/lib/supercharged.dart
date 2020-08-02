@@ -8,26 +8,20 @@
 
 library supercharged;
 
-import 'dart:convert';
-import 'dart:math';
-
-
 import 'dart:ui';
+import 'package:supercharged_dart/supercharged_dart.dart';
 import 'package:flutter/widgets.dart';
 
+export 'package:supercharged_dart/supercharged_dart.dart';
 
 part 'animatable/animatable.dart';
+
 part 'animation/animation.dart';
+
 part 'color/color.dart';
-part 'datetime/datetime.dart';
+
 part 'double/double.dart';
-part 'duration/duration.dart';
-part 'error/throw_if.dart';
+
 part 'int/int.dart';
-part 'iterable/iterable_double.dart';
-part 'iterable/iterable_int.dart';
-part 'iterable/iterable_mapentry.dart';
-part 'iterable/iterable_object.dart';
-part 'list/list_object.dart';
-part 'map/map.dart';
+
 part 'string/string.dart';

@@ -1,9 +1,7 @@
 part of supercharged;
 
-
-
-/// Supercharged extension on [Animatable] objects.
-extension AnimatableSC<T> on Animatable<T> {
+/// Supercharged Flutter extension on [Animatable] objects.
+extension AnimatableSCF<T> on Animatable<T> {
   /// Assigns this to an [AnimationController] specified by [controller] that
   /// computes the animation.
   ///
@@ -29,4 +27,3 @@ extension AnimatableSC<T> on Animatable<T> {
     return chain(CurveTween(curve: curve));
   }
 }
-

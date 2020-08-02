@@ -1,5 +1,5 @@
 /// Supercharged brings all the comfort features from
-/// languages like Kotlin to all Flutter developers.
+/// languages like Kotlin to all Dart developers.
 ///
 /// Start supercharging your code by importing it:
 /// ```dart
