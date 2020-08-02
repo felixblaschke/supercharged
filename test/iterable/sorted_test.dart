@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:supercharged/supercharged.dart';
 
 void main() {
-  test("iterable sortedBy", () {
+  test('iterable sortedBy', () {
     expect(<int>[].sortedBy((a, b) => a.compareTo(b)), equals([]));
     expect(() => [0, 1, 2].sortedBy(null), throwsArgumentError);
     expect([3, 1, 5, 9, 7].sortedBy((a, b) => a.compareTo(b)),
@@ -13,35 +13,35 @@ void main() {
         equals([1, 3, 5, 7, 9]));
   });
 
-  test("iterable sortedBy dont modify origin list", () {
+  test('iterable sortedBy dont modify origin list', () {
     var list = [3, 2, 1];
     var sortedList = list.sortedBy((a, b) => a.compareTo(b));
     expect(list, equals([3, 2, 1]));
     expect(sortedList, equals([1, 2, 3]));
   });
 
-  test("iterable sortedByNum", () {
+  test('iterable sortedByNum', () {
     expect(() => [0, 1, 2].sortedByNum(null), throwsArgumentError);
     expect(<int>[].sortedByNum((n) => n), equals([]));
     expect([2, 1, 3].sortedByNum((n) => n), equals([1, 2, 3]));
 
     expect(
-        [_Person("Hans", 21), _Person("Gerald", 9), _Person("Detlef", 5)]
+        [_Person('Hans', 21), _Person('Gerald', 9), _Person('Detlef', 5)]
             .sortedByNum((p) => p.age)
             .map((p) => p.name),
-        equals(["Detlef", "Gerald", "Hans"]));
+        equals(['Detlef', 'Gerald', 'Hans']));
   });
 
-  test("iterable sortedByString", () {
+  test('iterable sortedByString', () {
     expect(() => [0, 1, 2].sortedByString(null), throwsArgumentError);
     expect(<String>[].sortedByString((n) => n), equals([]));
-    expect([2, 1, 3].sortedByString((n) => "a$n"), equals([1, 2, 3]));
+    expect([2, 1, 3].sortedByString((n) => 'a$n'), equals([1, 2, 3]));
 
     expect(
-        [_Person("Hans", 21), _Person("Gerald", 9), _Person("Detlef", 5)]
+        [_Person('Hans', 21), _Person('Gerald', 9), _Person('Detlef', 5)]
             .sortedByString((p) => p.name)
             .map((p) => p.name),
-        equals(["Detlef", "Gerald", "Hans"]));
+        equals(['Detlef', 'Gerald', 'Hans']));
   });
 }
 
@@ -53,6 +53,6 @@ class _Person {
 
   @override
   String toString() {
-    return "Person($name,$age)";
+    return 'Person($name,$age)';
   }
 }

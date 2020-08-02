@@ -9,7 +9,7 @@ extension DateTimeSC on DateTime {
   /// DateTime(2020, 1, 1) + 2.days; // 3rd Jan 2020
   /// ```
   DateTime operator +(Duration duration) {
-    ArgumentError.checkNotNull(duration, "duration");
+    ArgumentError.checkNotNull(duration, 'duration');
     return add(duration);
   }
 
@@ -20,7 +20,7 @@ extension DateTimeSC on DateTime {
   /// DateTime(2020, 1, 1) - 2.days; // 30th Dec 2019
   /// ```
   DateTime operator -(Duration duration) {
-    ArgumentError.checkNotNull(duration, "duration");
+    ArgumentError.checkNotNull(duration, 'duration');
     return subtract(duration);
   }
 
@@ -42,8 +42,8 @@ extension DateTimeSC on DateTime {
   /// ```
   Iterable<DateTime> rangeTo(DateTime to,
       {Duration by = const Duration(days: 1)}) sync* {
-    ArgumentError.checkNotNull(to, "to");
-    ArgumentError.checkNotNull(by, "by");
+    ArgumentError.checkNotNull(to, 'to');
+    ArgumentError.checkNotNull(by, 'by');
 
     yield this;
 
@@ -111,8 +111,8 @@ extension DateTimeSC on DateTime {
   /// DateTime(2000, 1, 1).isBetween(DateTime(2000, 1, 1), DateTime(2000, 1, 1)); // true
   /// ```
   bool isBetween(DateTime from, DateTime to) {
-    ArgumentError.checkNotNull(from, "from");
-    ArgumentError.checkNotNull(to, "to");
+    ArgumentError.checkNotNull(from, 'from');
+    ArgumentError.checkNotNull(to, 'to');
     return (isAfter(from) && isBefore(to)) ||
         this == from ||
         this == to;

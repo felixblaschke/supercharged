@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:supercharged/supercharged.dart';
 
 void main() {
-  test("iterable count", () {
+  test('iterable count', () {
     expect([].count(), equals(0));
     expect([1, 2, 3].count(), equals(3));
     expect([1, 2, 3, 13, 14, 15].count(), equals(6));

@@ -8,10 +8,10 @@ extension IterableSC<T> on Iterable<T> {
   /// Example:
   /// ```dart
   /// [2, 4, 6].sumBy((n) => n);                   // 12
-  /// ["hello", "flutter"].sumBy((s) => s.length); // 12
+  /// ['hello', 'flutter'].sumBy((s) => s.length); // 12
   /// ```
   int sumBy(int Function(T) selector) {
-    ArgumentError.checkNotNull(selector, "selector");
+    ArgumentError.checkNotNull(selector, 'selector');
     return map(selector).fold(0, (prev, curr) => prev + curr);
   }
 
@@ -23,7 +23,7 @@ extension IterableSC<T> on Iterable<T> {
   /// [1.5, 2.5].sumByDouble((d) => 0.5 * d); // 2.0
   /// ```
   double sumByDouble(num Function(T) selector) {
-    ArgumentError.checkNotNull(selector, "selector");
+    ArgumentError.checkNotNull(selector, 'selector');
     return map(selector).fold(0.0, (prev, curr) => prev + curr);
   }
 
@@ -33,10 +33,10 @@ extension IterableSC<T> on Iterable<T> {
   /// Example:
   /// ```dart
   /// [1, 2, 3].averageBy((n) => n);               // 2.0
-  /// ["cat", "horse"].averageBy((s) => s.length); // 4.0
+  /// ['cat', 'horse'].averageBy((s) => s.length); // 4.0
   /// ```
   double averageBy(num Function(T) selector) {
-    ArgumentError.checkNotNull(selector, "selector");
+    ArgumentError.checkNotNull(selector, 'selector');
     if (isEmpty) {
       return null;
     }
@@ -56,9 +56,9 @@ extension IterableSC<T> on Iterable<T> {
   /// [1, 2, 3].chunked(2, fill: () => 99); // [[1, 2], [3, 99]]
   /// ```
   Iterable<List<T>> chunked(int size, {T Function() fill}) {
-    ArgumentError.checkNotNull(size, "chunkSize");
+    ArgumentError.checkNotNull(size, 'chunkSize');
     if (size <= 0) {
-      throw ArgumentError("chunkSize must be positive integer greater than 0.");
+      throw ArgumentError('chunkSize must be positive integer greater than 0.');
     }
 
     if (isEmpty) {
@@ -110,7 +110,7 @@ extension IterableSC<T> on Iterable<T> {
   ///
   /// This method is an alias for [where].
   Iterable<T> filter(bool Function(T element) test) {
-    ArgumentError.checkNotNull(test, "test");
+    ArgumentError.checkNotNull(test, 'test');
     return where(test);
   }
 
@@ -120,12 +120,12 @@ extension IterableSC<T> on Iterable<T> {
   ///
   /// Example:
   /// ```dart
-  /// ["a", "b", "c"].forEachIndex((index, value) {
-  ///   print("$index : $value"); // "0 : a", "1: b", "2: c"
+  /// ['a', 'b', 'c'].forEachIndex((index, value) {
+  ///   print('$index : $value'); // '0 : a', '1: b', '2: c'
   /// });
   /// ```
   void forEachIndexed(void Function(int index, T element) funcIndexValue) {
-    ArgumentError.checkNotNull(funcIndexValue, "funcIndexValue");
+    ArgumentError.checkNotNull(funcIndexValue, 'funcIndexValue');
     var index = 0;
     var iter = iterator;
     while (iter.moveNext()) {
@@ -138,12 +138,12 @@ extension IterableSC<T> on Iterable<T> {
   ///
   /// Example:
   /// ```dart
-  /// ["a", "b"].elementAtOrElse(2, () => ""); // ""
+  /// ['a', 'b'].elementAtOrElse(2, () => ''); // ''
   /// ```
   T elementAtOrElse(int index, T Function() orElse) {
-    RangeError.checkNotNegative(index, "index");
+    RangeError.checkNotNegative(index, 'index');
     ArgumentError.checkNotNull(index);
-    ArgumentError.checkNotNull(orElse, "orElse");
+    ArgumentError.checkNotNull(orElse, 'orElse');
 
     try {
       return elementAt(index);
@@ -157,7 +157,7 @@ extension IterableSC<T> on Iterable<T> {
   ///
   /// Example:
   /// ```dart
-  /// ["a", "b"].elementAtOrNull(2); // null
+  /// ['a', 'b'].elementAtOrNull(2); // null
   /// ```
   T elementAtOrNull(int index) {
     return elementAtOrElse(index, () => null);
@@ -168,11 +168,11 @@ extension IterableSC<T> on Iterable<T> {
   ///
   /// Example:
   /// ```dart
-  /// ["a", "b"].firstOrElse(() => ""); // "a"
-  /// [].firstOrElse(() => "");         // ""
+  /// ['a', 'b'].firstOrElse(() => ''); // 'a'
+  /// [].firstOrElse(() => '');         // ''
   /// ```
   T firstOrElse(T Function() orElse) {
-    ArgumentError.checkNotNull(orElse, "orElse");
+    ArgumentError.checkNotNull(orElse, 'orElse');
     return firstWhere((_) => true, orElse: orElse);
   }
 
@@ -181,7 +181,7 @@ extension IterableSC<T> on Iterable<T> {
   ///
   /// Example:
   /// ```dart
-  /// ["a", "b"].firstOrNull(); // "a"
+  /// ['a', 'b'].firstOrNull(); // 'a'
   /// [].firstOrNull();         // null
   /// ```
   T firstOrNull() {
@@ -193,11 +193,11 @@ extension IterableSC<T> on Iterable<T> {
   ///
   /// Example:
   /// ```dart
-  /// ["a", "b"].lastOrElse(() => ""); // "a"
-  /// [].lastOrElse(() => "");         // ""
+  /// ['a', 'b'].lastOrElse(() => ''); // 'a'
+  /// [].lastOrElse(() => '');         // ''
   /// ```
   T lastOrElse(T Function() orElse) {
-    ArgumentError.checkNotNull(orElse, "orElse");
+    ArgumentError.checkNotNull(orElse, 'orElse');
     return lastWhere((_) => true, orElse: orElse);
   }
 
@@ -206,7 +206,7 @@ extension IterableSC<T> on Iterable<T> {
   ///
   /// Example:
   /// ```dart
-  /// ["a", "b"].lastOrElse(); // "a"
+  /// ['a', 'b'].lastOrElse(); // 'a'
   /// [].lastOrElse();         // null
   /// ```
   T lastOrNull() {
@@ -221,20 +221,20 @@ extension IterableSC<T> on Iterable<T> {
   ///
   /// Example:
   /// ```dart
-  /// var map = [1, 2, 3, 97, 98, 99].groupBy((n) => n < 10 ? "smallNumbers" : "largeNumbers")
-  /// // map = {"smallNumbers": [1, 2, 3], "largeNumbers": [97, 98, 99]}
+  /// var map = [1, 2, 3, 97, 98, 99].groupBy((n) => n < 10 ? 'smallNumbers' : 'largeNumbers')
+  /// // map = {'smallNumbers': [1, 2, 3], 'largeNumbers': [97, 98, 99]}
   /// ```
   ///
   /// ```dart
   /// List<Person> persons = [
-  ///     Person(name: "John", age: 21),
-  ///     Person(name: "Carl", age: 18),
-  ///     Person(name: "Peter", age: 56),
-  ///     Person(name: "Sarah", age: 61)
+  ///     Person(name: 'John', age: 21),
+  ///     Person(name: 'Carl', age: 18),
+  ///     Person(name: 'Peter', age: 56),
+  ///     Person(name: 'Sarah', age: 61)
   /// ];
-  /// var map = persons.groupBy((p) => p.age < 40 ? "young" : "old",
+  /// var map = persons.groupBy((p) => p.age < 40 ? 'young' : 'old',
   ///        valueTransform: (p) => p.name);
-  /// // map = {"young": ["John", "Carl"], "old": ["Peter", "Sarah"]}
+  /// // map = {'young': ['John', 'Carl'], 'old': ['Peter', 'Sarah']}
   /// ```
   Map<K, List<V>> groupBy<K, V>(K Function(T element) keySelector,
       {V Function(T element) valueTransform}) {
@@ -262,10 +262,10 @@ extension IterableSC<T> on Iterable<T> {
   ///
   /// Example:
   /// ```dart
-  /// [1, 2, 3].associate((e) => MapEntry("key_$e", e * 100)); // {"key_1": 100, "key_2": 200, "key_3": 300}
+  /// [1, 2, 3].associate((e) => MapEntry('key_$e', e * 100)); // {'key_1': 100, 'key_2': 200, 'key_3': 300}
   /// ```
   Map<K, V> associate<K, V>(MapEntry<K, V> Function(T element) transform) {
-    ArgumentError.checkNotNull(transform, "transform");
+    ArgumentError.checkNotNull(transform, 'transform');
     return Map.fromEntries(map(transform));
   }
 
@@ -276,10 +276,10 @@ extension IterableSC<T> on Iterable<T> {
   ///
   /// Example:
   /// ```dart
-  /// ["a", "ab", "abc"].associateBy((e) => e.length); // {1: "a", 2: "ab", 3: "abc"}
+  /// ['a', 'ab', 'abc'].associateBy((e) => e.length); // {1: 'a', 2: 'ab', 3: 'abc'}
   /// ```
   Map<K, T> associateBy<K>(K Function(T element) keySelector) {
-    ArgumentError.checkNotNull(keySelector, "keySelector");
+    ArgumentError.checkNotNull(keySelector, 'keySelector');
     var map = <K, T>{};
     forEach((element) {
       var key = keySelector(element);
@@ -293,10 +293,10 @@ extension IterableSC<T> on Iterable<T> {
   ///
   /// Example:
   /// ```dart
-  /// ["a", "ab", "abc"].associateBy((e) => e.length); // {"a": 1, "ab": 2, "abc": 3}
+  /// ['a', 'ab', 'abc'].associateBy((e) => e.length); // {'a': 1, 'ab': 2, 'abc': 3}
   /// ```
   Map<T, V> associateWith<V>(V Function(T element) valueSelector) {
-    ArgumentError.checkNotNull(valueSelector, "valueSelector");
+    ArgumentError.checkNotNull(valueSelector, 'valueSelector');
     var map = <T, V>{};
     forEach((element) {
       map[element] = valueSelector(element);
@@ -312,7 +312,7 @@ extension IterableSC<T> on Iterable<T> {
   /// persons.minBy((a, b) => a.age.compareTo(b.age)); // the youngest person
   /// ```
   T minBy(Comparator<T> comparator) {
-    ArgumentError.checkNotNull(comparator, "comparator");
+    ArgumentError.checkNotNull(comparator, 'comparator');
     if (isEmpty) {
       return null;
     }
@@ -328,7 +328,7 @@ extension IterableSC<T> on Iterable<T> {
   /// persons.maxBy((a, b) => a.age.compareTo(b.age));  // the oldest person
   /// ```
   T maxBy(Comparator<T> comparator) {
-    ArgumentError.checkNotNull(comparator, "comparator");
+    ArgumentError.checkNotNull(comparator, 'comparator');
     if (isEmpty) {
       return null;
     }
@@ -343,7 +343,7 @@ extension IterableSC<T> on Iterable<T> {
   /// [3, 1, 5, 9, 7].sortedBy((a,b) => a.compareTo(b)); // [1, 3, 5, 7, 9]
   /// ```
   List<T> sortedBy(Comparator<T> comparator) {
-    ArgumentError.checkNotNull(comparator, "comparator");
+    ArgumentError.checkNotNull(comparator, 'comparator');
     var list = toList();
     list.sort(comparator);
     return list;
@@ -358,7 +358,7 @@ extension IterableSC<T> on Iterable<T> {
   /// persons.sortedByNum((p) => p.age).reversed; // oldest persons first
   /// ```
   List<T> sortedByNum(num Function(T element) valueProvider) {
-    ArgumentError.checkNotNull(valueProvider, "valueProvider");
+    ArgumentError.checkNotNull(valueProvider, 'valueProvider');
     return sortedBy((a, b) => valueProvider(a).compareTo(valueProvider(b)));
   }
 
@@ -367,11 +367,11 @@ extension IterableSC<T> on Iterable<T> {
   ///
   /// Example:
   /// ```dart
-  /// ["c", "b", "a"].sortedByNum((c) => c); // ["a", "b", "c"]
+  /// ['c', 'b', 'a'].sortedByNum((c) => c); // ['a', 'b', 'c']
   /// persons.sortedByString((p) => p.name); // sort persons alphabetically
   /// ```
   List<T> sortedByString(String Function(T element) valueProvider) {
-    ArgumentError.checkNotNull(valueProvider, "valueProvider");
+    ArgumentError.checkNotNull(valueProvider, 'valueProvider');
     return sortedBy((a, b) => valueProvider(a).compareTo(valueProvider(b)));
   }
 
@@ -380,9 +380,9 @@ extension IterableSC<T> on Iterable<T> {
   ///
   /// Example:
   /// ```dart
-  /// var list = ["a", "b", "c"];
+  /// var list = ['a', 'b', 'c'];
   /// list.lastIndex; // 2
-  /// list[list.lastIndex]; // "c"
+  /// list[list.lastIndex]; // 'c'
   /// ```
   int get lastIndex {
     if (isNotEmpty) {

@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:supercharged/supercharged.dart';
 
 void main() {
-  test("iterable chunked", () {
+  test('iterable chunked', () {
     expect(() => [1, 2, 3].chunked(null), throwsArgumentError);
     expect(() => [].chunked(-1), throwsArgumentError);
     expect(() => [].chunked(0), throwsArgumentError);
@@ -32,7 +32,7 @@ void main() {
         ]));
   });
 
-  test("iterable chunked with fill", () {
+  test('iterable chunked with fill', () {
     expect([].chunked(2, fill: () => 99).toList(), equals([]));
 
     expect(

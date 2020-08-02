@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:supercharged/supercharged.dart';
 
 void main() {
-  test("int between", () {
+  test('int between', () {
     expect(() => 1.isBetween(null, 10), throwsArgumentError);
     expect(() => 1.isBetween(10, null), throwsArgumentError);
     expect(1.isBetween(1, 1), equals(true));

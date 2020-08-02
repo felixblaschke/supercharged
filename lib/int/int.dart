@@ -11,7 +11,7 @@ extension IntSC on int {
   /// 3.rangeTo(1); // [3, 2, 1]
   /// ```
   Iterable<int> rangeTo(int n) {
-    ArgumentError.checkNotNull(n, "n");
+    ArgumentError.checkNotNull(n, 'n');
     var count = (n - this).abs() + 1;
     var direction = (n - this).sign;
     var i = this - direction;
@@ -29,7 +29,7 @@ extension IntSC on int {
   /// 3.until(1); // [3, 2]
   /// ```
   Iterable<int> until(int n) {
-    ArgumentError.checkNotNull(n, "n");
+    ArgumentError.checkNotNull(n, 'n');
     if (this < n) {
       return rangeTo(n - 1);
     } else if (this > n) {
@@ -42,9 +42,9 @@ extension IntSC on int {
   /// Executes the function [action] for [this] times.
   ///
   /// Example:
-  /// 3.times(() => print("Hello")); // Hello... Hello... Hello
+  /// 3.times(() => print('Hello')); // Hello... Hello... Hello
   void times(void Function() action) {
-    ArgumentError.checkNotNull(action, "action");
+    ArgumentError.checkNotNull(action, 'action');
     0.until(this).forEach((_) => action());
   }
 
@@ -120,7 +120,7 @@ extension IntSC on int {
   }
 // @codegen end block flutter
 
-  @Deprecated("Use isBetween() instead")
+  @Deprecated('Use isBetween() instead')
   bool between(num first, num second) {
     return isBetween(first, second);
   }
@@ -135,8 +135,8 @@ extension IntSC on int {
   /// 100.isBetween(100, 100) // true;
   /// ```
   bool isBetween(num first, num second) {
-    ArgumentError.checkNotNull(first, "first");
-    ArgumentError.checkNotNull(second, "second");
+    ArgumentError.checkNotNull(first, 'first');
+    ArgumentError.checkNotNull(second, 'second');
     if (first <= second) {
       return this >= first && this <= second;
     } else {

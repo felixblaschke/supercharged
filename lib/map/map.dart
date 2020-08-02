@@ -7,10 +7,10 @@ extension MapSC<K, V> on Map<K, V> {
   ///
   /// Example:
   /// ```dart
-  /// {"a": 1, "b": 2, "c": 3}.filter((e) => e.key == "a").toMap(); // {"a": 1}
+  /// {'a': 1, 'b': 2, 'c': 3}.filter((e) => e.key == 'a').toMap(); // {'a': 1}
   /// ```
   Iterable<MapEntry<K, V>> filter(bool Function(MapEntry<K, V>) test) {
-    ArgumentError.checkNotNull(test, "test");
+    ArgumentError.checkNotNull(test, 'test');
     return entries.filter(test);
   }
 
@@ -36,7 +36,7 @@ extension MapSC<K, V> on Map<K, V> {
   ///
   /// Example:
   /// ```dart
-  /// {"a": 1, "b": 2}.toJSON(); // """{"a":1,"b":2}"""
+  /// {'a': 1, 'b': 2}.toJSON(); // '''{'a':1,'b':2}'''
   /// ```
   String toJSON({Object Function(Object nonEncodable) toEncodable}) {
     return jsonEncode(this, toEncodable: toEncodable);

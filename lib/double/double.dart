@@ -56,7 +56,7 @@ extension DoubleSC on double {
 // @codegen end block flutter
 
 
-  @Deprecated("Use isBetween() instead")
+  @Deprecated('Use isBetween() instead')
   bool between(num first, num second) {
     return isBetween(first, second);
   }
@@ -71,8 +71,8 @@ extension DoubleSC on double {
   /// 100.0.isBetween(100.0, 100.0) // true;
   /// ```
   bool isBetween(num first, num second) {
-    ArgumentError.checkNotNull(first, "first");
-    ArgumentError.checkNotNull(second, "second");
+    ArgumentError.checkNotNull(first, 'first');
+    ArgumentError.checkNotNull(second, 'second');
     final lower = min(first, second);
     final upper = max(first, second);
     return this >= lower && this <= upper;

@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:supercharged/supercharged.dart';
 
 void main() {
-  test("iterable forEachIndex", () {
+  test('iterable forEachIndex', () {
     expect(() => [1, 2, 3].forEachIndexed(null), throwsArgumentError);
 
     var occuredIndized = [];

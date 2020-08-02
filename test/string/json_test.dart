@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:supercharged/supercharged.dart';
 
 void main() {
-  test("string parseJSON", () {
+  test('string parseJSON', () {
     var jsonString = '''
   [
     {"score": 40},
@@ -13,23 +13,23 @@ void main() {
   ]
 ''';
     dynamic object = jsonString.parseJSON();
-    expect(object[0]["score"], equals(40));
-    expect(object[1]["score"], equals(80));
-    expect(object[2]["score"], equals(120));
-    expect(object[2]["isValid"], isTrue);
-    expect(object[2]["label"], equals("highscore"));
+    expect(object[0]['score'], equals(40));
+    expect(object[1]['score'], equals(80));
+    expect(object[2]['score'], equals(120));
+    expect(object[2]['isValid'], isTrue);
+    expect(object[2]['label'], equals('highscore'));
   });
 
-  test("string parseJSON with reviver", () {
+  test('string parseJSON with reviver', () {
     var jsonString = jsonEncode([_Score(20), _Score(40)], toEncodable: (obj) {
       if (obj is _Score) {
-        return "@score:${obj.score}";
+        return '@score:${obj.score}';
       }
       return null;
     });
     var scoreList = jsonString.parseJSON(reviver: (key, value) {
-      if (value is String && value.startsWith("@score")) {
-        return _Score(value.allAfter(":").toInt());
+      if (value is String && value.startsWith('@score')) {
+        return _Score(value.allAfter(':').toInt());
       }
       if (value is List && value[0] is _Score) {
         return value.map((e) => e as _Score).toList();
@@ -49,6 +49,6 @@ class _Score {
 
   @override
   String toString() {
-    return "Instance of _Score (Score: $score)";
+    return 'Instance of _Score (Score: $score)';
   }
 }

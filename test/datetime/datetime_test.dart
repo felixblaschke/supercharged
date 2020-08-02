@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:supercharged/supercharged.dart';
 
 void main() {
-  test("datetime add", () {
+  test('datetime add', () {
     Duration nullDuration;
     expect(() => DateTime(2020, 1, 1) + nullDuration, throwsArgumentError);
     expect(DateTime(2020, 1, 1, 0, 0, 0) + 1.days,
@@ -11,7 +11,7 @@ void main() {
         equals(DateTime(2020, 1, 1, 0, 10, 0)));
   });
 
-  test("datetime subtract", () {
+  test('datetime subtract', () {
     Duration nullDuration;
     expect(() => DateTime(2020, 1, 1) - nullDuration, throwsArgumentError);
     expect(DateTime(2020, 1, 1, 0, 0, 0) - 1.days,
@@ -20,7 +20,7 @@ void main() {
         equals(DateTime(2019, 12, 31, 23, 50, 0)));
   });
 
-  test("datetime rangeTo future", () {
+  test('datetime rangeTo future', () {
     expectDates(
         dates: DateTime(2020).rangeTo(DateTime(2021)),
         first: DateTime(2020, 1, 1),
@@ -41,7 +41,7 @@ void main() {
         throwsArgumentError);
   });
 
-  test("datetime rangeTo past", () {
+  test('datetime rangeTo past', () {
     expectDates(
         dates: DateTime(2021).rangeTo(DateTime(2020)),
         first: DateTime(2021, 1, 1),
@@ -54,7 +54,7 @@ void main() {
         length: 25);
   });
 
-  test("datetime until future", () {
+  test('datetime until future', () {
     expectDates(
         dates: DateTime(2020).until(DateTime(2021)),
         first: DateTime(2020, 1, 1),
@@ -71,7 +71,7 @@ void main() {
         throwsArgumentError);
   });
 
-  test("datetime until past", () {
+  test('datetime until past', () {
     expectDates(
         dates: DateTime(2021).until(DateTime(2020)),
         first: DateTime(2021, 1, 1),
@@ -84,19 +84,19 @@ void main() {
         length: 24);
   });
 
-  test("datetime duration1", () {
+  test('datetime duration1', () {
     var date = DateTime.utc(2020, 1, 1);
     var duration = date.duration();
     expect(duration, 438288.hours);
   });
 
-  test("datetime duration2", () {
+  test('datetime duration2', () {
     var date = DateTime.utc(1960, 3, 31, 14, 32, 32);
     var duration = date.duration();
     expect(duration, -85497.hours - 27.minutes - 28.seconds);
   });
 
-  test("datetime isBetween", () {
+  test('datetime isBetween', () {
     var dateFromOne = DateTime(1959, 3, 31, 14, 32, 32);
     var dateFromTwo = DateTime(1960, 3, 31, 14, 32, 32);
     var dateTo = DateTime(1960, 3, 31, 14, 32, 32);
