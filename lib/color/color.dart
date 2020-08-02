@@ -1,6 +1,6 @@
 part of supercharged;
 
-// @codegen begin block flutter
+
 
 
 /// Supercharged extension on [Color] objects.
@@ -16,4 +16,4 @@ extension ColorSC on Color {
   }
 }
 
-// @codegen end block flutter
+

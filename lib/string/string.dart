@@ -165,7 +165,7 @@ extension StringSC on String {
     }
   }
 
-// @codegen begin block flutter
+
   /// Converts string in hex representation into a [Color].
   ///
   /// You can use 6-char hex color (RRGGBB), 3-char hex color (RGB) or a valid
@@ -230,10 +230,10 @@ extension StringSC on String {
   static Color _getColorByHtmlColorName(String name) {
     return _HTML_COLOR_NAMES[name.toLowerCase()].toColor();
   }
-// @codegen end block flutter
+
 }
 
-// @codegen begin block flutter
+
 const _HTML_COLOR_NAMES = {
   'aliceblue': '#f0f8ff',
   'antiquewhite': '#faebd7',
@@ -384,4 +384,4 @@ const _HTML_COLOR_NAMES = {
   'yellow': '#ffff00',
   'yellowgreen': '#9acd32'
 };
-// @codegen end block flutter
+

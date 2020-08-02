@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:supercharged/supercharged.dart';
 
 void main() {
-  test("animation interval and curve", () {
+  test('animation interval and curve', () {
     expect(
       compareAnimation(
         actual: (controller) => controller.interval(0.3, 0.7),
@@ -33,7 +33,7 @@ void main() {
   });
 }
 
-compareAnimation({
+bool compareAnimation({
   Animation<double> Function(AnimationController) actual,
   Animation<double> Function(AnimationController) matcher,
 }) {
@@ -44,7 +44,7 @@ compareAnimation({
   final _actual = actual(controller);
   final _matcher = matcher(controller);
 
-  double v = 0.0;
+  var v = 0.0;
   while (v <= 1) {
     v += 0.01;
     controller.value = v;
