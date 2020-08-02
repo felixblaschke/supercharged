@@ -3,9 +3,7 @@ name: Tests
 on: [push]
 
 jobs:
-  tests_supercharged:
-    name: "Tests supercharged"
-
+  tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +14,12 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
-      - run: cd supercharged
-      - run: rm -rf example/
       - run: flutter pub get
+        working-directory: ./supercharged_dart
       - run: flutter test
+        working-directory: ./supercharged_dart
+      - run: flutter pub get
+        working-directory: ./supercharged
+      - run: flutter test
+        working-directory: ./supercharged
+
