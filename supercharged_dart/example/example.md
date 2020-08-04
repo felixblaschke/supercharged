@@ -1,14 +1,9 @@
 # 📝 Examples
 
 ```dart
-import 'package:flutter/material.dart';
 import 'package:supercharged_dart/supercharged_dart.dart';
 
 main() {
-  // Transform any String to colors
-  "#ff00ff".toColor(); // painless hex to color
-  "red".toColor(); // supports all web color names
-
   // Helpful substring functions:
   "mode:production".allAfter(":"); // "production"
   "<html>".allBetween("<", ">"); // "html"`
@@ -17,7 +12,7 @@ main() {
   // Handle user input:
   "2.1".toDouble(); // 2.1
   "42".toInt(); // 42
-  12.between(0, 30); // true
+  12.isBetween(0, 30); // true
 
   // Effortless aggregation for Iterable<int> and Iterable<double>:
   [1, 2, 3].sum(); // 6
@@ -88,10 +83,6 @@ main() {
       .sortedByNum((p) => p.age)
       .map((p) => p.name)
       .toList();
-
-  // Solid tween shortcuts for animations
-  100.0.tweenTo(200.0); // Tween(begin: 100.0, end: 200.0)
-  Colors.red.tweenTo(Colors.blue); // ColorTween(...)
 
   // Replace your classic for loop:
   0.rangeTo(5); // [0, 1, 2, 3, 4, 5]
