@@ -1,3 +1,10 @@
+## 1.8.0
+
+- **New:** Animation `interval` method
+- **New:** Animation `curve` method
+- **Changed:** Upgraded to `pedantic 1.9 ruleset` and fixed linter issues
+- Migrated all non-Flutter extensions to [supercharged_dart](https://pub.dev/packages/supercharged_dart) to this package
+
 ## 1.7.0
 
 - **New:** DateTime `isBetween` method

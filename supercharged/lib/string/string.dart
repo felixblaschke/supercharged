@@ -2,7 +2,6 @@ part of supercharged;
 
 /// Supercharged Flutter extensions on [String].
 extension StringSCF on String {
-
   /// Converts string in hex representation into a [Color].
   ///
   /// You can use 6-char hex color (RRGGBB), 3-char hex color (RGB) or a valid
@@ -67,9 +66,7 @@ extension StringSCF on String {
   static Color _getColorByHtmlColorName(String name) {
     return _HTML_COLOR_NAMES[name.toLowerCase()].toColor();
   }
-
 }
-
 
 const _HTML_COLOR_NAMES = {
   'aliceblue': '#f0f8ff',
@@ -221,4 +218,3 @@ const _HTML_COLOR_NAMES = {
   'yellow': '#ffff00',
   'yellowgreen': '#9acd32'
 };
-

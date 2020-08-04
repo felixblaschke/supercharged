@@ -9,36 +9,38 @@
 - 📝 **well documented**
 - 💼 **enterprise-ready**
 
+For dart web/native projects you can use [⚡ Supercharged Dart](https://pub.dev/packages/supercharged). 
+
 ## ⛏️ Getting started
 
-Add the dependency `supercharged: ^1.X.X` ([find recent version](https://pub.dev/packages/supercharged#-installing-tab-)) to your project and start using **Supercharged** everywhere:
+Add the dependency `supercharged: ^1.X.X` ([find recent version](https://pub.dev/packages/supercharged/install)) to your project and start using **Supercharged** everywhere:
 ```dart
 import 'package:supercharged/supercharged.dart';
 ```
 
 ## 🌞 Highlights
 
-Transform any `String` to **[colors](https://pub.dev/documentation/supercharged/latest/supercharged/String_/toColor.html)**
+Transform any `String` to colors
 ```dart
 "#ff00ff".toColor(); // painless hex to color
 "red".toColor(); // supports all web color names
 ```
 
-Helpful [substring](https://pub.dev/documentation/supercharged/latest/supercharged/String_/allAfter.html) functions:
+Helpful string functions:
 ```dart
 "mode:production".allAfter(":"); // "production"
 "<html>".allBetween("<", ">"); // "html"`
 "flutter is cool".allBefore(" is"); // "flutter"
 ```
 
-[Handle](https://pub.dev/documentation/supercharged/latest/supercharged/String_/toDouble.html) user input:
+Handle user input:
 ```dart
 "2.1".toDouble(); // 2.1
 "42".toInt(); // 42
 12.between(0, 30); // true
 ```
 
-Effortless [aggregation](https://pub.dev/documentation/supercharged/latest/supercharged/IterableOfInt_.html) for `Iterable<int>` and `Iterable<double>`:
+Effortless aggregation for `Iterable<int>` and `Iterable<double>`:
 ```dart
 [1, 2, 3].sum(); // 6
 [1, 2, 3].average(); // 2
@@ -46,7 +48,7 @@ Effortless [aggregation](https://pub.dev/documentation/supercharged/latest/super
 [1, 2, 3].max(); // 3
 ```
 
-Advanced [aggregation](https://pub.dev/documentation/supercharged/latest/supercharged/Iterable_/sumBy.html) for any `Iterable`:
+Advanced aggregation for any `Iterable`:
 ```dart
 var persons = [Person(age: 20), Person(age: 30), Person(age: 40)];
 persons.sumBy((p) => p.age); // 90
@@ -56,7 +58,7 @@ persons.minBy((a,b) => a.age.compareTo(b.age)); // Person(age: 20)
 persons.maxBy((a,b) => a.age.compareTo(b.age)); // Person(age: 40)
 ```
 
-Safely [access](https://pub.dev/documentation/supercharged/latest/supercharged/Iterable_/firstOrNull.html) `Iterable`:
+Safely access `Iterable`:
 ```dart
 [].firstOrNull(); // return null instead
 [].lastOrNull();  // of throwing error
@@ -68,7 +70,7 @@ Safely [access](https://pub.dev/documentation/supercharged/latest/supercharged/I
 [1, 2, 3].elementAtOrElse(4, () => 0);
 ```
 
-[Group up data](https://pub.dev/documentation/supercharged/latest/supercharged/Iterable_/groupBy.html) to match view:
+Group up data to match view:
 ```dart
 var persons = [
     Person(name: "John", age: 21),
@@ -83,13 +85,13 @@ persons.groupBy(
 ); // {"young": ["John", "Carl"], "old": ["Peter", "Sarah"]}
 ```
 
-[Chunking](https://pub.dev/documentation/supercharged/latest/supercharged/Iterable_/chunked.html) for easy pagination:
+Chunking for easy pagination:
 ```dart
 ["a", "b", "c", "d", "e"].chunked(3); // [ ["a", "b", "c"], ["d", "e"] ]
 ["a", "b", "c"].chunked(2, fill: () => ""); // [ ["a", "b"], ["c", ""] ]
 ```
 
-More natural [durations](https://pub.dev/documentation/supercharged/latest/supercharged/Int_/minutes.html) and dates:
+More natural durations and dates:
 ```dart
 var duration = 5.minutes + 30.seconds;
 duration += 0.5.hours;
@@ -102,7 +104,7 @@ var allFullHoursOfFirstJanuary2020 =
   DateTime(2020, 1, 1).until(DateTime(2020, 1, 2), by: 1.hours);
 ```
 
-Simplified [data sorting](https://pub.dev/documentation/supercharged/latest/supercharged/Iterable_/sortedByNum.html):
+Simplified data sorting:
 ```dart
  persons = [
     Person(name: "John", age: 21),
@@ -127,10 +129,10 @@ Solid tween shortcuts for animations:
 ```dart
 100.0.tweenTo(200.0); // Tween(begin: 100.0, end: 200.0)
 Colors.red.tweenTo(Colors.blue); // ColorTween(...)
-0.0.tweenTo(100.0).curved(Curves.easeInOut); // Apply accelleration
+0.0.tweenTo(100.0).curved(Curves.easeInOut); // Apply acceleration
 ```
 
-[Replace](https://pub.dev/documentation/supercharged/latest/supercharged/Int_/rangeTo.html) your classic for-loop:
+Replace your classic for-loop:
 ```dart
 0.rangeTo(5); // [0, 1, 2, 3, 4, 5]
 3.rangeTo(1); // [3, 2, 1]
@@ -147,24 +149,8 @@ list.forEachIndexed((index, value) {
 
 ## 📑 API documentation
 
-You can discover all **78 features** in the [API documentation](https://pub.dev/documentation/supercharged/latest/supercharged/supercharged-library.html).
+You can discover all features in the [API documentation](https://pub.dev/documentation/supercharged/latest/supercharged/supercharged-library.html).
 Each feature is **well documented** with an **example**.
-
-Feel free to quickly **jump** into a topic:
-
-- [double](https://pub.dev/documentation/supercharged/latest/supercharged/Double_.html)
-- [int](https://pub.dev/documentation/supercharged/latest/supercharged/Int_.html)
-- [Iterable / List / Set](https://pub.dev/documentation/supercharged/latest/supercharged/Iterable_.html)
-- [Iterable\<double\> / List\<double\> / Set\<double\>](https://pub.dev/documentation/supercharged/latest/supercharged/IterableOfDouble_.html)
-- [Iterable\<int\> / List\<int\> / Set\<int\>](https://pub.dev/documentation/supercharged/latest/supercharged/IterableOfInt_.html)
-- [Iterable\<MapEntry\> / List\<MapEntry\> / Set\<MapEntry\>](https://pub.dev/documentation/supercharged/latest/supercharged/IterableOfMapEntry_.html)
-- [List](https://pub.dev/documentation/supercharged/latest/supercharged/List_.html)
-- [Map](https://pub.dev/documentation/supercharged/latest/supercharged/Map_.html)
-- [String](https://pub.dev/documentation/supercharged/latest/supercharged/String_.html)
-- [Duration](https://pub.dev/documentation/supercharged/latest/supercharged/Duration_.html)
-- [DateTime](https://pub.dev/documentation/supercharged/latest/supercharged/DateTime_.html)
-- [Animatable](https://pub.dev/documentation/supercharged/latest/supercharged/Animatable_.html)
-- [Color](https://pub.dev/documentation/supercharged/latest/supercharged/Color_.html)
 
 ## 📈 Improve
 

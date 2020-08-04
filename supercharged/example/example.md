@@ -17,7 +17,7 @@ main() {
   // Handle user input:
   "2.1".toDouble(); // 2.1
   "42".toInt(); // 42
-  12.between(0, 30); // true
+  12.isBetween(0, 30); // true
 
   // Effortless aggregation for Iterable<int> and Iterable<double>:
   [1, 2, 3].sum(); // 6
