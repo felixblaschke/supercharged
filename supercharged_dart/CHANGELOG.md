@@ -1,3 +1,7 @@
+## 1.0.1
+
+- **Improved:** documentation
+
 ## 1.0.0
 
-* **New**: Migrated all non-Flutter extensions from [supercharged](https://pub.dev/packages/supercharged) to this package
+- Migrated all non-Flutter extensions from [supercharged](https://pub.dev/packages/supercharged) to this package
