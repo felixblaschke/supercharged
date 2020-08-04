@@ -1,3 +1,7 @@
+## 1.8.1
+
+- **Fixed:** Typo in documentation
+
 ## 1.8.0
 
 - **New:** Animation `interval` method
