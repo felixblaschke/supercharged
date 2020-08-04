@@ -1,6 +1,6 @@
 # ⚡️ Supercharged Dart
 
-[![Pub](https://img.shields.io/pub/v/supercharged.svg)](https://pub.dartlang.org/packages/supercharged)
+[![Pub](https://img.shields.io/pub/v/supercharged_dart.svg)](https://pub.dartlang.org/packages/supercharged_dart)
 [![Tests](https://github.com/felixblaschke/supercharged/workflows/Tests/badge.svg)](https://github.com/felixblaschke/supercharged/actions?query=workflow%3ATests)
 
 **Supercharged Dart** brings **all the comfort features** from languages like Kotlin to **all Dart developers**.
@@ -8,6 +8,8 @@
 - 💪 **fully tested**
 - 📝 **well documented**
 - 💼 **enterprise-ready**
+
+For dart Flutter projects you can use [⚡ Supercharged](https://pub.dev/packages/supercharged).
 
 ## ⛏️ Getting started
 
