@@ -1,3 +1,7 @@
+## 1.8.2
+
+- **Fixed:** Use release version dependency of `supercharged_dart` dependency.
+
 ## 1.8.1
 
 - **Fixed:** Typo in documentation

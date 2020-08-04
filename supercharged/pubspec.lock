@@ -155,7 +155,7 @@ packages:
       name: supercharged_dart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.3-alpha.1"
+    version: "1.0.1"
   term_glyph:
     dependency: transitive
     description:
