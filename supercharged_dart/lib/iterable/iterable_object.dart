@@ -435,4 +435,49 @@ extension IterableSC<T> on Iterable<T> {
       }
     }
   }
+
+  /// Replaces every element which matches the [comparator] by [newValue]
+  Iterable<T> replaceWhere(
+    bool Function(T currentValue) comparator,
+    T newValue,
+  ) sync* {
+    final it = iterator;
+    while (it.moveNext()) {
+      if (comparator(it.current)) {
+        yield newValue;
+      } else {
+        yield it.current;
+      }
+    }
+  }
+
+  /// Replaces the first element which matches the [comparator] by [newValue]
+  Iterable<T> replaceFirstWhere(
+    bool Function(T currentValue) transformer,
+    T value,
+  ) sync* {
+    final it = iterator;
+    while (it.moveNext()) {
+      final currentValue = it.current;
+      if (transformer(currentValue)) {
+        yield value;
+        while (it.moveNext()) {
+          yield it.current;
+        }
+      } else {
+        yield currentValue;
+      }
+    }
+  }
+
+  /// Just like `map()`, but with access to the element's current index
+  Iterable<U> indexedMap<U>(
+    U Function(int index, T currentValue) transformer,
+  ) sync* {
+    final it = iterator;
+    var index = 0;
+    while (it.moveNext()) {
+      yield transformer(index++, it.current);
+    }
+  }
 }
