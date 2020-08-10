@@ -453,19 +453,18 @@ extension IterableSC<T> on Iterable<T> {
 
   /// Replaces the first element which matches the [comparator] by [newValue]
   Iterable<T> replaceFirstWhere(
-    bool Function(T currentValue) transformer,
-    T value,
+    bool Function(T currentValue) comparator,
+    T newValue,
   ) sync* {
     final it = iterator;
     while (it.moveNext()) {
-      final currentValue = it.current;
-      if (transformer(currentValue)) {
-        yield value;
+      if (comparator(it.current)) {
+        yield newValue;
         while (it.moveNext()) {
           yield it.current;
         }
       } else {
-        yield currentValue;
+        yield it.current;
       }
     }
   }
