@@ -7,7 +7,7 @@ void main() {
     final replacedNumbers = numbers.indexedMap((_, number) => number * 2);
     expect(replacedNumbers, orderedEquals([2, 4, 6, 8, 10]));
   });
-  // and pass the index of the current element
+
   test('indexedMap should pass the index of the current element', () {
     final numbers = [10, 20, 30, 40, 50];
     final indexes = numbers.indexedMap((index, _) => index);
