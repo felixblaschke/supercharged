@@ -18,4 +18,10 @@ void main() {
         numbers.replaceWhere((number) => number % 2 == 0, 10);
     expect(replacedNumbers, orderedEquals([1, 10, 3, 10, 5]));
   });
+
+  test('replaceWhere example', () {
+    expect([1, 2, 3].replaceWhere((n) => n < 3, 0), orderedEquals([0, 0, 3]));
+    expect(
+        [1, 2, 3].replaceFirstWhere((n) => n < 3, 0), orderedEquals([0, 2, 3]));
+  });
 }

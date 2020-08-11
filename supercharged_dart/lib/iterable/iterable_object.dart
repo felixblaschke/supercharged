@@ -436,7 +436,12 @@ extension IterableSC<T> on Iterable<T> {
     }
   }
 
-  /// Replaces every element which matches the [comparator] by [newValue]
+  /// Replaces every element that matches the [comparator] with [newValue].
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3].replaceWhere((n) => n < 3, 0); // [0, 0, 3]
+  /// ```
   Iterable<T> replaceWhere(
     bool Function(T currentValue) comparator,
     T newValue,
@@ -451,7 +456,12 @@ extension IterableSC<T> on Iterable<T> {
     }
   }
 
-  /// Replaces the first element which matches the [comparator] by [newValue]
+  /// Replaces the first element that matches the [comparator] with [newValue].
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3].replaceFirstWhere((n) => n < 3, 0); // [0, 2, 3]
+  /// ```
   Iterable<T> replaceFirstWhere(
     bool Function(T currentValue) comparator,
     T newValue,
@@ -469,14 +479,19 @@ extension IterableSC<T> on Iterable<T> {
     }
   }
 
-  /// Just like `map()`, but with access to the element's current index
-  Iterable<U> indexedMap<U>(
-    U Function(int index, T currentValue) transformer,
+  /// Just like [map], but with access to the element's current index.
+  ///
+  /// Example
+  /// ```dart
+  /// [1, 2, 3].mapIndexed((number, index) => number * 2); // [2, 4, 6]
+  /// ```
+  Iterable<U> mapIndexed<U>(
+    U Function(T currentValue, int index) transformer,
   ) sync* {
     final it = iterator;
     var index = 0;
     while (it.moveNext()) {
-      yield transformer(index++, it.current);
+      yield transformer(it.current, index++);
     }
   }
 }
