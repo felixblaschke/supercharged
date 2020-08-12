@@ -1,3 +1,9 @@
+## 1.9.0
+
+- **New:** Iterable `replaceWhere` method
+- **New:** Iterable `replaceFirstWhere` method
+- **New:** Iterable `maxIndexed` method
+
 ## 1.8.2
 
 - **Fixed:** Use release version dependency of `supercharged_dart` dependency.
