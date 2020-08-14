@@ -29,4 +29,13 @@ extension DurationSC on Duration {
   double operator /(Duration otherDuration) {
     return inMicroseconds.toDouble() / otherDuration.inMicroseconds.toDouble();
   }
+  
+  /// Returns a [Future] that can be awaited.
+  ///
+  /// Example:
+  /// ```
+  /// await 5.seconds.delay;
+  /// print('awaited!'); // this will be printed after 5 seconds
+  /// ```
+  Future<void> get delay => Future.delayed(this);
 }
