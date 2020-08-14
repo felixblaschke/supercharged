@@ -1,3 +1,7 @@
+## 1.2.0
+
+- **New:** Duration `delay` method
+
 ## 1.1.0
 
 - **New:** Iterable `replaceWhere` method

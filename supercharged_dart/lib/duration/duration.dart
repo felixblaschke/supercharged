@@ -23,19 +23,19 @@ extension DurationSC on Duration {
   /// Divides [this] by [otherDuration] and returns a fraction.
   ///
   /// Example:
-  /// ```
+  /// ```dart
   /// 1.minutes() / 2.minutes(); // 0.5
   /// ```
   double operator /(Duration otherDuration) {
     return inMicroseconds.toDouble() / otherDuration.inMicroseconds.toDouble();
   }
   
-  /// Returns a [Future] that can be awaited.
+  /// Returns a [Future] that completes after [this] duration.
   ///
   /// Example:
-  /// ```
+  /// ```dart
   /// await 5.seconds.delay;
-  /// print('awaited!'); // this will be printed after 5 seconds
+  /// print('5 seconds gone'); // printed after 5 seconds
   /// ```
   Future<void> get delay => Future.delayed(this);
 }
