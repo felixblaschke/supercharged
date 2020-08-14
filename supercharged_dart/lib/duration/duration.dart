@@ -29,7 +29,7 @@ extension DurationSC on Duration {
   double operator /(Duration otherDuration) {
     return inMicroseconds.toDouble() / otherDuration.inMicroseconds.toDouble();
   }
-  
+
   /// Returns a [Future] that completes after [this] duration.
   ///
   /// Example:
