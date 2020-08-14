@@ -15,6 +15,16 @@ void main() {
     expect(5.hours / 5.hours, 1.0);
     expect(12.seconds / 3.seconds, 4.0);
   });
+  
+  test('duration delay', () async {
+    var n = 0;
+    
+    100.milliseconds.delay.then(() => n = 1);
+    expect(n, equals(0));
+    
+    await 200.milliseconds.delay;
+    expect(n, equals(1));
+  });
 }
 
 bool isAboutTheSame(DateTime a, DateTime b) {
