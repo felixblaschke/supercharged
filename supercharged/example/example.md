@@ -70,6 +70,9 @@ main() {
   var allFullHoursOfFirstJanuary2020 =
       DateTime(2020, 1, 1).until(DateTime(2020, 1, 2), by: 1.hours);
 
+  await 2.seconds.delay; // waits for 2 seconds
+
+
   // Simplified data sorting:
   persons = [
     Person(name: "John", age: 21),

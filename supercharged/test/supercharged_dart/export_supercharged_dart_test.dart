@@ -10,4 +10,8 @@ void main() {
   test('supercharged_dart replaceWhere example', () {
     expect([1, 2, 3].replaceWhere((n) => n < 3, 0), orderedEquals([0, 0, 3]));
   });
+
+  test('delay', () async {
+    await 1.milliseconds.delay;
+  });
 }
