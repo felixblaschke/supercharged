@@ -43,6 +43,9 @@ main() {
   [1, 2, 3].elementAtOrNull(4); // Never go out of bounds
   [1, 2, 3].elementAtOrElse(4, () => 0);
 
+  [1, 2, 3].pickOne();   // Get a random item
+  [1, 2, 3].pickSome(2); // or multiple random items
+
   // Group up data to match view:
   persons = [
     Person(name: "John", age: 21),
@@ -89,12 +92,15 @@ main() {
   persons // sorting is fully integrated into processing chain
       .filter((p) => p.name.length < 5)
       .sortedByNum((p) => p.age)
+      .onEach(print)
       .map((p) => p.name)
       .toList();
 
   // Solid tween shortcuts for animations
   100.0.tweenTo(200.0); // Tween(begin: 100.0, end: 200.0)
   Colors.red.tweenTo(Colors.blue); // ColorTween(...)
+  0.0.tweenTo(100.0).curved(Curves.easeInOut); // Apply acceleration
+  Offset(50, 50).tweenTo(Offset.zero); // Offset-Tween
 
   // Replace your classic for loop:
   0.rangeTo(5); // [0, 1, 2, 3, 4, 5]

@@ -1,3 +1,12 @@
+## 1.11.0
+
+- **New:** Offset `tweenTo` method
+- **New:** Iterable `onEach` method
+- **New:** Iterable `onEachIndexed` method
+- **New:** Iterable `pickOne` method
+- **New:** Iterable `pickSome` method
+- **Fix:** Example for Iterable `associateWith` method
+
 ## 1.10.0
 
 - **New:** Duration `delay` method

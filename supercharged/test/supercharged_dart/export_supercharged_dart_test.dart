@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:supercharged/supercharged.dart';
 
@@ -13,5 +15,9 @@ void main() {
 
   test('delay', () async {
     await 1.milliseconds.delay;
+  });
+
+  test('pick', () {
+    expect([1, 2, 3, 4, 5, 6].pickOne(Random(0)), equals(3));
   });
 }

@@ -24,4 +24,6 @@ part 'double/double.dart';
 
 part 'int/int.dart';
 
+part 'offset/offset.dart';
+
 part 'string/string.dart';
