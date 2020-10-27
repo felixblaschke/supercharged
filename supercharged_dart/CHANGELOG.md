@@ -1,3 +1,11 @@
+## 1.3.0
+
+- **New:** Iterable `onEach` method
+- **New:** Iterable `onEachIndexed` method
+- **New:** Iterable `pickOne` method
+- **New:** Iterable `pickSome` method
+- **Fix:** Example for Iterable `associateWith` method
+
 ## 1.2.0
 
 - **New:** Duration `delay` method

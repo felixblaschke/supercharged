@@ -293,7 +293,7 @@ extension IterableSC<T> on Iterable<T> {
   ///
   /// Example:
   /// ```dart
-  /// ['a', 'ab', 'abc'].associateBy((e) => e.length); // {'a': 1, 'ab': 2, 'abc': 3}
+  /// [1, 2, 3].associateWith((e) => e * 1000); // {1: 1000, 2: 2000, 3: 3000}
   /// ```
   Map<T, V> associateWith<V>(V Function(T element) valueSelector) {
     ArgumentError.checkNotNull(valueSelector, 'valueSelector');
@@ -493,5 +493,68 @@ extension IterableSC<T> on Iterable<T> {
     while (it.moveNext()) {
       yield transformer(it.current, index++);
     }
+  }
+
+  /// Applies the given [action] on each element and also returns the
+  /// whole [Iterable] without modifying it.
+  ///
+  /// Example:
+  /// ```dart
+  /// var sum = [1, 2, 3].onEach(print).sum(); // sum = 6 (also prints each number)
+  /// ```
+  Iterable<T> onEach(void Function(T element) action) sync* {
+    ArgumentError.checkNotNull(action, 'action');
+    final it = iterator;
+    while (it.moveNext()) {
+      action(it.current);
+      yield it.current;
+    }
+  }
+
+  /// Applies the given [action] on each element and also returns the
+  /// whole [Iterable] without modifying it. The [action] takes a second
+  /// parameter [index] matching the element index.
+  ///
+  /// Example:
+  /// ```dart
+  /// var sum = [1, 2, 3].onEach(print).sum(); // sum = 6 (also prints each number)
+  /// ```
+  Iterable<T> onEachIndexed(void Function(T element, int index) action) sync* {
+    ArgumentError.checkNotNull(action, 'action');
+    final it = iterator;
+    var index = 0;
+    while (it.moveNext()) {
+      action(it.current, index++);
+      yield it.current;
+    }
+  }
+
+  /// Returns a random item.
+  /// The randomness can be customized by setting [random].
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3].pickOne(); // 2 (or 1 or 3)
+  /// ```
+  T pickOne([Random random]) {
+    ArgumentError.checkNotNull(random, 'random');
+    var list = toList();
+    list.shuffle(random);
+    return list.first;
+  }
+
+  /// Returns an [List] of [count] random items.
+  /// The randomness can be customized by setting [random].
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, 3].pickSome(2); // [1, 2] or [3, 2] and so on...
+  /// ```
+  List<T> pickSome(int count, [Random random]) {
+    ArgumentError.checkNotNull(count, 'count');
+    ArgumentError.checkNotNull(random, 'random');
+    var list = toList();
+    list.shuffle(random);
+    return list.take(min(count, length)).toList();
   }
 }

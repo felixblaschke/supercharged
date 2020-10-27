@@ -38,6 +38,9 @@ main() {
   [1, 2, 3].elementAtOrNull(4); // Never go out of bounds
   [1, 2, 3].elementAtOrElse(4, () => 0);
 
+  [1, 2, 3].pickOne();   // Get a random item
+  [1, 2, 3].pickSome(2); // or multiple random items
+
   // Group up data to match view:
   persons = [
     Person(name: "John", age: 21),
@@ -84,6 +87,7 @@ main() {
   persons // sorting is fully integrated into processing chain
       .filter((p) => p.name.length < 5)
       .sortedByNum((p) => p.age)
+      .onEach(print)
       .map((p) => p.name)
       .toList();
 
