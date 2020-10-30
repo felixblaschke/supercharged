@@ -1,3 +1,7 @@
+## 1.11.1
+
+- **Fix:** Optional parameter in Iterable `pickOne` and `pickSome` methods
+
 ## 1.11.0
 
 - **New:** Offset `tweenTo` method

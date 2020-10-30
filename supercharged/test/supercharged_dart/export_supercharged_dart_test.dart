@@ -19,5 +19,6 @@ void main() {
 
   test('pick', () {
     expect([1, 2, 3, 4, 5, 6].pickOne(Random(0)), equals(3));
+    expect([1, 2, 3, 4, 5, 6].pickOne() < 10, equals(true));
   });
 }
