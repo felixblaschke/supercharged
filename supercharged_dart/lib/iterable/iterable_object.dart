@@ -537,7 +537,6 @@ extension IterableSC<T> on Iterable<T> {
   /// [1, 2, 3].pickOne(); // 2 (or 1 or 3)
   /// ```
   T pickOne([Random random]) {
-    ArgumentError.checkNotNull(random, 'random');
     var list = toList();
     list.shuffle(random);
     return list.first;
@@ -552,7 +551,6 @@ extension IterableSC<T> on Iterable<T> {
   /// ```
   List<T> pickSome(int count, [Random random]) {
     ArgumentError.checkNotNull(count, 'count');
-    ArgumentError.checkNotNull(random, 'random');
     var list = toList();
     list.shuffle(random);
     return list.take(min(count, length)).toList();
