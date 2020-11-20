@@ -9,6 +9,4 @@ void main() {
     expect(tween.begin, Colors.red);
     expect(tween.end, Colors.blue);
   });
-
 }
-

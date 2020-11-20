@@ -9,21 +9,16 @@
 library supercharged;
 
 import 'dart:ui';
-import 'package:supercharged_dart/supercharged_dart.dart';
+
 import 'package:flutter/widgets.dart';
+import 'package:supercharged_dart/supercharged_dart.dart';
 
 export 'package:supercharged_dart/supercharged_dart.dart';
 
 part 'animatable/animatable.dart';
-
 part 'animation/animation.dart';
-
 part 'color/color.dart';
-
 part 'double/double.dart';
-
 part 'int/int.dart';
-
 part 'offset/offset.dart';
-
 part 'string/string.dart';

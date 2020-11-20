@@ -11,8 +11,5 @@ void main() {
     expect(tween.transform(0.5), 50.0);
     expect(tween.transform(0.75), 87.13146895170212);
     expect(tween.transform(1.0), 100.0);
-
   });
-
 }
-
