@@ -9,7 +9,7 @@ extension AnimationSCF on Animation<double> {
   /// ```dart
   /// controller.interval(0.0, 1.0, curve:Curves.elasticOut)
   /// ```
-  Animation<double> interval(double begin, double end, {Curve curve}) {
+  Animation<double> interval(double begin, double end, {Curve? curve}) {
     assert(begin >= 0 && end <= 1);
     return drive(CurveTween(
       curve: Interval(begin, end, curve: curve ?? Curves.linear),

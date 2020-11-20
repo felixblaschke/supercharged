@@ -34,8 +34,8 @@ void main() {
 }
 
 bool compareAnimation({
-  Animation<double> Function(AnimationController) actual,
-  Animation<double> Function(AnimationController) matcher,
+  required Animation<double> Function(AnimationController) actual,
+  required Animation<double> Function(AnimationController) matcher,
 }) {
   final controller = AnimationController(
     vsync: const TestVSync(),

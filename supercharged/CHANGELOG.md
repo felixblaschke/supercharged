@@ -1,3 +1,7 @@
+## 2.0.0-nullsafety.0
+
+- **New:** Upgraded to null-safe
+
 ## 1.11.1
 
 - **Fix:** Optional parameter in Iterable `pickOne` and `pickSome` methods

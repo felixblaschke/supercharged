@@ -3,6 +3,7 @@ part of supercharged;
 /// Supercharged Flutter extensions on [String].
 extension StringSCF on String {
   /// Converts string in hex representation into a [Color].
+  /// Returns black (#000000) if string is not interpretable.
   ///
   /// You can use 6-char hex color (RRGGBB), 3-char hex color (RGB) or a valid
   /// HTML color name. The hash (#) is optional for hex color strings.
@@ -35,7 +36,7 @@ extension StringSCF on String {
       // will throw anyway
     }
 
-    throw ArgumentError('Can not interpret string $this');
+    return Color.fromARGB(255, 0, 0, 0);
   }
 
   static String _removeLeadingHash(String color) {
@@ -49,14 +50,14 @@ extension StringSCF on String {
     var r = color.substring(0, 2).toInt(radix: 16);
     var g = color.substring(2, 4).toInt(radix: 16);
     var b = color.substring(4, 6).toInt(radix: 16);
-    return Color.fromARGB(255, r, g, b);
+    return Color.fromARGB(255, r!, g!, b!);
   }
 
   static Color _threeCharHexToColor(String color) {
     var r = color.substring(0, 1).repeat(2).toInt(radix: 16);
     var g = color.substring(1, 2).repeat(2).toInt(radix: 16);
     var b = color.substring(2, 3).repeat(2).toInt(radix: 16);
-    return Color.fromARGB(255, r, g, b);
+    return Color.fromARGB(255, r!, g!, b!);
   }
 
   static bool _isHtmlColorName(String name) {
@@ -64,7 +65,7 @@ extension StringSCF on String {
   }
 
   static Color _getColorByHtmlColorName(String name) {
-    return _HTML_COLOR_NAMES[name.toLowerCase()].toColor();
+    return _HTML_COLOR_NAMES[name.toLowerCase()]!.toColor();
   }
 }
 

@@ -11,10 +11,10 @@ void main() {
     expect('00f'.toColor(), equals(Color(0xFF0000FF)));
     expect('red'.toColor(), equals(Color(0xFFFF0000)));
     expect('GOLD'.toColor(), equals(Color(0xFFFFD700)));
-    expect(() => ''.toColor(), throwsArgumentError);
-    expect(() => '#red'.toColor(), throwsArgumentError);
-    expect(() => '#'.toColor(), throwsArgumentError);
-    expect(() => '#ff'.toColor(), throwsArgumentError);
-    expect(() => '#ffff'.toColor(), throwsArgumentError);
+    expect(''.toColor(), equals(Color.fromARGB(255, 0, 0, 0)));
+    expect('#red'.toColor(), equals(Color.fromARGB(255, 0, 0, 0)));
+    expect('#'.toColor(), equals(Color.fromARGB(255, 0, 0, 0)));
+    expect('#ff'.toColor(), equals(Color.fromARGB(255, 0, 0, 0)));
+    expect('#ffff'.toColor(), equals(Color.fromARGB(255, 0, 0, 0)));
   });
 }
