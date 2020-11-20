@@ -13,32 +13,35 @@ extension IterableOfIntSC on Iterable<int> {
   }
 
   /// Returns the average value (arithmetic mean) of all elements.
+  /// If collection is empty this returns `null`.
   ///
   /// Example:
   /// ```dart
   /// [2, 4, 6, 8].average(); // 5.0
   /// ```
-  double average() {
+  double? average() {
     return averageBy((n) => n);
   }
 
   /// Returns the largest value of all elements
+  /// If collection is empty this returns `null`.
   ///
   /// Example:
   /// ```dart
   /// [9, 42, 3].max(); // 42
   /// ```
-  int max() {
+  int? max() {
     return maxBy((a, b) => a.compareTo(b));
   }
 
   /// Returns the lowest value of all elements
+  /// If collection is empty this returns `null`.
   ///
   /// Example:
   /// ```dart
   /// [17, 13, 92].min(); // 13
   /// ```
-  int min() {
+  int? min() {
     return minBy((a, b) => a.compareTo(b));
   }
 }

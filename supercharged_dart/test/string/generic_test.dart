@@ -9,7 +9,6 @@ void main() {
     expect('a'.repeat(2), equals('aa'));
     expect('ab'.repeat(3), equals('ababab'));
     expect(() => 'a'.repeat(0), throwsArgumentError);
-    expect(() => 'a'.repeat(null), throwsArgumentError);
     expect(() => 'abab'.repeat(-2), throwsArgumentError);
     expect('hello'.repeat(3, separator: '-'), equals('hello-hello-hello'));
   });

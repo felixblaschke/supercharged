@@ -13,32 +13,35 @@ extension IterableOfDoubleSC on Iterable<double> {
   }
 
   /// Returns the average value (arithmetic mean) of all elements.
+  /// If collection is empty this returns `null`.
   ///
   /// Example:
   /// ```dart
   /// [2.0, 4.0, 6.0, 8.0].average(); // 5.0
   /// ```
-  double average() {
+  double? average() {
     return averageBy((n) => n);
   }
 
   /// Returns the largest value of all elements
+  /// If collection is empty this returns `null`.
   ///
   /// Example:
   /// ```dart
   /// [9.0, 42.0, 3.0].max(); // 42.0
   /// ```
-  double max() {
+  double? max() {
     return maxBy((a, b) => a.compareTo(b));
   }
 
   /// Returns the lowest value of all elements
+  /// If collection is empty this returns `null`.
   ///
   /// Example:
   /// ```dart
   /// [17.0, 13.0, 92.0].min(); // 13.0
   /// ```
-  double min() {
+  double? min() {
     return minBy((a, b) => a.compareTo(b));
   }
 }

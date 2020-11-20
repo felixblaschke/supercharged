@@ -11,7 +11,6 @@ extension IterableSC<T> on Iterable<T> {
   /// ['hello', 'flutter'].sumBy((s) => s.length); // 12
   /// ```
   int sumBy(int Function(T) selector) {
-    ArgumentError.checkNotNull(selector, 'selector');
     return map(selector).fold(0, (prev, curr) => prev + curr);
   }
 
@@ -23,20 +22,19 @@ extension IterableSC<T> on Iterable<T> {
   /// [1.5, 2.5].sumByDouble((d) => 0.5 * d); // 2.0
   /// ```
   double sumByDouble(num Function(T) selector) {
-    ArgumentError.checkNotNull(selector, 'selector');
     return map(selector).fold(0.0, (prev, curr) => prev + curr);
   }
 
   /// Returns the average value (arithmetic mean) of all values produces by the
   /// [selector] function that is applied to each element.
   ///
+  ///
   /// Example:
   /// ```dart
   /// [1, 2, 3].averageBy((n) => n);               // 2.0
   /// ['cat', 'horse'].averageBy((s) => s.length); // 4.0
   /// ```
-  double averageBy(num Function(T) selector) {
-    ArgumentError.checkNotNull(selector, 'selector');
+  double? averageBy(num Function(T) selector) {
     if (isEmpty) {
       return null;
     }
@@ -55,8 +53,7 @@ extension IterableSC<T> on Iterable<T> {
   /// [1, 2, 3].chunked(2);                 // [[1, 2], [3]]
   /// [1, 2, 3].chunked(2, fill: () => 99); // [[1, 2], [3, 99]]
   /// ```
-  Iterable<List<T>> chunked(int size, {T Function() fill}) {
-    ArgumentError.checkNotNull(size, 'chunkSize');
+  Iterable<List<T>> chunked(int size, {T Function()? fill}) {
     if (size <= 0) {
       throw ArgumentError('chunkSize must be positive integer greater than 0.');
     }
@@ -89,14 +86,14 @@ extension IterableSC<T> on Iterable<T> {
   /// [1, 2, 3, 13, 14, 15].count();             // 6
   /// [1, 2, 3, 13, 14, 15].count((n) => n > 9); // 3
   /// ```
-  int count([bool Function(T element) test]) {
-    test ??= (_) => true;
+  int count([bool Function(T element)? test]) {
+    final testFn = test ?? (_) => true;
 
     if (isEmpty) {
       return 0;
     }
 
-    return map((element) => test(element) ? 1 : 0)
+    return map((element) => testFn(element) ? 1 : 0)
         .reduce((value, element) => value + element);
   }
 
@@ -110,7 +107,6 @@ extension IterableSC<T> on Iterable<T> {
   ///
   /// This method is an alias for [where].
   Iterable<T> filter(bool Function(T element) test) {
-    ArgumentError.checkNotNull(test, 'test');
     return where(test);
   }
 
@@ -125,7 +121,6 @@ extension IterableSC<T> on Iterable<T> {
   /// });
   /// ```
   void forEachIndexed(void Function(int index, T element) funcIndexValue) {
-    ArgumentError.checkNotNull(funcIndexValue, 'funcIndexValue');
     var index = 0;
     var iter = iterator;
     while (iter.moveNext()) {
@@ -141,10 +136,6 @@ extension IterableSC<T> on Iterable<T> {
   /// ['a', 'b'].elementAtOrElse(2, () => ''); // ''
   /// ```
   T elementAtOrElse(int index, T Function() orElse) {
-    RangeError.checkNotNegative(index, 'index');
-    ArgumentError.checkNotNull(index);
-    ArgumentError.checkNotNull(orElse, 'orElse');
-
     try {
       return elementAt(index);
     } catch (error) {
@@ -152,15 +143,19 @@ extension IterableSC<T> on Iterable<T> {
     }
   }
 
-  /// Returns the [index]th element. If the index is out of bounds it will
-  /// return [null].
+  /// Returns the [index]th element.
+  /// If the index is out of bounds it will return `null`.
   ///
   /// Example:
   /// ```dart
   /// ['a', 'b'].elementAtOrNull(2); // null
   /// ```
-  T elementAtOrNull(int index) {
-    return elementAtOrElse(index, () => null);
+  T? elementAtOrNull(int index) {
+    try {
+      return elementAt(index);
+    } catch (error) {
+      return null;
+    }
   }
 
   /// Returns the first element. If there is no first element the [orElse]
@@ -172,20 +167,23 @@ extension IterableSC<T> on Iterable<T> {
   /// [].firstOrElse(() => '');         // ''
   /// ```
   T firstOrElse(T Function() orElse) {
-    ArgumentError.checkNotNull(orElse, 'orElse');
     return firstWhere((_) => true, orElse: orElse);
   }
 
-  /// Returns the first element. If there is no first element it will
-  /// return [null].
+  /// Returns the first element.
+  /// If there is no first element it will return `null`.
   ///
   /// Example:
   /// ```dart
   /// ['a', 'b'].firstOrNull(); // 'a'
   /// [].firstOrNull();         // null
   /// ```
-  T firstOrNull() {
-    return firstOrElse(() => null);
+  T? firstOrNull() {
+    if (isEmpty) {
+      return null;
+    }
+
+    return firstWhere((_) => true, orElse: null);
   }
 
   /// Returns the last element. If there is no last element the [orElse]
@@ -197,20 +195,23 @@ extension IterableSC<T> on Iterable<T> {
   /// [].lastOrElse(() => '');         // ''
   /// ```
   T lastOrElse(T Function() orElse) {
-    ArgumentError.checkNotNull(orElse, 'orElse');
     return lastWhere((_) => true, orElse: orElse);
   }
 
-  /// Returns the last element. If there is no last element it will
-  /// return [null].
+  /// Returns the last element.
+  /// If there is no last element it will return `null`.
   ///
   /// Example:
   /// ```dart
   /// ['a', 'b'].lastOrElse(); // 'a'
   /// [].lastOrElse();         // null
   /// ```
-  T lastOrNull() {
-    return lastOrElse(() => null);
+  T? lastOrNull() {
+    if (isEmpty) {
+      return null;
+    }
+
+    return lastWhere((_) => true, orElse: null);
   }
 
   /// Groups the elements of the list into a map by a key
@@ -237,10 +238,9 @@ extension IterableSC<T> on Iterable<T> {
   /// // map = {'young': ['John', 'Carl'], 'old': ['Peter', 'Sarah']}
   /// ```
   Map<K, List<V>> groupBy<K, V>(K Function(T element) keySelector,
-      {V Function(T element) valueTransform}) {
-    ArgumentError.checkNotNull(keySelector);
+      {V Function(T element)? valueTransform}) {
 
-    valueTransform ??= (element) => element as V;
+    final transformFn = valueTransform ?? (element) => element as V;
 
     var map = <K, List<V>>{};
 
@@ -250,7 +250,7 @@ extension IterableSC<T> on Iterable<T> {
       if (!map.containsKey(key)) {
         map[key] = [];
       }
-      map[key].add(valueTransform(element));
+      map[key]!.add(transformFn(element));
     });
 
     return map;
@@ -265,7 +265,6 @@ extension IterableSC<T> on Iterable<T> {
   /// [1, 2, 3].associate((e) => MapEntry('key_$e', e * 100)); // {'key_1': 100, 'key_2': 200, 'key_3': 300}
   /// ```
   Map<K, V> associate<K, V>(MapEntry<K, V> Function(T element) transform) {
-    ArgumentError.checkNotNull(transform, 'transform');
     return Map.fromEntries(map(transform));
   }
 
@@ -279,7 +278,6 @@ extension IterableSC<T> on Iterable<T> {
   /// ['a', 'ab', 'abc'].associateBy((e) => e.length); // {1: 'a', 2: 'ab', 3: 'abc'}
   /// ```
   Map<K, T> associateBy<K>(K Function(T element) keySelector) {
-    ArgumentError.checkNotNull(keySelector, 'keySelector');
     var map = <K, T>{};
     forEach((element) {
       var key = keySelector(element);
@@ -296,7 +294,6 @@ extension IterableSC<T> on Iterable<T> {
   /// [1, 2, 3].associateWith((e) => e * 1000); // {1: 1000, 2: 2000, 3: 3000}
   /// ```
   Map<T, V> associateWith<V>(V Function(T element) valueSelector) {
-    ArgumentError.checkNotNull(valueSelector, 'valueSelector');
     var map = <T, V>{};
     forEach((element) {
       map[element] = valueSelector(element);
@@ -305,14 +302,14 @@ extension IterableSC<T> on Iterable<T> {
   }
 
   /// Returns the minimal value based on the [comparator] function.
+  /// If collection is empty this returns `null`.
   ///
   /// Example:
   /// ```dart
   /// [1, 0, 2].minBy((a, b) => a.compareTo(b));       // 0
   /// persons.minBy((a, b) => a.age.compareTo(b.age)); // the youngest person
   /// ```
-  T minBy(Comparator<T> comparator) {
-    ArgumentError.checkNotNull(comparator, 'comparator');
+  T? minBy(Comparator<T> comparator) {
     if (isEmpty) {
       return null;
     }
@@ -321,14 +318,14 @@ extension IterableSC<T> on Iterable<T> {
   }
 
   /// Returns the maximum value based on the [comparator] function.
+  /// If collection is empty this returns `null`.
   ///
   /// Example:
   /// ```dart
   /// [90, 10, 20, 30].maxBy((a, b) => a.compareTo(b)); // 90
   /// persons.maxBy((a, b) => a.age.compareTo(b.age));  // the oldest person
   /// ```
-  T maxBy(Comparator<T> comparator) {
-    ArgumentError.checkNotNull(comparator, 'comparator');
+  T? maxBy(Comparator<T> comparator) {
     if (isEmpty) {
       return null;
     }
@@ -343,7 +340,6 @@ extension IterableSC<T> on Iterable<T> {
   /// [3, 1, 5, 9, 7].sortedBy((a,b) => a.compareTo(b)); // [1, 3, 5, 7, 9]
   /// ```
   List<T> sortedBy(Comparator<T> comparator) {
-    ArgumentError.checkNotNull(comparator, 'comparator');
     var list = toList();
     list.sort(comparator);
     return list;
@@ -358,7 +354,6 @@ extension IterableSC<T> on Iterable<T> {
   /// persons.sortedByNum((p) => p.age).reversed; // oldest persons first
   /// ```
   List<T> sortedByNum(num Function(T element) valueProvider) {
-    ArgumentError.checkNotNull(valueProvider, 'valueProvider');
     return sortedBy((a, b) => valueProvider(a).compareTo(valueProvider(b)));
   }
 
@@ -371,12 +366,11 @@ extension IterableSC<T> on Iterable<T> {
   /// persons.sortedByString((p) => p.name); // sort persons alphabetically
   /// ```
   List<T> sortedByString(String Function(T element) valueProvider) {
-    ArgumentError.checkNotNull(valueProvider, 'valueProvider');
     return sortedBy((a, b) => valueProvider(a).compareTo(valueProvider(b)));
   }
 
-  /// Returns the last accessible index. If collection is empty this returns
-  /// `null`.
+  /// Returns the last accessible index.
+  /// If collection is empty this returns `null`.
   ///
   /// Example:
   /// ```dart
@@ -384,7 +378,7 @@ extension IterableSC<T> on Iterable<T> {
   /// list.lastIndex; // 2
   /// list[list.lastIndex]; // 'c'
   /// ```
-  int get lastIndex {
+  int? get lastIndex {
     if (isNotEmpty) {
       return length - 1;
     } else {
@@ -503,7 +497,6 @@ extension IterableSC<T> on Iterable<T> {
   /// var sum = [1, 2, 3].onEach(print).sum(); // sum = 6 (also prints each number)
   /// ```
   Iterable<T> onEach(void Function(T element) action) sync* {
-    ArgumentError.checkNotNull(action, 'action');
     final it = iterator;
     while (it.moveNext()) {
       action(it.current);
@@ -520,7 +513,6 @@ extension IterableSC<T> on Iterable<T> {
   /// var sum = [1, 2, 3].onEach(print).sum(); // sum = 6 (also prints each number)
   /// ```
   Iterable<T> onEachIndexed(void Function(T element, int index) action) sync* {
-    ArgumentError.checkNotNull(action, 'action');
     final it = iterator;
     var index = 0;
     while (it.moveNext()) {
@@ -536,7 +528,7 @@ extension IterableSC<T> on Iterable<T> {
   /// ```dart
   /// [1, 2, 3].pickOne(); // 2 (or 1 or 3)
   /// ```
-  T pickOne([Random random]) {
+  T pickOne([Random? random]) {
     var list = toList();
     list.shuffle(random);
     return list.first;
@@ -549,8 +541,7 @@ extension IterableSC<T> on Iterable<T> {
   /// ```dart
   /// [1, 2, 3].pickSome(2); // [1, 2] or [3, 2] and so on...
   /// ```
-  List<T> pickSome(int count, [Random random]) {
-    ArgumentError.checkNotNull(count, 'count');
+  List<T> pickSome(int count, [Random? random]) {
     var list = toList();
     list.shuffle(random);
     return list.take(min(count, length)).toList();

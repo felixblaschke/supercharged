@@ -3,8 +3,6 @@ import 'package:supercharged_dart/supercharged_dart.dart';
 
 void main() {
   test('iterable forEachIndex', () {
-    expect(() => [1, 2, 3].forEachIndexed(null), throwsArgumentError);
-
     var occuredIndized = [];
     var occuredValues = [];
     [5, 9, 11].forEachIndexed((index, value) {

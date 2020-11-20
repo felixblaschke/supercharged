@@ -12,7 +12,6 @@ extension StringSC on String {
   /// 'cat'.repeat(3, separator: ':');  // 'cat:cat:cat'
   /// ```
   String repeat(int n, {String separator = ''}) {
-    ArgumentError.checkNotNull(n, 'n');
     throwIfNot(n > 0,
         () => ArgumentError('n must be a positive value greater then 0'));
 
@@ -63,7 +62,7 @@ extension StringSC on String {
   /// jsonString.parseJSON();
   /// '[1, 2, 3]'.parseJSON(); // [1, 2, 3]
   /// ```
-  dynamic parseJSON({Object Function(Object key, Object value) reviver}) {
+  dynamic parseJSON({Object? Function(Object? key, Object? value)? reviver}) {
     return jsonDecode(this, reviver: reviver);
   }
 
@@ -79,7 +78,6 @@ extension StringSC on String {
   /// 'i   like cats'.allAfter(RegExp('\\s+')) // 'like cats'
   /// ```
   String allAfter(Pattern pattern) {
-    ArgumentError.checkNotNull(pattern, 'pattern');
     var matchIterator = pattern.allMatches(this).iterator;
 
     if (matchIterator.moveNext()) {
@@ -101,10 +99,9 @@ extension StringSC on String {
   /// 'i like turtles'.allBefore('like') // 'i '
   /// ```
   String allBefore(Pattern pattern) {
-    ArgumentError.checkNotNull(pattern, 'pattern');
     var matchIterator = pattern.allMatches(this).iterator;
 
-    Match match;
+    Match? match;
     while (matchIterator.moveNext()) {
       match = matchIterator.current;
     }
@@ -140,7 +137,7 @@ extension StringSC on String {
   /// ```dart
   /// '42'.toDouble();      // 42
   /// 'invalid'.toDouble(); // null
-  int toInt({int radix = 10}) {
+  int? toInt({int radix = 10}) {
     try {
       return int.parse(this, radix: radix);
     } catch (error) {
@@ -157,7 +154,7 @@ extension StringSC on String {
   /// '2.1'.toDouble();     // 2.1
   /// 'invalid'.toDouble(); // null
   /// ```
-  double toDouble() {
+  double? toDouble() {
     try {
       return double.parse(this);
     } catch (error) {

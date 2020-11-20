@@ -57,8 +57,6 @@ extension DoubleSC on double {
   /// 100.0.isBetween(100.0, 100.0) // true;
   /// ```
   bool isBetween(num first, num second) {
-    ArgumentError.checkNotNull(first, 'first');
-    ArgumentError.checkNotNull(second, 'second');
     final lower = min(first, second);
     final upper = max(first, second);
     return this >= lower && this <= upper;
