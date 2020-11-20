@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:test/test.dart';
 import 'package:supercharged_dart/supercharged_dart.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('string parseJSON', () {

@@ -239,7 +239,6 @@ extension IterableSC<T> on Iterable<T> {
   /// ```
   Map<K, List<V>> groupBy<K, V>(K Function(T element) keySelector,
       {V Function(T element)? valueTransform}) {
-
     final transformFn = valueTransform ?? (element) => element as V;
 
     var map = <K, List<V>>{};

@@ -40,7 +40,6 @@ extension DateTimeSC on DateTime {
   /// ```
   Iterable<DateTime> rangeTo(DateTime to,
       {Duration by = const Duration(days: 1)}) sync* {
-
     yield this;
 
     if (isAtSameMomentAs(to)) return;

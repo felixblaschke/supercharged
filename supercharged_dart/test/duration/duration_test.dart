@@ -1,6 +1,6 @@
 import 'package:pedantic/pedantic.dart';
-import 'package:test/test.dart';
 import 'package:supercharged_dart/supercharged_dart.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('duration', () {
@@ -16,13 +16,15 @@ void main() {
     expect(5.hours / 5.hours, 1.0);
     expect(12.seconds / 3.seconds, 4.0);
   });
-  
+
   test('duration delay', () async {
     var n = 0;
-    
-    unawaited(100.milliseconds.delay.then((_) { n = 1;}));
+
+    unawaited(100.milliseconds.delay.then((_) {
+      n = 1;
+    }));
     expect(n, equals(0));
-    
+
     await 200.milliseconds.delay;
     expect(n, equals(1));
   });
