@@ -5,7 +5,7 @@ void main() {
   test('error throwIf', () {
     var n = 3;
     expect(() => throwIf(n > 0, () => ArgumentError()), throwsArgumentError);
-    throwIf(n == null, () => ArgumentError()); // no error
+    throwIf(n == 3, () => ArgumentError()); // no error
   });
 
   test('error throwIfNot', () {
