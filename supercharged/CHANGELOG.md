@@ -1,3 +1,7 @@
+## 1.12.0
+
+- **New:** Auto-import helper class `Supercharged` added.
+
 ## 1.11.1
 
 - **Fix:** Optional parameter in Iterable `pickOne` and `pickSome` methods

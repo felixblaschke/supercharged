@@ -9,8 +9,9 @@
 library supercharged;
 
 import 'dart:ui';
-import 'package:supercharged_dart/supercharged_dart.dart';
+
 import 'package:flutter/widgets.dart';
+import 'package:supercharged_dart/supercharged_dart.dart';
 
 export 'package:supercharged_dart/supercharged_dart.dart';
 

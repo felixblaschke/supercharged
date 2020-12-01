@@ -1,6 +1,6 @@
 ## 1.4.0
 
-- **New:** Auto-import helper class `SupercharedDart` added.
+- **New:** Auto-import helper class `SuperchargedDart` added.
 
 ## 1.3.1
 
