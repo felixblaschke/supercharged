@@ -18,6 +18,10 @@ Add the dependency `supercharged: ^1.X.X` ([find recent version](https://pub.dev
 import 'package:supercharged/supercharged.dart';
 ```
 
+Hint: You can type **Superch** and press **CTRL + Space** for code completion to trigger auto-import:
+
+![](https://miro.medium.com/max/390/1*2uKbrlnG-YZZ1xl19-ocJg.gif)
+
 ## 🌞 Highlights
 
 Transform any `String` to colors
