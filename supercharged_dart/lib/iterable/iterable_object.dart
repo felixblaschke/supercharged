@@ -332,18 +332,27 @@ extension IterableSC<T> on Iterable<T> {
         (value, element) => comparator(value, element) > 0 ? value : element);
   }
 
+  /// Deprecation hint: Read the
+  /// [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md)
+  /// for more details on migrating.
+  ///
   /// Returns this as sorted list using the [comparator] function.
   ///
   /// Example:
   /// ```dart
   /// [3, 1, 5, 9, 7].sortedBy((a,b) => a.compareTo(b)); // [1, 3, 5, 7, 9]
   /// ```
-  List<T> sortedBy(Comparator<T> comparator) {
+  @Deprecated('Dart natively supports this function. Use that instead.')
+  List<T> sortedBySC(Comparator<T> comparator) {
     var list = toList();
     list.sort(comparator);
     return list;
   }
 
+  /// Deprecation hint: Read the
+  /// [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md)
+  /// for more details on migrating.
+  ///
   /// Returns this as sorted list using the [valueProvider] function that produces
   /// numerical values as base for sorting.
   ///
@@ -352,10 +361,15 @@ extension IterableSC<T> on Iterable<T> {
   /// [2, 1, 3].sortedByNum((n) => n); // [1, 2, 3]
   /// persons.sortedByNum((p) => p.age).reversed; // oldest persons first
   /// ```
-  List<T> sortedByNum(num Function(T element) valueProvider) {
-    return sortedBy((a, b) => valueProvider(a).compareTo(valueProvider(b)));
+  @Deprecated('Dart natively supports this function. Use that instead.')
+  List<T> sortedByNumSC(num Function(T element) valueProvider) {
+    return sortedBySC((a, b) => valueProvider(a).compareTo(valueProvider(b)));
   }
 
+  /// Deprecation hint: Read the
+  /// [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md)
+  /// for more details on migrating.
+  ///
   /// Returns this as sorted list using the [valueProvider] function that produces
   /// character values as base for sorting.
   ///
@@ -364,8 +378,9 @@ extension IterableSC<T> on Iterable<T> {
   /// ['c', 'b', 'a'].sortedByNum((c) => c); // ['a', 'b', 'c']
   /// persons.sortedByString((p) => p.name); // sort persons alphabetically
   /// ```
-  List<T> sortedByString(String Function(T element) valueProvider) {
-    return sortedBy((a, b) => valueProvider(a).compareTo(valueProvider(b)));
+  @Deprecated('Dart natively supports this function. Use that instead.')
+  List<T> sortedByStringSC(String Function(T element) valueProvider) {
+    return sortedBySC((a, b) => valueProvider(a).compareTo(valueProvider(b)));
   }
 
   /// Returns the last accessible index.

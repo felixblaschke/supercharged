@@ -1,42 +1,79 @@
 import 'package:supercharged_dart/supercharged_dart.dart';
 import 'package:test/test.dart';
+import 'package:collection/collection.dart';
 
 void main() {
   test('iterable sortedBy', () {
-    expect(<int>[].sortedBy((a, b) => a.compareTo(b)), equals([]));
-    expect([3, 1, 5, 9, 7].sortedBy((a, b) => a.compareTo(b)),
+    expect(<int>[].sortedBySC((a, b) => a.compareTo(b)), equals([]));
+    expect([3, 1, 5, 9, 7].sortedBySC((a, b) => a.compareTo(b)),
         equals([1, 3, 5, 7, 9]));
-    expect([1, 3, 5, 7, 9].sortedBy((a, b) => a.compareTo(b)),
+    expect([1, 3, 5, 7, 9].sortedBySC((a, b) => a.compareTo(b)),
         equals([1, 3, 5, 7, 9]));
-    expect([9, 7, 5, 3, 1].sortedBy((a, b) => a.compareTo(b)),
+    expect([9, 7, 5, 3, 1].sortedBySC((a, b) => a.compareTo(b)),
         equals([1, 3, 5, 7, 9]));
+  });
+
+  test('iterable sortedBy (dart)', () {
+    expect([3, 1, 5, 9, 7].sortedBy<num>((a) => a), equals([1, 3, 5, 7, 9]));
   });
 
   test('iterable sortedBy dont modify origin list', () {
     var list = [3, 2, 1];
-    var sortedList = list.sortedBy((a, b) => a.compareTo(b));
+    var sortedList = list.sortedBySC((a, b) => a.compareTo(b));
     expect(list, equals([3, 2, 1]));
     expect(sortedList, equals([1, 2, 3]));
   });
 
   test('iterable sortedByNum', () {
-    expect(<int>[].sortedByNum((n) => n), equals([]));
-    expect([2, 1, 3].sortedByNum((n) => n), equals([1, 2, 3]));
+    expect(<int>[].sortedByNumSC((n) => n), equals([]));
+    expect([2, 1, 3].sortedByNumSC((n) => n), equals([1, 2, 3]));
 
     expect(
         [_Person('Hans', 21), _Person('Gerald', 9), _Person('Detlef', 5)]
-            .sortedByNum((p) => p.age)
+            .sortedByNumSC((p) => p.age)
+            .map((p) => p.name),
+        equals(['Detlef', 'Gerald', 'Hans']));
+  });
+
+  test('iterable sortedByNum (dart)', () {
+    expect([2, 1, 3].sortedBy<num>((n) => n), equals([1, 2, 3]));
+
+    expect(
+        [_Person('Hans', 21), _Person('Gerald', 9), _Person('Detlef', 5)]
+            .sortedBy<num>((p) => p.age)
+            .map((p) => p.name),
+        equals(['Detlef', 'Gerald', 'Hans']));
+  });
+
+
+  test('iterable sortedByNum (dart)', () {
+    expect(<int>[].sortedByNumSC((n) => n), equals([]));
+    expect([2, 1, 3].sortedByNumSC((n) => n), equals([1, 2, 3]));
+
+    expect(
+        [_Person('Hans', 21), _Person('Gerald', 9), _Person('Detlef', 5)]
+            .sortedByNumSC((p) => p.age)
             .map((p) => p.name),
         equals(['Detlef', 'Gerald', 'Hans']));
   });
 
   test('iterable sortedByString', () {
-    expect(<String>[].sortedByString((n) => n), equals([]));
-    expect([2, 1, 3].sortedByString((n) => 'a$n'), equals([1, 2, 3]));
+    expect(<String>[].sortedByStringSC((n) => n), equals([]));
+    expect([2, 1, 3].sortedByStringSC((n) => 'a$n'), equals([1, 2, 3]));
 
     expect(
         [_Person('Hans', 21), _Person('Gerald', 9), _Person('Detlef', 5)]
-            .sortedByString((p) => p.name)
+            .sortedByStringSC((p) => p.name)
+            .map((p) => p.name),
+        equals(['Detlef', 'Gerald', 'Hans']));
+  });
+
+  test('iterable sortedByString (dart)', () {
+    expect([2, 1, 3].sortedBy<String>((n) => 'a$n'), equals([1, 2, 3]));
+
+    expect(
+        [_Person('Hans', 21), _Person('Gerald', 9), _Person('Detlef', 5)]
+            .sortedBy<String>((p) => p.name)
             .map((p) => p.name),
         equals(['Detlef', 'Gerald', 'Hans']));
   });
