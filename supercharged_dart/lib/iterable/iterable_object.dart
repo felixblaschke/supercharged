@@ -120,7 +120,7 @@ extension IterableSC<T> on Iterable<T> {
   ///   print('$index : $value'); // '0 : a', '1: b', '2: c'
   /// });
   /// ```
-  void forEachIndexed(void Function(int index, T element) funcIndexValue) {
+  void forEachIndexedSC(void Function(int index, T element) funcIndexValue) {
     var index = 0;
     var iter = iterator;
     while (iter.moveNext()) {

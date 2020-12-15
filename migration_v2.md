@@ -49,3 +49,13 @@ Working with **String**s is quite the same:
 ```dart
 ['b', 'c', 'a'].sortedBy<String>((s) => s)
 ```
+
+### forEachIndex
+
+The method signature of Dart's native method is identical to the one in Supercharged.
+
+```dart
+[1, 2, 3].forEachIndexed((index, value) {
+  // ...    
+});
+```
