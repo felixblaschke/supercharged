@@ -114,12 +114,17 @@ extension IterableSC<T> on Iterable<T> {
   /// in iteration order. The function receives the element index as first
   /// parameter [index] and the [element] as the second parameter.
   ///
+  /// Applies the function [funcIndexValue] to each element of this collection
+  /// in iteration order. The function receives the element index as first
+  /// parameter [index] and the [element] as the second parameter.
+  ///
   /// Example:
   /// ```dart
   /// ['a', 'b', 'c'].forEachIndex((index, value) {
   ///   print('$index : $value'); // '0 : a', '1: b', '2: c'
   /// });
   /// ```
+  @Deprecated('Dart natively supports this function. Use that instead.')
   void forEachIndexedSC(void Function(int index, T element) funcIndexValue) {
     var index = 0;
     var iter = iterator;
@@ -487,13 +492,18 @@ extension IterableSC<T> on Iterable<T> {
     }
   }
 
+  /// Applies the function [funcIndexValue] to each element of this collection
+  /// in iteration order. The function receives the element index as first
+  /// parameter [index] and the [element] as the second parameter.
+  ///
   /// Just like [map], but with access to the element's current index.
   ///
   /// Example
   /// ```dart
   /// [1, 2, 3].mapIndexed((number, index) => number * 2); // [2, 4, 6]
   /// ```
-  Iterable<U> mapIndexed<U>(
+  @Deprecated('Dart natively supports this function. Use that instead.')
+  Iterable<U> mapIndexedSC<U>(
     U Function(T currentValue, int index) transformer,
   ) sync* {
     final it = iterator;

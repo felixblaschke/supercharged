@@ -59,3 +59,17 @@ The method signature of Dart's native method is identical to the one in Supercha
   // ...    
 });
 ```
+
+### mapIndexed
+
+**Be cautious on this one.** The name is identical but the positions of the parameters are swapped.
+
+```dart
+[1, 2, 3].mapIndexedSC((element, index) => /* ... */)
+```
+
+can be migrated into
+
+```dart
+[1, 2, 3].mapIndexedSC((index, element) => /* ... */)
+```
