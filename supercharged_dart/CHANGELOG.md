@@ -2,6 +2,10 @@
 
 - **New:** Upgraded to null-safe
 
+## 1.4.0
+
+- **New:** Auto-import helper class `SuperchargedDart` added.
+
 ## 1.3.1
 
 - **Fix:** Optional parameter in Iterable `pickOne` and `pickSome` methods

@@ -23,3 +23,8 @@ part 'iterable/iterable_object.dart';
 part 'list/list_object.dart';
 part 'map/map.dart';
 part 'string/string.dart';
+
+/// Importer helper class. Does nothing.
+class Supercharged {
+
+}
