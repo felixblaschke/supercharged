@@ -66,8 +66,21 @@ can be migrated into
 [1, 2, 3].average
 ```
 
-### average
+### firstOrNull / lastOrNull
 
+The dart equivalent is nearly identical. Just remove the parenthesis since Dart uses only a getter method.
+
+```dart
+['a', 'b'].firstOrNullSC()
+['a', 'b'].lastOrNullSC()
+```
+
+can be migrated into
+
+```dart
+['a', 'b'].firstOrNull
+['a', 'b'].lastOrNull
+```
 
 ### forEachIndex
 

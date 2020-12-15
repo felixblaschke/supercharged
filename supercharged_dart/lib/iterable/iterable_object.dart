@@ -152,6 +152,10 @@ extension IterableSC<T> on Iterable<T> {
     }
   }
 
+  /// Deprecation hint: Read the
+  /// [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md)
+  /// for more details on migrating.
+  ///
   /// Returns the [index]th element.
   /// If the index is out of bounds it will return `null`.
   ///
@@ -179,6 +183,10 @@ extension IterableSC<T> on Iterable<T> {
     return firstWhere((_) => true, orElse: orElse);
   }
 
+  /// Deprecation hint: Read the
+  /// [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md)
+  /// for more details on migrating.
+  ///
   /// Returns the first element.
   /// If there is no first element it will return `null`.
   ///
@@ -187,7 +195,8 @@ extension IterableSC<T> on Iterable<T> {
   /// ['a', 'b'].firstOrNull(); // 'a'
   /// [].firstOrNull();         // null
   /// ```
-  T? firstOrNull() {
+  @Deprecated('Dart natively supports this function. Use that instead.')
+  T? firstOrNullSC() {
     if (isEmpty) {
       return null;
     }
@@ -215,7 +224,8 @@ extension IterableSC<T> on Iterable<T> {
   /// ['a', 'b'].lastOrElse(); // 'a'
   /// [].lastOrElse();         // null
   /// ```
-  T? lastOrNull() {
+  @Deprecated('Dart natively supports this function. Use that instead.')
+  T? lastOrNullSC() {
     if (isEmpty) {
       return null;
     }

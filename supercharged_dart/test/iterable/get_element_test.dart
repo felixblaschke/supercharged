@@ -1,5 +1,6 @@
 import 'package:supercharged_dart/supercharged_dart.dart';
 import 'package:test/test.dart';
+import 'package:collection/collection.dart';
 
 void main() {
   test('iterable elementAtOrElse', () {
@@ -23,9 +24,15 @@ void main() {
   });
 
   test('iterable firstOrNull', () {
-    expect([1].firstOrNull(), equals(1));
-    expect([1, 2, 3].firstOrNull(), equals(1));
-    expect([].firstOrNull(), equals(null));
+    expect([1].firstOrNullSC(), equals(1));
+    expect([1, 2, 3].firstOrNullSC(), equals(1));
+    expect([].firstOrNullSC(), equals(null));
+  });
+
+  test('iterable firstOrNull (dart)', () {
+    expect([1].firstOrNull, equals(1));
+    expect([1, 2, 3].firstOrNull, equals(1));
+    expect([].firstOrNull, equals(null));
   });
 
   test('iterable lastOrElse', () {
@@ -35,8 +42,14 @@ void main() {
   });
 
   test('iterable lastOrNull', () {
-    expect([1].lastOrNull(), equals(1));
-    expect([1, 2, 3].lastOrNull(), equals(3));
-    expect([].lastOrNull(), equals(null));
+    expect([1].lastOrNullSC(), equals(1));
+    expect([1, 2, 3].lastOrNullSC(), equals(3));
+    expect([].lastOrNullSC(), equals(null));
+  });
+
+  test('iterable lastOrNull (dart)', () {
+    expect([1].lastOrNull, equals(1));
+    expect([1, 2, 3].lastOrNull, equals(3));
+    expect([].lastOrNull, equals(null));
   });
 }
