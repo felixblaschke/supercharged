@@ -105,11 +105,6 @@ extension IntSC on int {
     return Duration(days: this);
   }
 
-  @Deprecated('Use isBetween() instead')
-  bool between(num first, num second) {
-    return isBetween(first, second);
-  }
-
   /// Returns a [bool] if [this] value is between (including) the two
   /// numeric values [first] and [second].
   ///
