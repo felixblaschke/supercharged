@@ -2,16 +2,25 @@ part of supercharged_dart;
 
 /// Supercharged extensions on [Iterable<int>] like [List<int>] and [Set<int>].
 extension IterableOfIntSC on Iterable<int> {
+  /// Deprecation hint: Read the
+  /// [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md)
+  /// for more details on migrating.
+  ///
   /// Returns the sum of all elements.
   ///
   /// Example:
   /// ```dart
   /// [2, 6, 4, 8].sum(); // 20
   /// ```
-  int sum() {
+  @Deprecated('Dart natively supports this function. Use that instead.')
+  int sumSC() {
     return sumBy((n) => n);
   }
 
+  /// Deprecation hint: Read the
+  /// [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md)
+  /// for more details on migrating.
+  ///
   /// Returns the average value (arithmetic mean) of all elements.
   /// If collection is empty this returns `null`.
   ///
@@ -19,7 +28,8 @@ extension IterableOfIntSC on Iterable<int> {
   /// ```dart
   /// [2, 4, 6, 8].average(); // 5.0
   /// ```
-  double? average() {
+  @Deprecated('Dart natively supports this function. Use that instead.')
+  double? averageSC() {
     return averageBy((n) => n);
   }
 

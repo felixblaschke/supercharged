@@ -110,6 +110,10 @@ extension IterableSC<T> on Iterable<T> {
     return where(test);
   }
 
+  /// Deprecation hint: Read the
+  /// [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md)
+  /// for more details on migrating.
+  ///
   /// Applies the function [funcIndexValue] to each element of this collection
   /// in iteration order. The function receives the element index as first
   /// parameter [index] and the [element] as the second parameter.
@@ -492,6 +496,10 @@ extension IterableSC<T> on Iterable<T> {
     }
   }
 
+  /// Deprecation hint: Read the
+  /// [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md)
+  /// for more details on migrating.
+  ///
   /// Applies the function [funcIndexValue] to each element of this collection
   /// in iteration order. The function receives the element index as first
   /// parameter [index] and the [element] as the second parameter.

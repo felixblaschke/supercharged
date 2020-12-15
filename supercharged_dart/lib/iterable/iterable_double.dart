@@ -2,16 +2,25 @@ part of supercharged_dart;
 
 /// Supercharged extensions on [Iterable<double>] like [List<double>] and [Set<double>].
 extension IterableOfDoubleSC on Iterable<double> {
+  /// Deprecation hint: Read the
+  /// [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md)
+  /// for more details on migrating.
+  ///
   /// Returns the sum of all elements.
   ///
   /// Example:
   /// ```dart
   /// [2.0, 6.0, 4.0, 8.0].sum(); // 20.0
   /// ```
-  double sum() {
+  @Deprecated('Dart natively supports this function. Use that instead.')
+  double sumSC() {
     return sumByDouble((n) => n);
   }
 
+  /// Deprecation hint: Read the
+  /// [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md)
+  /// for more details on migrating.
+  ///
   /// Returns the average value (arithmetic mean) of all elements.
   /// If collection is empty this returns `null`.
   ///
@@ -19,7 +28,8 @@ extension IterableOfDoubleSC on Iterable<double> {
   /// ```dart
   /// [2.0, 4.0, 6.0, 8.0].average(); // 5.0
   /// ```
-  double? average() {
+  @Deprecated('Dart natively supports this function. Use that instead.')
+  double? averageSC() {
     return averageBy((n) => n);
   }
 

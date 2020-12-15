@@ -1,14 +1,24 @@
 import 'package:supercharged_dart/supercharged_dart.dart';
 import 'package:test/test.dart';
+import 'package:collection/collection.dart';
 
 void main() {
   test('iterable<double> sum', () {
-    expect([2.0, 6.0, 4.0, 8.0].sum(), equals(20.0));
-    expect([0.0].sum(), equals(0));
+    expect([2.0, 6.0, 4.0, 8.0].sumSC(), equals(20.0));
+    expect([0.0].sumSC(), equals(0));
   });
 
   test('iterable<double> average', () {
-    expect([2.0, 4.0, 6.0, 8.0].average(), equals(5.0));
+    expect([2.0, 4.0, 6.0, 8.0].averageSC(), equals(5.0));
+  });
+
+  test('iterable<double> sum (dart)', () {
+    expect([2.0, 6.0, 4.0, 8.0].sum, equals(20.0));
+    expect([0.0].sumSC(), equals(0));
+  });
+
+  test('iterable<double> average (dart)', () {
+    expect([2.0, 4.0, 6.0, 8.0].average, equals(5.0));
   });
 
   test('iterable<double> max', () {
