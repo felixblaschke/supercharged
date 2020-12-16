@@ -7,7 +7,7 @@ environment:
   sdk: ">=2.12.0-0 <3.0.0"
 
 dependencies:
-  supercharged_dart: ^2.0.0-nullsafety.0
+  supercharged_dart: ^2.0.0-nullsafety.1
   flutter:
     sdk: flutter
 

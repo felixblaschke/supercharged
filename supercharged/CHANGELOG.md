@@ -1,6 +1,18 @@
-## 2.0.0-nullsafety.0
+## 2.0.0-nullsafety.1
 
-- **New:** Upgraded to null-safe
+- **New:** Supercharged is null-safe
+- **Breaking:** Renamed and deprecated several methods to avoid conflict Dart's own implementation. See [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md) for more details.
+    - `sortedBy` renamed to `sortedBySC`
+    - `sortedByNum` renamed to `sortedByNumSC`
+    - `sortedByString` renamed to `sortedByStringSC`
+    - `sum` renamed to `sumSC`
+    - `average` renamed to `averageSC`
+    - `firstOrNull` renamed to `firstOrNullSC`
+    - `lastOrNull` renamed to `lastOrNullSC`
+    - `forEachIndexed` renamed to `forEachIndexedSC`
+    - `mapIndexed` renamed to `mapIndexedSC`
+- **Breaking:** Removed already deprecated method `between`.
+- **Deprecation:** `filter` is now deprecated in favour of Dart's own `where`.
 
 ## 1.12.0
 

@@ -20,8 +20,6 @@ main() {
   12.isBetween(0, 30); // true
 
   // Effortless aggregation for Iterable<int> and Iterable<double>:
-  [1, 2, 3].sum(); // 6
-  [1, 2, 3].average(); // 2
   [1, 2, 3].min(); // 1
   [1, 2, 3].max(); // 3
 
@@ -34,11 +32,8 @@ main() {
   persons.maxBy((a, b) => a.age.compareTo(b.age)); // Person(age: 40)
 
   // Safely access Iterable:
-  [].firstOrNull(); // return null instead
-  [].lastOrNull(); // of throwing error
-
   [].firstOrElse(() => Placeholder()); // Produce default values
-  [].lastOrElse(() => Placeholder()); // on the fly
+  [].lastOrElse(() => Placeholder());  // on the fly
 
   [1, 2, 3].elementAtOrNull(4); // Never go out of bounds
   [1, 2, 3].elementAtOrElse(4, () => 0);
@@ -75,27 +70,6 @@ main() {
 
   await 2.seconds.delay; // waits for 2 seconds
 
-
-  // Simplified data sorting:
-  persons = [
-    Person(name: "John", age: 21),
-    Person(name: "Carl", age: 18),
-    Person(name: "Peter", age: 56),
-    Person(name: "Sarah", age: 61)
-  ];
-
-  persons.sortedByNum((p) => p.age); // list sorted by age
-  persons.sortedByString((p) => p.name); // list sorted by name
-  persons
-      .sortedBy((a, b) => a.name.compareTo(b.name)); // sorted with comparator
-
-  persons // sorting is fully integrated into processing chain
-      .filter((p) => p.name.length < 5)
-      .sortedByNum((p) => p.age)
-      .onEach(print)
-      .map((p) => p.name)
-      .toList();
-
   // Solid tween shortcuts for animations
   100.0.tweenTo(200.0); // Tween(begin: 100.0, end: 200.0)
   Colors.red.tweenTo(Colors.blue); // ColorTween(...)
@@ -108,12 +82,6 @@ main() {
 
   var list = ["dog", "cat", "mouse"];
   0.until(list.length); // [0, 1, 2]
-
-  list.forEachIndexed((index, value) {
-    // index: 0, value: "dog"
-    // index: 1, value: "cat"
-    // index: 2, value: "mouse"
-  });
 }
 
 class Person {
