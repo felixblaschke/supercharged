@@ -13,4 +13,8 @@ void main() {
             .reduce((value, n) => value + n),
         equals(6));
   });
+
+  test('iterable filterNotNull', () {
+    expect(<int>[1, 2, null, 4].filterNotNull(), equals([1, 2, 4]));
+  });
 }

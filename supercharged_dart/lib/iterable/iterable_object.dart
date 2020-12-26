@@ -114,6 +114,17 @@ extension IterableSC<T> on Iterable<T> {
     return where(test);
   }
 
+  /// Returns a new [Iterable] with all elements that aren't null
+  ///
+  /// Example:
+  /// ```dart
+  /// [1, 2, null, 4].filterNotNull().toList(); // [1, 2, 4]
+  /// ```
+  ///
+  Iterable<T> filterNotNull() {
+    return where((e) => e != null);
+  }
+
   /// Applies the function [funcIndexValue] to each element of this collection
   /// in iteration order. The function receives the element index as first
   /// parameter [index] and the [element] as the second parameter.
