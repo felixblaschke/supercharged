@@ -4,11 +4,12 @@ part of supercharged;
 extension StringSCF on String {
   /// Converts string in hex representation into a [Color].
   ///
-  /// You can use 6-char hex color (RRGGBB), 3-char hex color (RGB) or a valid
+  /// You can use 8-char hex color (OORRGGBB), 6-char hex color (RRGGBB), 3-char hex color (RGB) or a valid
   /// HTML color name. The hash (#) is optional for hex color strings.
   ///
   /// Example:
   /// ```dart
+  /// '#99ff00ff'.toColor();  // transparent pink
   /// '#ff00ff'.toColor();  // pink
   /// 'ff0000'.toColor();   // red
   /// '00f'.toColor();      // blue
@@ -23,6 +24,10 @@ extension StringSCF on String {
 
     try {
       var color = _removeLeadingHash(this);
+
+      if (color.length == 8) {
+        return _eightCharHexToColor(color);
+      }
 
       if (color.length == 6) {
         return _sixCharHexToColor(color);
@@ -43,6 +48,11 @@ extension StringSCF on String {
       return color.substring(1);
     }
     return color;
+  }
+
+  static Color _eightCharHexToColor(String color) {
+    var colorHex = int.parse(color.toString(), radix: 16);
+    return Color(colorHex);
   }
 
   static Color _sixCharHexToColor(String color) {

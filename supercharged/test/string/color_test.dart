@@ -5,6 +5,7 @@ import 'package:supercharged/supercharged.dart';
 
 void main() {
   test('string to color', () {
+    expect('#99ff00ff'.toColor(), equals(Color(0x99FF00FF)));
     expect('#ff00ff'.toColor(), equals(Color(0xFFFF00FF)));
     expect('ff0000'.toColor(), equals(Color(0xFFFF0000)));
     expect('#fff'.toColor(), equals(Color(0xFFFFFFFF)));

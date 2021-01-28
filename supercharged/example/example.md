@@ -6,6 +6,7 @@ import 'package:supercharged/supercharged.dart';
 
 main() {
   // Transform any String to colors
+  "#99ff00ff".toColor(); // painless hex to color
   "#ff00ff".toColor(); // painless hex to color
   "red".toColor(); // supports all web color names
 

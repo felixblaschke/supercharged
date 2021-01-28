@@ -26,6 +26,7 @@ Hint: You can type **Superch** and press **CTRL + Space** for code completion to
 
 Transform any `String` to colors
 ```dart
+"#99ff00ff".toColor(); // painless hex to color
 "#ff00ff".toColor(); // painless hex to color
 "red".toColor(); // supports all web color names
 ```
