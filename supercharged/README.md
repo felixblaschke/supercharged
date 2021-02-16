@@ -9,7 +9,7 @@
 - 📝 **well documented**
 - 💼 **enterprise-ready**
 
-For dart web/native projects you can use [⚡ Supercharged Dart](https://pub.dev/packages/supercharged_dart). 
+For dart web/native projects you can use [⚡ Supercharged Dart](https://pub.dev/packages/supercharged_dart).
 
 ## ⛏️ Getting started
 
@@ -140,6 +140,8 @@ Solid tween shortcuts for animations:
 Colors.red.tweenTo(Colors.blue); // ColorTween(...)
 0.0.tweenTo(100.0).curved(Curves.easeInOut); // Apply acceleration
 Offset(50, 50).tweenTo(Offset.zero); // Offset-Tween
+Size(400, 300).tweenTo(Size.square(50)) // Size-Tween
+Rect.zero.tweenTo(Rect.fromLTWH(50, 50, 400, 300)) // Rect-Tween
 ```
 
 Replace your classic for-loop:
