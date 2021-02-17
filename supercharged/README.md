@@ -9,7 +9,7 @@
 - 📝 **well documented**
 - 💼 **enterprise-ready**
 
-For dart web/native projects you can use [⚡ Supercharged Dart](https://pub.dev/packages/supercharged_dart).
+For non-Flutter projects you can use [⚡ Supercharged Dart](https://pub.dev/packages/supercharged_dart).
 
 ## ⛏️ Getting started
 
