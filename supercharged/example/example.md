@@ -75,7 +75,9 @@ main() {
   Colors.red.tweenTo(Colors.blue); // ColorTween(...)
   0.0.tweenTo(100.0).curved(Curves.easeInOut); // Apply acceleration
   Offset(50, 50).tweenTo(Offset.zero); // Offset-Tween
-
+  Size(400, 300).tweenTo(Size.square(50)) // Size-Tween
+  Rect.zero.tweenTo(Rect.fromLTWH(50, 50, 400, 300)) // Rect-Tween
+  
   // Replace your classic for loop:
   0.rangeTo(5); // [0, 1, 2, 3, 4, 5]
   3.rangeTo(1); // [3, 2, 1]
