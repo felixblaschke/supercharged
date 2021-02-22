@@ -5,13 +5,15 @@ extension StringSCF on String {
   /// Converts string in hex representation into a [Color].
   /// Returns black (#000000) if string is not interpretable.
   ///
-  /// You can use 6-char hex color (RRGGBB), 3-char hex color (RGB) or a valid
+  /// You can use 6-char hex color (RRGGBB), 8-char hex color (RRGGBBAA),
+  /// 3-char hex color (RGB), 4-char hex color (RGBA) or a valid
   /// HTML color name. The hash (#) is optional for hex color strings.
   ///
   /// Example:
   /// ```dart
   /// '#ff00ff'.toColor();  // pink
   /// 'ff0000'.toColor();   // red
+  /// 'ff000080'.toColor();   // red with 50% opacity
   /// '00f'.toColor();      // blue
   /// 'red'.toColor();      // red (HTML color name)
   /// 'deeppink'.toColor(); // deep pink (HTML color name)
@@ -31,6 +33,14 @@ extension StringSCF on String {
 
       if (color.length == 3) {
         return _threeCharHexToColor(color);
+      }
+
+      if (color.length == 8) {
+        return _eigthCharHexToColor(color);
+      }
+
+      if (color.length == 4) {
+        return _fourCharHexToColor(color);
       }
     } catch (error) {
       // will throw anyway
@@ -58,6 +68,22 @@ extension StringSCF on String {
     var g = color.substring(1, 2).repeat(2).toInt(radix: 16);
     var b = color.substring(2, 3).repeat(2).toInt(radix: 16);
     return Color.fromARGB(255, r!, g!, b!);
+  }
+
+  static Color _eigthCharHexToColor(String color) {
+    final r = color.substring(0, 2).toInt(radix: 16);
+    final g = color.substring(2, 4).toInt(radix: 16);
+    final b = color.substring(4, 6).toInt(radix: 16);
+    final a = color.substring(6, 8).toInt(radix: 16);
+    return Color.fromARGB(a!, r!, g!, b!);
+  }
+
+  static Color _fourCharHexToColor(String color) {
+    final r = color.substring(0, 1).repeat(2).toInt(radix: 16);
+    final g = color.substring(1, 2).repeat(2).toInt(radix: 16);
+    final b = color.substring(2, 3).repeat(2).toInt(radix: 16);
+    final a = color.substring(3, 4).repeat(2).toInt(radix: 16);
+    return Color.fromARGB(a!, r!, g!, b!);
   }
 
   static bool _isHtmlColorName(String name) {
