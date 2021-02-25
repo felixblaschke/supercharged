@@ -13,7 +13,7 @@ extension StringSCF on String {
   /// ```dart
   /// '#ff00ff'.toColor();  // pink
   /// 'ff0000'.toColor();   // red
-  /// 'ff000080'.toColor();   // red with 50% opacity
+  /// 'ff000080'.toColor(); // red with 50% opacity
   /// '00f'.toColor();      // blue
   /// 'red'.toColor();      // red (HTML color name)
   /// 'deeppink'.toColor(); // deep pink (HTML color name)
@@ -36,7 +36,7 @@ extension StringSCF on String {
       }
 
       if (color.length == 8) {
-        return _eigthCharHexToColor(color);
+        return _eightCharHexToColor(color);
       }
 
       if (color.length == 4) {
@@ -70,7 +70,7 @@ extension StringSCF on String {
     return Color.fromARGB(255, r!, g!, b!);
   }
 
-  static Color _eigthCharHexToColor(String color) {
+  static Color _eightCharHexToColor(String color) {
     final r = color.substring(0, 2).toInt(radix: 16);
     final g = color.substring(2, 4).toInt(radix: 16);
     final b = color.substring(4, 6).toInt(radix: 16);
