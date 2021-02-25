@@ -1,8 +1,9 @@
-## 2.0.0-nullsafety.2
+## 2.0.0-nullsafety.3
 
 - **New:** Supercharged is null-safe
 - **New:** Size `tweenTo` method
 - **New:** Rect `tweenTo` method
+- **New:** String `toColor` method supports 4-character and 8-character (RGBA) strings
 - **Breaking:** Renamed and deprecated several methods to avoid conflict Dart's own implementation. See [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md) for more details.
     - `sortedBy` renamed to `sortedBySC`
     - `sortedByNum` renamed to `sortedByNumSC`
