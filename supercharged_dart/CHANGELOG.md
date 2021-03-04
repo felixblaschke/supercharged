@@ -1,6 +1,6 @@
-## 2.0.0-nullsafety.1
+## 2.0.0-nullsafety.2
 
-- **New:** Supercharged is null-safe
+- **New:** Supercharged is sound null-safe (Flutter 2.0)
 - **Breaking:** Renamed and deprecated several methods to avoid conflict Dart's own implementation. See [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md) for more details.
     - `sortedBy` renamed to `sortedBySC`
     - `sortedByNum` renamed to `sortedByNumSC`

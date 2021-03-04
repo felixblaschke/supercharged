@@ -28,8 +28,7 @@ Now you are free to stop here and focus on other issues demanded by the general 
 
 Once your application compiles just perfectly, you can focus on further adoption of Dart's native methods.
 
-💡 **Notice**: *At the moment of writing this guide the Dart native methods require the import of
-`package:collection/collection.dart`.*
+💡 **Notice**: Flutter/Dart currently doesn't support IDE auto-import of extensions methods. Please add `import 'package:collection/collection.dart';` by hand.
 
 ### sortedBy / sortedByNum / sortedByString
 

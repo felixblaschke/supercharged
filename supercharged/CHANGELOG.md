@@ -1,6 +1,6 @@
 ## 2.0.0-nullsafety.3
 
-- **New:** Supercharged is null-safe
+- **New:** Supercharged is sound null-safe (Flutter 2.0)
 - **New:** Size `tweenTo` method
 - **New:** Rect `tweenTo` method
 - **New:** String `toColor` method supports 4-character and 8-character (RGBA) strings

@@ -4,24 +4,25 @@ import 'package:collection/collection.dart';
 
 void main() {
   test('iterable forEachIndex', () {
-    var occuredIndized = [];
-    var occuredValues = [];
+    var occurredIndices = [];
+    var occurredValues = [];
+    // ignore: deprecated_member_use_from_same_package
     [5, 9, 11].forEachIndexedSC((index, value) {
-      occuredIndized.add(index);
-      occuredValues.add(value);
+      occurredIndices.add(index);
+      occurredValues.add(value);
     });
-    expect(occuredIndized, equals([0, 1, 2]));
-    expect(occuredValues, equals([5, 9, 11]));
+    expect(occurredIndices, equals([0, 1, 2]));
+    expect(occurredValues, equals([5, 9, 11]));
   });
 
   test('iterable forEachIndex (dart)', () {
-    var occuredIndized = [];
-    var occuredValues = [];
+    var occurredIndices = [];
+    var occurredValues = [];
     [5, 9, 11].forEachIndexed((index, value) {
-      occuredIndized.add(index);
-      occuredValues.add(value);
+      occurredIndices.add(index);
+      occurredValues.add(value);
     });
-    expect(occuredIndized, equals([0, 1, 2]));
-    expect(occuredValues, equals([5, 9, 11]));
+    expect(occurredIndices, equals([0, 1, 2]));
+    expect(occurredValues, equals([5, 9, 11]));
   });
 }

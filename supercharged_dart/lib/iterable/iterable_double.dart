@@ -12,7 +12,7 @@ extension IterableOfDoubleSC on Iterable<double> {
   /// ```dart
   /// [2.0, 6.0, 4.0, 8.0].sum(); // 20.0
   /// ```
-  @Deprecated('Dart natively supports this function. Use that instead.')
+  @Deprecated('Dart natively supports this function. Read DartDoc comment for more info.')
   double sumSC() {
     return sumByDouble((n) => n);
   }
@@ -28,7 +28,7 @@ extension IterableOfDoubleSC on Iterable<double> {
   /// ```dart
   /// [2.0, 4.0, 6.0, 8.0].average(); // 5.0
   /// ```
-  @Deprecated('Dart natively supports this function. Use that instead.')
+  @Deprecated('Dart natively supports this function. Read DartDoc comment for more info.')
   double? averageSC() {
     return averageBy((n) => n);
   }

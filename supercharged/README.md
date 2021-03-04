@@ -3,6 +3,10 @@
 [![Pub](https://img.shields.io/pub/v/supercharged.svg)](https://pub.dartlang.org/packages/supercharged)
 [![Tests](https://github.com/felixblaschke/supercharged/workflows/Tests/badge.svg)](https://github.com/felixblaschke/supercharged/actions?query=workflow%3ATests)
 
+__________
+**Important for upgraders:** If you are upgrading from version `1.x.x` the [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md) will help you.
+__________
+
 **Supercharged** brings **all the comfort features** from languages like Kotlin to **all Flutter developers**.
 
 - 💪 **fully tested**
@@ -14,8 +18,6 @@ For non-Flutter projects you can use [⚡ Supercharged Dart](https://pub.dev/pac
 ## ⛏️ Getting started
 
 Add **Supercharged** to your project by following the instructions on the [install page](https://pub.dev/packages/supercharged/install).
-
-If you are upgrading from version `1.x.x` the [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md) will help you.
 
 &nbsp;
 

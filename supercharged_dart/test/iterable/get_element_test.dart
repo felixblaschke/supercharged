@@ -24,8 +24,11 @@ void main() {
   });
 
   test('iterable firstOrNull', () {
+    // ignore: deprecated_member_use_from_same_package
     expect([1].firstOrNullSC(), equals(1));
+    // ignore: deprecated_member_use_from_same_package
     expect([1, 2, 3].firstOrNullSC(), equals(1));
+    // ignore: deprecated_member_use_from_same_package
     expect([].firstOrNullSC(), equals(null));
   });
 
@@ -42,8 +45,11 @@ void main() {
   });
 
   test('iterable lastOrNull', () {
+    // ignore: deprecated_member_use_from_same_package
     expect([1].lastOrNullSC(), equals(1));
+    // ignore: deprecated_member_use_from_same_package
     expect([1, 2, 3].lastOrNullSC(), equals(3));
+    // ignore: deprecated_member_use_from_same_package
     expect([].lastOrNullSC(), equals(null));
   });
 
