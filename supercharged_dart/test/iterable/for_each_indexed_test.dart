@@ -1,6 +1,6 @@
+import 'package:collection/collection.dart';
 import 'package:supercharged_dart/supercharged_dart.dart';
 import 'package:test/test.dart';
-import 'package:collection/collection.dart';
 
 void main() {
   test('iterable forEachIndex', () {

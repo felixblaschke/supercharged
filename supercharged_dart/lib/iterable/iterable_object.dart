@@ -128,7 +128,8 @@ extension IterableSC<T> on Iterable<T> {
   ///   print('$index : $value'); // '0 : a', '1: b', '2: c'
   /// });
   /// ```
-  @Deprecated('Dart natively supports this function. Read DartDoc comment for more info.')
+  @Deprecated(
+      'Dart natively supports this function. Read DartDoc comment for more info.')
   void forEachIndexedSC(void Function(int index, T element) funcIndexValue) {
     var index = 0;
     var iter = iterator;
@@ -195,7 +196,8 @@ extension IterableSC<T> on Iterable<T> {
   /// ['a', 'b'].firstOrNull(); // 'a'
   /// [].firstOrNull();         // null
   /// ```
-  @Deprecated('Dart natively supports this function. Read DartDoc comment for more info.')
+  @Deprecated(
+      'Dart natively supports this function. Read DartDoc comment for more info.')
   T? firstOrNullSC() {
     if (isEmpty) {
       return null;
@@ -228,7 +230,8 @@ extension IterableSC<T> on Iterable<T> {
   /// ['a', 'b'].lastOrElse(); // 'a'
   /// [].lastOrElse();         // null
   /// ```
-  @Deprecated('Dart natively supports this function. Read DartDoc comment for more info.')
+  @Deprecated(
+      'Dart natively supports this function. Read DartDoc comment for more info.')
   T? lastOrNullSC() {
     if (isEmpty) {
       return null;
@@ -365,7 +368,8 @@ extension IterableSC<T> on Iterable<T> {
   /// ```dart
   /// [3, 1, 5, 9, 7].sortedBy((a,b) => a.compareTo(b)); // [1, 3, 5, 7, 9]
   /// ```
-  @Deprecated('Dart natively supports this function. Read DartDoc comment for more info.')
+  @Deprecated(
+      'Dart natively supports this function. Read DartDoc comment for more info.')
   List<T> sortedBySC(Comparator<T> comparator) {
     var list = toList();
     list.sort(comparator);
@@ -384,7 +388,8 @@ extension IterableSC<T> on Iterable<T> {
   /// [2, 1, 3].sortedByNum((n) => n); // [1, 2, 3]
   /// persons.sortedByNum((p) => p.age).reversed; // oldest persons first
   /// ```
-  @Deprecated('Dart natively supports this function. Read DartDoc comment for more info.')
+  @Deprecated(
+      'Dart natively supports this function. Read DartDoc comment for more info.')
   List<T> sortedByNumSC(num Function(T element) valueProvider) {
     return sortedBySC((a, b) => valueProvider(a).compareTo(valueProvider(b)));
   }
@@ -401,7 +406,8 @@ extension IterableSC<T> on Iterable<T> {
   /// ['c', 'b', 'a'].sortedByNum((c) => c); // ['a', 'b', 'c']
   /// persons.sortedByString((p) => p.name); // sort persons alphabetically
   /// ```
-  @Deprecated('Dart natively supports this function. Read DartDoc comment for more info.')
+  @Deprecated(
+      'Dart natively supports this function. Read DartDoc comment for more info.')
   List<T> sortedByStringSC(String Function(T element) valueProvider) {
     return sortedBySC((a, b) => valueProvider(a).compareTo(valueProvider(b)));
   }
@@ -524,7 +530,8 @@ extension IterableSC<T> on Iterable<T> {
   /// ```dart
   /// [1, 2, 3].mapIndexed((number, index) => number * 2); // [2, 4, 6]
   /// ```
-  @Deprecated('Dart natively supports this function. Read DartDoc comment for more info.')
+  @Deprecated(
+      'Dart natively supports this function. Read DartDoc comment for more info.')
   Iterable<U> mapIndexedSC<U>(
     U Function(T currentValue, int index) transformer,
   ) sync* {

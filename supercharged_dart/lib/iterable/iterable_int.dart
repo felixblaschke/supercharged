@@ -12,7 +12,8 @@ extension IterableOfIntSC on Iterable<int> {
   /// ```dart
   /// [2, 6, 4, 8].sum(); // 20
   /// ```
-  @Deprecated('Dart natively supports this function. Read DartDoc comment for more info.')
+  @Deprecated(
+      'Dart natively supports this function. Read DartDoc comment for more info.')
   int sumSC() {
     return sumBy((n) => n);
   }
@@ -28,7 +29,8 @@ extension IterableOfIntSC on Iterable<int> {
   /// ```dart
   /// [2, 4, 6, 8].average(); // 5.0
   /// ```
-  @Deprecated('Dart natively supports this function. Read DartDoc comment for more info.')
+  @Deprecated(
+      'Dart natively supports this function. Read DartDoc comment for more info.')
   double? averageSC() {
     return averageBy((n) => n);
   }

@@ -25,6 +25,4 @@ part 'map/map.dart';
 part 'string/string.dart';
 
 /// Importer helper class. Does nothing.
-class Supercharged {
-
-}
+class Supercharged {}
