@@ -1,20 +1,20 @@
 name: supercharged
 description: Supercharged brings all the comfort features from languages like Kotlin to all Flutter developers.
-version: 1.12.0
+version: 2.0.0-nullsafety.2
 homepage: https://github.com/felixblaschke/supercharged
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  supercharged_dart: ^1.4.0
+  supercharged_dart: ^2.0.0-nullsafety.1
   flutter:
     sdk: flutter
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  pedantic: ^1.9.0
+  pedantic: ^1.11.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

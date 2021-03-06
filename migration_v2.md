@@ -1,12 +1,13 @@
 # Migration guide for version 2.x.x
 
-The `collection` package, that is maintained by the Dart team, adopted ([`1.15.0-nullsafety.4`](https://pub.dev/packages/collection/versions/1.15.0-nullsafety.5/changelog#1150-nullsafety4)) several extension methods that causes problems with Supercharged extension methods.
+Dart's own `collection` (in `1.15.0-nullsafety.4`) adopted several extension methods that were previously covered by Supercharged.
+**This might lead to code issues**.
 
-The release `2.x.x` of `supercharged` (or `supercharged_dart`) addresses these changes. This document will guide you through the migration process.
+The release `2.x.x` of `supercharged` (or `supercharged_dart`) addresses these changes. This document will guide your through the migration process.
 
 ## Renaming
 
-In order to keep compile issues as low as possible, Supercharged renamed all affected methods by adding the suffix `SC` to the method name:
+In order to keep compile issue as low as possible, Supercharged renamed all affected methods by adding the suffix `SC` to the method name:
 
 - `sortedBy` renamed to `sortedBySC`
 - `sortedByNum` renamed to `sortedByNumSC`
@@ -27,11 +28,7 @@ Now you are free to stop here and focus on other issues demanded by the general 
 
 Once your application compiles just perfectly, you can focus on further adoption of Dart's native methods.
 
-You need to import the `collection` package that is maintained by the Dart team:
-
-```dart
-import 'package:collection/collection.dart';
-```
+💡 **Notice**: Flutter/Dart currently doesn't support IDE auto-import of extensions methods. Please add `import 'package:collection/collection.dart';` by hand.
 
 ### sortedBy / sortedByNum / sortedByString
 
@@ -90,7 +87,7 @@ The method signature of Dart's native method is identical to the one in Supercha
 
 ```dart
 [1, 2, 3].forEachIndexed((index, value) {
-  // ...    
+// ...    
 });
 ```
 

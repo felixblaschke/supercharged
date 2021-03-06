@@ -1,5 +1,5 @@
-import 'package:test/test.dart';
 import 'package:supercharged_dart/supercharged_dart.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('string repeat', () {
@@ -9,7 +9,6 @@ void main() {
     expect('a'.repeat(2), equals('aa'));
     expect('ab'.repeat(3), equals('ababab'));
     expect(() => 'a'.repeat(0), throwsArgumentError);
-    expect(() => 'a'.repeat(null), throwsArgumentError);
     expect(() => 'abab'.repeat(-2), throwsArgumentError);
     expect('hello'.repeat(3, separator: '-'), equals('hello-hello-hello'));
   });

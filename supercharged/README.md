@@ -3,22 +3,25 @@
 [![Pub](https://img.shields.io/pub/v/supercharged.svg)](https://pub.dartlang.org/packages/supercharged)
 [![Tests](https://github.com/felixblaschke/supercharged/workflows/Tests/badge.svg)](https://github.com/felixblaschke/supercharged/actions?query=workflow%3ATests)
 
+__________
+**Important for upgraders:** If you are upgrading from version `1.x.x` the [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md) will help you.
+__________
+
 **Supercharged** brings **all the comfort features** from languages like Kotlin to **all Flutter developers**.
 
 - 💪 **fully tested**
 - 📝 **well documented**
 - 💼 **enterprise-ready**
 
-For dart web/native projects you can use [⚡ Supercharged Dart](https://pub.dev/packages/supercharged_dart). 
+For non-Flutter projects you can use [⚡ Supercharged Dart](https://pub.dev/packages/supercharged_dart).
 
 ## ⛏️ Getting started
 
-Add the dependency `supercharged: ^1.X.X` ([find recent version](https://pub.dev/packages/supercharged/install)) to your project and start using **Supercharged** everywhere:
-```dart
-import 'package:supercharged/supercharged.dart';
-```
+Add **Supercharged** to your project by following the instructions on the [install page](https://pub.dev/packages/supercharged/install).
 
-Hint: You can type **Superch** and press **CTRL + Space** for code completion to trigger auto-import:
+&nbsp;
+
+💡 *Hint: You can type **Superch** and press **CTRL + Space** for code completion to trigger auto-import:*
 
 ![](https://miro.medium.com/max/390/1*2uKbrlnG-YZZ1xl19-ocJg.gif)
 
@@ -39,24 +42,24 @@ Helpful string functions:
 
 Handle user input:
 ```dart
-"2.1".toDouble(); // 2.1
-"42".toInt(); // 42
+"2.1".toDouble();  // 2.1
+"42".toInt();      // 42
 12.between(0, 30); // true
 ```
 
 Effortless aggregation for `Iterable<int>` and `Iterable<double>`:
 ```dart
-[1, 2, 3].sum(); // 6
-[1, 2, 3].average(); // 2
-[1, 2, 3].min(); // 1
-[1, 2, 3].max(); // 3
+[1, 2, 3].sum;     // 6 (now supported by Dart collection package)
+[1, 2, 3].average; // 2 (now supported by Dart collection package)
+[1, 2, 3].min();   // 1
+[1, 2, 3].max();   // 3
 ```
 
 Advanced aggregation for any `Iterable`:
 ```dart
 var persons = [Person(age: 20), Person(age: 30), Person(age: 40)];
-persons.sumBy((p) => p.age); // 90
-persons.averageBy((p) => p.age); // 30
+persons.sumBy((p) => p.age);      // 90
+persons.averageBy((p) => p.age);  // 30
 persons.count((p) => p.age < 35); // 2
 persons.minBy((a,b) => a.age.compareTo(b.age)); // Person(age: 20)
 persons.maxBy((a,b) => a.age.compareTo(b.age)); // Person(age: 40)
@@ -64,8 +67,8 @@ persons.maxBy((a,b) => a.age.compareTo(b.age)); // Person(age: 40)
 
 Safely access `Iterable`:
 ```dart
-[].firstOrNull(); // return null instead
-[].lastOrNull();  // of throwing error
+[].firstOrNull; // (now supported by Dart collection package)
+[].lastOrNull;  // (now supported by Dart collection package)
 
 [].firstOrElse(() => Placeholder()); // Produce default values
 [].lastOrElse(() => Placeholder());  // on the fly
@@ -122,14 +125,12 @@ Simplified data sorting:
     Person(name: "Sarah", age: 61)
   ];
 
-  persons.sortedByNum((p) => p.age); // list sorted by age
-  persons.sortedByString((p) => p.name); // list sorted by name
-  persons  // sorted with comparator
-      .sortedBy((a, b) => a.name.compareTo(b.name));
+  persons.sortedBy<num>((p) => p.age);     // (now supported by Dart
+  persons.sortedBy<String>((p) => p.name); //     collection package)
 
-  persons // sorting is fully integrated into processing chain
-      .filter((p) => p.name.length < 5)
-      .sortedByNum((p) => p.age)
+  persons
+      .where((p) => p.name.length < 5)
+      .sortedBy<num>((p) => p.age)
       .onEach(print)
       .map((p) => p.name)
       .toList();
@@ -141,6 +142,8 @@ Solid tween shortcuts for animations:
 Colors.red.tweenTo(Colors.blue); // ColorTween(...)
 0.0.tweenTo(100.0).curved(Curves.easeInOut); // Apply acceleration
 Offset(50, 50).tweenTo(Offset.zero); // Offset-Tween
+Size(400, 300).tweenTo(Size.square(50)) // Size-Tween
+Rect.zero.tweenTo(Rect.fromLTWH(50, 50, 400, 300)) // Rect-Tween
 ```
 
 Replace your classic for-loop:
@@ -151,7 +154,7 @@ Replace your classic for-loop:
 var list = ["dog", "cat", "mouse"];
 0.until(list.length); // [0, 1, 2]
 
-list.forEachIndexed((index, value) {
+list.forEachIndexed((index, value) { // (now supported by Dart collection package)
     // index: 0, value: "dog"
     // index: 1, value: "cat"
     // index: 2, value: "mouse"

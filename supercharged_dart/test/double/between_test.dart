@@ -1,10 +1,8 @@
-import 'package:test/test.dart';
 import 'package:supercharged_dart/supercharged_dart.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('double between', () {
-    expect(() => 1.1.isBetween(null, 10.1), throwsArgumentError);
-    expect(() => 1.1.isBetween(10.0, null), throwsArgumentError);
     expect(1.1.isBetween(1.1, 1.1), equals(true));
     expect(1.1.isBetween(6.1, 6.1), equals(false));
     expect(1.1.isBetween(1.1, 2.0), equals(true));

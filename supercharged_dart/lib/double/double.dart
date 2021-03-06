@@ -42,11 +42,6 @@ extension DoubleSC on double {
     return Duration(milliseconds: (1000 * 60 * 60 * 24 * this).round());
   }
 
-  @Deprecated('Use isBetween() instead')
-  bool between(num first, num second) {
-    return isBetween(first, second);
-  }
-
   /// Returns a [bool] if [this] value is between (including) the two
   /// numeric values [first] and [second].
   ///
@@ -57,8 +52,6 @@ extension DoubleSC on double {
   /// 100.0.isBetween(100.0, 100.0) // true;
   /// ```
   bool isBetween(num first, num second) {
-    ArgumentError.checkNotNull(first, 'first');
-    ArgumentError.checkNotNull(second, 'second');
     final lower = min(first, second);
     final upper = max(first, second);
     return this >= lower && this <= upper;

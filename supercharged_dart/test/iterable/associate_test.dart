@@ -1,15 +1,13 @@
-import 'package:test/test.dart';
 import 'package:supercharged_dart/supercharged_dart.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('iterable associate', () {
-    expect(() => [1, 2, 3].associate(null), throwsArgumentError);
     expect([1, 2, 3].associate((e) => MapEntry('key_$e', e * 100)),
         equals({'key_1': 100, 'key_2': 200, 'key_3': 300}));
   });
 
   test('iterable associateBy', () {
-    expect(() => [1, 2, 3].associateBy(null), throwsArgumentError);
     expect([1, 2, 3].associateBy((e) => 'key_$e'),
         equals({'key_1': 1, 'key_2': 2, 'key_3': 3}));
     expect(['a', 'ab', 'abc', 'ba'].associateBy((e) => 'length_${e.length}'),
@@ -17,7 +15,6 @@ void main() {
   });
 
   test('iterable associateWith', () {
-    expect(() => [1, 2, 3].associateWith(null), throwsArgumentError);
     expect(
         [1, 2, 3].associateWith((e) => e * 10), equals({1: 10, 2: 20, 3: 30}));
 

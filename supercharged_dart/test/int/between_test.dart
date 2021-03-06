@@ -1,10 +1,8 @@
-import 'package:test/test.dart';
 import 'package:supercharged_dart/supercharged_dart.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('int between', () {
-    expect(() => 1.isBetween(null, 10), throwsArgumentError);
-    expect(() => 1.isBetween(10, null), throwsArgumentError);
     expect(1.isBetween(1, 1), equals(true));
     expect(1.isBetween(6, 6), equals(false));
     expect(1.isBetween(1, 2), equals(true));

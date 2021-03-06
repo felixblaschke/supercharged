@@ -13,7 +13,7 @@ extension ListSC<T> on List<T> {
   /// ```dart
   /// [1, 2, 3].toJSON(); // [1,2,3]
   /// ```
-  String toJSON({Object Function(Object nonEncodable) toEncodable}) {
+  String toJSON({Object? Function(Object? nonEncodable)? toEncodable}) {
     return jsonEncode(this, toEncodable: toEncodable);
   }
 }

@@ -1,10 +1,8 @@
-import 'package:test/test.dart';
 import 'package:supercharged_dart/supercharged_dart.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('list group by (without value transform)', () {
-    expect(() => [1, 2, 3].groupBy(null), throwsArgumentError);
-
     expect(
         [1, 2, 3, 4].groupBy((el) => el < 3 ? 'small' : 'large'),
         equals({

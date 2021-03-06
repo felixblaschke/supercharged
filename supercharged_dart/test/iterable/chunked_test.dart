@@ -1,9 +1,8 @@
-import 'package:test/test.dart';
 import 'package:supercharged_dart/supercharged_dart.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('iterable chunked', () {
-    expect(() => [1, 2, 3].chunked(null), throwsArgumentError);
     expect(() => [].chunked(-1), throwsArgumentError);
     expect(() => [].chunked(0), throwsArgumentError);
     expect([].chunked(2).toList(), equals([]));

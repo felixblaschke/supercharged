@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:test/test.dart';
 import 'package:supercharged_dart/supercharged_dart.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('string parseJSON', () {
@@ -29,7 +29,7 @@ void main() {
     });
     var scoreList = jsonString.parseJSON(reviver: (key, value) {
       if (value is String && value.startsWith('@score')) {
-        return _Score(value.allAfter(':').toInt());
+        return _Score(value.allAfter(':').toInt()!);
       }
       if (value is List && value[0] is _Score) {
         return value.map((e) => e as _Score).toList();

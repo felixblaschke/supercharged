@@ -21,4 +21,3 @@ void main() {
     expect(half.dy, 25);
   });
 }
-

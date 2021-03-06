@@ -16,15 +16,11 @@ import 'package:supercharged_dart/supercharged_dart.dart';
 export 'package:supercharged_dart/supercharged_dart.dart';
 
 part 'animatable/animatable.dart';
-
 part 'animation/animation.dart';
-
 part 'color/color.dart';
-
 part 'double/double.dart';
-
 part 'int/int.dart';
-
 part 'offset/offset.dart';
-
+part 'rect/rect.dart';
+part 'size/size.dart';
 part 'string/string.dart';

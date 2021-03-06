@@ -1,11 +1,7 @@
-import 'package:test/test.dart';
 import 'package:supercharged_dart/supercharged_dart.dart';
+import 'package:test/test.dart';
 
 void main() {
-  test('int times null', () {
-    expect(() => 10.times(null), throwsArgumentError);
-  });
-
   test('int times 0', () {
     var i = 0;
     0.times(() => i++);
