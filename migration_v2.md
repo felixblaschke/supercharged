@@ -1,13 +1,15 @@
 # Migration guide for version 2.x.x
 
-Dart's own `collection` (in `1.15.0-nullsafety.4`) adopted several extension methods that were previously covered by Supercharged.
-**This might lead to code issues**.
+Dart's own [collection package](https://pub.dev/packages/collection) adopted (in `1.15.0`) several extension methods that were previously covered by Supercharged.
+This causes **naming conflicts** when using both packages.
 
-The release `2.x.x` of `supercharged` (or `supercharged_dart`) addresses these changes. This document will guide your through the migration process.
+As a general strategy **Supercharged** will favour Dart's implementations and rename it's own API.
+
+This document will guide your through the migration process.
 
 ## Renaming
 
-In order to keep compile issue as low as possible, Supercharged renamed all affected methods by adding the suffix `SC` to the method name:
+In order to keep compile issues as low as possible, Supercharged renamed all affected methods by adding the suffix `SC` to the method name:
 
 - `sortedBy` renamed to `sortedBySC`
 - `sortedByNum` renamed to `sortedByNumSC`
@@ -28,7 +30,11 @@ Now you are free to stop here and focus on other issues demanded by the general 
 
 Once your application compiles just perfectly, you can focus on further adoption of Dart's native methods.
 
-💡 **Notice**: Flutter/Dart currently doesn't support IDE auto-import of extensions methods. Please add `import 'package:collection/collection.dart';` by hand.
+The [collection package](https://pub.dev/packages/collection) is implicitly available in Flutter or Dart projects. Make sure to import it using:
+
+```dart
+import 'package:collection/collection.dart';
+```
 
 ### sortedBy / sortedByNum / sortedByString
 
