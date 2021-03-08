@@ -108,5 +108,5 @@ The method signature of Dart's native method is identical to the one in Supercha
 can be migrated into
 
 ```dart
-[1, 2, 3].mapIndexedSC((index, element) => /* ... */)
+[1, 2, 3].mapIndexed((index, element) => /* ... */)
 ```
