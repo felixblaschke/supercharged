@@ -6,7 +6,7 @@ extension DoubleSC on double {
   ///
   /// Example:
   /// ```dart
-  /// 30.seconds; // Duration(seconds: 1000);
+  /// 30.seconds; // Duration(seconds: 30);
   /// ```
   Duration get seconds {
     return Duration(microseconds: (1000000 * this).round());
