@@ -44,14 +44,17 @@ Instead of comparing two values inside a function, you just return a value of a 
 [3, 1, 5, 9, 7].sortedBySC((a, b) => a.compareTo(b))
 ```
 can be migrated into
-
 ```dart
-[3, 1, 5, 9, 7].sortedBy<num>((a) => a)
+[3, 1, 5, 9, 7].sorted((a, b) => a.compareTo(b))
 ```
 
-Working with **String**s is quite the same:
+or
 
 ```dart
+// for numeric values
+[3, 1, 5, 9, 7].sortedBy<num>((a) => a)
+
+// for string values
 ['b', 'c', 'a'].sortedBy<String>((s) => s)
 ```
 
