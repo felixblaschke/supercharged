@@ -46,7 +46,7 @@ extension StringSCF on String {
       // will throw anyway
     }
 
-    return Color.fromARGB(255, 0, 0, 0);
+    return const Color.fromARGB(255, 0, 0, 0);
   }
 
   static String _removeLeadingHash(String color) {
@@ -87,15 +87,15 @@ extension StringSCF on String {
   }
 
   static bool _isHtmlColorName(String name) {
-    return _HTML_COLOR_NAMES.containsKey(name.toLowerCase());
+    return _htmlColorNames.containsKey(name.toLowerCase());
   }
 
   static Color _getColorByHtmlColorName(String name) {
-    return _HTML_COLOR_NAMES[name.toLowerCase()]!.toColor();
+    return _htmlColorNames[name.toLowerCase()]!.toColor();
   }
 }
 
-const _HTML_COLOR_NAMES = {
+const _htmlColorNames = {
   'aliceblue': '#f0f8ff',
   'antiquewhite': '#faebd7',
   'aqua': '#00ffff',

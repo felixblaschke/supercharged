@@ -3,9 +3,9 @@ import 'package:test/test.dart';
 
 void main() {
   test('iterable chunked', () {
-    expect(() => [].chunked(-1), throwsArgumentError);
-    expect(() => [].chunked(0), throwsArgumentError);
-    expect([].chunked(2).toList(), equals([]));
+    expect(() => <int>[].chunked(-1), throwsArgumentError);
+    expect(() => <int>[].chunked(0), throwsArgumentError);
+    expect(<int>[].chunked(2).toList(), equals(<int>[]));
 
     expect(
         [1, 2, 3, 4, 5, 6].chunked(2).toList(),
@@ -32,7 +32,7 @@ void main() {
   });
 
   test('iterable chunked with fill', () {
-    expect([].chunked(2, fill: () => 99).toList(), equals([]));
+    expect(<int>[].chunked(2, fill: () => 99).toList(), equals(<int>[]));
 
     expect(
         [1].chunked(2, fill: () => 99).toList(),

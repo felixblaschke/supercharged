@@ -8,7 +8,7 @@ void main() {
       compareAnimation(
         actual: (controller) => controller.interval(0.3, 0.7),
         matcher: (controller) =>
-            controller.drive(CurveTween(curve: Interval(0.3, 0.7))),
+            controller.drive(CurveTween(curve: const Interval(0.3, 0.7))),
       ),
       true,
     );
@@ -16,8 +16,8 @@ void main() {
       compareAnimation(
         actual: (controller) =>
             controller.interval(0.3, 0.7, curve: Curves.easeInOut),
-        matcher: (controller) => controller.drive(
-            CurveTween(curve: Interval(0.3, 0.7, curve: Curves.easeInOut))),
+        matcher: (controller) => controller.drive(CurveTween(
+            curve: const Interval(0.3, 0.7, curve: Curves.easeInOut))),
       ),
       true,
     );

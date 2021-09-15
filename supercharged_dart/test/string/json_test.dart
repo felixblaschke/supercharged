@@ -32,7 +32,7 @@ void main() {
         return _Score(value.allAfter(':').toInt()!);
       }
       if (value is List && value[0] is _Score) {
-        return value.map((e) => e as _Score).toList();
+        return value.map((dynamic e) => e as _Score).toList();
       }
       return value;
     }) as List<_Score>;

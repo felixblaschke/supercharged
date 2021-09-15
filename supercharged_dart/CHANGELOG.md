@@ -1,16 +1,20 @@
+## 2.1.0
+
+- **Update**: Use `flutter_lints` instead of `pedantic`
+
 ## 2.0.0
 
 - **New:** Supercharged is sound null-safe (Flutter 2.0)
 - **Breaking:** Renamed and deprecated several methods to avoid conflict Dart's own implementation. See [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md) for more details.
-    - `sortedBy` renamed to `sortedBySC`
-    - `sortedByNum` renamed to `sortedByNumSC`
-    - `sortedByString` renamed to `sortedByStringSC`
-    - `sum` renamed to `sumSC`
-    - `average` renamed to `averageSC`
-    - `firstOrNull` renamed to `firstOrNullSC`
-    - `lastOrNull` renamed to `lastOrNullSC`
-    - `forEachIndexed` renamed to `forEachIndexedSC`
-    - `mapIndexed` renamed to `mapIndexedSC`
+  - `sortedBy` renamed to `sortedBySC`
+  - `sortedByNum` renamed to `sortedByNumSC`
+  - `sortedByString` renamed to `sortedByStringSC`
+  - `sum` renamed to `sumSC`
+  - `average` renamed to `averageSC`
+  - `firstOrNull` renamed to `firstOrNullSC`
+  - `lastOrNull` renamed to `lastOrNullSC`
+  - `forEachIndexed` renamed to `forEachIndexedSC`
+  - `mapIndexed` renamed to `mapIndexedSC`
 - **Breaking:** Removed already deprecated method `between`.
 - **Deprecation:** `filter` is now deprecated in favour of Dart's own `where`.
 

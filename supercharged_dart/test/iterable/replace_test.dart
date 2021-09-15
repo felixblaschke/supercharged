@@ -8,7 +8,7 @@ void main() {
     final numbers = [1, 2, 3, 4, 5];
     final replacedNumbers =
         numbers.replaceFirstWhere((number) => number % 2 == 0, 10);
-    expect(replacedNumbers, orderedEquals([1, 10, 3, 4, 5]));
+    expect(replacedNumbers, orderedEquals(<int>[1, 10, 3, 4, 5]));
   });
 
   test('replaceWhere should replace every item which matches the comparator',
@@ -16,12 +16,13 @@ void main() {
     final numbers = [1, 2, 3, 4, 5];
     final replacedNumbers =
         numbers.replaceWhere((number) => number % 2 == 0, 10);
-    expect(replacedNumbers, orderedEquals([1, 10, 3, 10, 5]));
+    expect(replacedNumbers, orderedEquals(<int>[1, 10, 3, 10, 5]));
   });
 
   test('replaceWhere example', () {
-    expect([1, 2, 3].replaceWhere((n) => n < 3, 0), orderedEquals([0, 0, 3]));
     expect(
-        [1, 2, 3].replaceFirstWhere((n) => n < 3, 0), orderedEquals([0, 2, 3]));
+        [1, 2, 3].replaceWhere((n) => n < 3, 0), orderedEquals(<int>[0, 0, 3]));
+    expect([1, 2, 3].replaceFirstWhere((n) => n < 3, 0),
+        orderedEquals(<int>[0, 2, 3]));
   });
 }

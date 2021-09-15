@@ -21,7 +21,7 @@ void main() {
   });
 
   test('string toList', () {
-    expect(''.toList(), equals([]));
+    expect(''.toList(), equals(<int>[]));
     expect('hello'.toList(), equals(['h', 'e', 'l', 'l', 'o']));
   });
 }

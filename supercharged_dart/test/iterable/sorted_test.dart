@@ -5,7 +5,7 @@ import 'package:test/test.dart';
 void main() {
   test('iterable sortedBy', () {
     // ignore: deprecated_member_use_from_same_package
-    expect(<int>[].sortedBySC((a, b) => a.compareTo(b)), equals([]));
+    expect(<int>[].sortedBySC((a, b) => a.compareTo(b)), equals(<int>[]));
     // ignore: deprecated_member_use_from_same_package
     expect([3, 1, 5, 9, 7].sortedBySC((a, b) => a.compareTo(b)),
         equals([1, 3, 5, 7, 9]));
@@ -31,7 +31,7 @@ void main() {
 
   test('iterable sortedByNum', () {
     // ignore: deprecated_member_use_from_same_package
-    expect(<int>[].sortedByNumSC((n) => n), equals([]));
+    expect(<int>[].sortedByNumSC((n) => n), equals(<int>[]));
     // ignore: deprecated_member_use_from_same_package
     expect([2, 1, 3].sortedByNumSC((n) => n), equals([1, 2, 3]));
 
@@ -55,7 +55,7 @@ void main() {
 
   test('iterable sortedByNum (dart)', () {
     // ignore: deprecated_member_use_from_same_package
-    expect(<int>[].sortedByNumSC((n) => n), equals([]));
+    expect(<int>[].sortedByNumSC((n) => n), equals(<int>[]));
     // ignore: deprecated_member_use_from_same_package
     expect([2, 1, 3].sortedByNumSC((n) => n), equals([1, 2, 3]));
 
@@ -69,7 +69,7 @@ void main() {
 
   test('iterable sortedByString', () {
     // ignore: deprecated_member_use_from_same_package
-    expect(<String>[].sortedByStringSC((n) => n), equals([]));
+    expect(<String>[].sortedByStringSC((n) => n), equals(<int>[]));
     // ignore: deprecated_member_use_from_same_package
     expect([2, 1, 3].sortedByStringSC((n) => 'a$n'), equals([1, 2, 3]));
 

@@ -4,15 +4,15 @@ import 'package:test/test.dart';
 
 void main() {
   test('iterable elementAtOrElse', () {
-    expect([].elementAtOrElse(-1, () => 42), equals(42));
-    expect([].elementAtOrElse(0, () => 42), equals(42));
+    expect(<int>[].elementAtOrElse(-1, () => 42), equals(42));
+    expect(<int>[].elementAtOrElse(0, () => 42), equals(42));
     expect([1, 2].elementAtOrElse(1, () => 42), equals(2));
     expect([1, 2].elementAtOrElse(2, () => 42), equals(42));
   });
 
   test('iterable elementAtOrNull', () {
-    expect([].elementAtOrNull(-1), isNull);
-    expect([].elementAtOrNull(0), isNull);
+    expect(<int>[].elementAtOrNull(-1), isNull);
+    expect(<int>[].elementAtOrNull(0), isNull);
     expect([1, 2].elementAtOrNull(1), equals(2));
     expect([1, 2].elementAtOrNull(2), isNull);
   });
@@ -20,7 +20,7 @@ void main() {
   test('iterable firstOrElse', () {
     expect([1].firstOrElse(() => 42), equals(1));
     expect([1, 2, 3].firstOrElse(() => 42), equals(1));
-    expect([].firstOrElse(() => 42), equals(42));
+    expect(<int>[].firstOrElse(() => 42), equals(42));
   });
 
   test('iterable firstOrNull', () {
@@ -29,19 +29,19 @@ void main() {
     // ignore: deprecated_member_use_from_same_package
     expect([1, 2, 3].firstOrNullSC(), equals(1));
     // ignore: deprecated_member_use_from_same_package
-    expect([].firstOrNullSC(), equals(null));
+    expect(<int>[].firstOrNullSC(), equals(null));
   });
 
   test('iterable firstOrNull (dart)', () {
     expect([1].firstOrNull, equals(1));
     expect([1, 2, 3].firstOrNull, equals(1));
-    expect([].firstOrNull, equals(null));
+    expect(<int>[].firstOrNull, equals(null));
   });
 
   test('iterable lastOrElse', () {
     expect([1].lastOrElse(() => 42), equals(1));
     expect([1, 2, 3].lastOrElse(() => 42), equals(3));
-    expect([].lastOrElse(() => 42), equals(42));
+    expect(<int>[].lastOrElse(() => 42), equals(42));
   });
 
   test('iterable lastOrNull', () {
@@ -50,12 +50,12 @@ void main() {
     // ignore: deprecated_member_use_from_same_package
     expect([1, 2, 3].lastOrNullSC(), equals(3));
     // ignore: deprecated_member_use_from_same_package
-    expect([].lastOrNullSC(), equals(null));
+    expect(<int>[].lastOrNullSC(), equals(null));
   });
 
   test('iterable lastOrNull (dart)', () {
     expect([1].lastOrNull, equals(1));
     expect([1, 2, 3].lastOrNull, equals(3));
-    expect([].lastOrNull, equals(null));
+    expect(<int>[].lastOrNull, equals(null));
   });
 }

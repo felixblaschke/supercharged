@@ -11,7 +11,7 @@ void main() {
 
   test('int until', () {
     expect(0.until(10).toList(), equals([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]));
-    expect(5.until(5).toList(), equals([]));
+    expect(5.until(5).toList(), equals(<int>[]));
     expect(3.until(5).toList(), equals([3, 4]));
     expect(5.until(3).toList(), equals([5, 4]));
   });
