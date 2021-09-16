@@ -6,10 +6,10 @@ extension StringSC on String {
   ///
   /// You can set an optional [separator] that is put in between each repetition
   ///
-  /// Example:
+  /// Example: <!-- string/repeat -->
   /// ```dart
-  /// 'hello'.repeat(2);                // 'hellohello'
-  /// 'cat'.repeat(3, separator: ':');  // 'cat:cat:cat'
+  /// 'hello'.repeat(3); // 'hellohellohello'
+  /// 'cat'.repeat(3, separator: ':'); // 'cat:cat:cat'
   /// ```
   String repeat(int n, {String separator = ''}) {
     throwIfNot(n > 0,
@@ -29,9 +29,9 @@ extension StringSC on String {
 
   /// Reverses the string
   ///
-  /// Example:
+  /// Example: <!-- string/reverse -->
   /// ```dart
-  /// 'hello'.reverse;   // 'olleh'
+  /// 'hello'.reverse; // 'olleh'
   /// 'flutter'.reverse; // 'rettulf'
   /// ```
   String get reverse {
@@ -49,6 +49,7 @@ extension StringSC on String {
   /// ''.toList();      // [ ]
   /// ```
   List<String> toList() {
+    // TODO => get characters
     return split('');
   }
 
@@ -63,6 +64,7 @@ extension StringSC on String {
   /// '[1, 2, 3]'.parseJSON(); // [1, 2, 3]
   /// ```
   dynamic parseJSON({Object? Function(Object? key, Object? value)? reviver}) {
+    // TODO remove
     return jsonDecode(this, reviver: reviver);
   }
 
@@ -71,11 +73,11 @@ extension StringSC on String {
   ///
   /// Returns `''` if no occurrences were found.
   ///
-  /// Example:
+  /// Example: <!-- string/allafter -->
   /// ```dart
-  /// 'value=1'.allAfter('=');                 // '1'
-  /// 'i like turtles'.allAfter('like')        // ' turtles'
-  /// 'i   like cats'.allAfter(RegExp('\\s+')) // 'like cats'
+  /// 'value=1'.allAfter('='); // '1'
+  /// 'i like turtles'.allAfter('like'); // ' turtles'
+  /// 'i   like cats'.allAfter(RegExp('\\s+')); // 'like cats'
   /// ```
   String allAfter(Pattern pattern) {
     var matchIterator = pattern.allMatches(this).iterator;
@@ -93,10 +95,10 @@ extension StringSC on String {
   ///
   /// Returns `''` if no occurrences were found.
   ///
-  /// Example:
+  /// Example: <!-- string/allbefore -->
   /// ```dart
-  /// 'value=1'.allBefore('=');          // 'value'
-  /// 'i like turtles'.allBefore('like') // 'i '
+  /// 'value=1'.allBefore('='); // 'value'
+  /// 'i like turtles'.allBefore('like'); // 'i '
   /// ```
   String allBefore(Pattern pattern) {
     var matchIterator = pattern.allMatches(this).iterator;
@@ -118,9 +120,9 @@ extension StringSC on String {
   ///
   /// Returns `''` if no occurrences were found.
   ///
-  /// Example:
+  /// Example: <!-- string/allbetween -->
   /// ```dart
-  /// 'i like turtles'.allBetween('i ', ' turtles') // 'like'
+  /// 'i like turtles'.allBetween('i ', ' turtles'); // 'like'
   /// ```
   String allBetween(Pattern startPattern, Pattern endPattern) {
     return allAfter(startPattern).allBefore(endPattern);
