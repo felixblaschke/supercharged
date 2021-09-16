@@ -1,4 +1,3 @@
-import 'package:pedantic/pedantic.dart';
 import 'package:supercharged_dart/supercharged_dart.dart';
 import 'package:test/test.dart';
 
@@ -20,9 +19,9 @@ void main() {
   test('duration delay', () async {
     var n = 0;
 
-    unawaited(100.milliseconds.delay.then((_) {
+    100.milliseconds.delay.then((_) {
       n = 1;
-    }));
+    });
     expect(n, equals(0));
 
     await 200.milliseconds.delay;
