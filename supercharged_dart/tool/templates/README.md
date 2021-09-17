@@ -2,4 +2,4 @@
 
 @index
 
-@include tool/templates/example_doc.md
+@include tool/templates/doc_string.md

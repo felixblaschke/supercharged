@@ -38,35 +38,13 @@ extension StringSC on String {
     if (isEmpty) {
       return '';
     }
-    return toList().reversed.reduce((value, element) => value += element);
+    return chars.reversed.reduce((value, element) => value += element);
   }
 
   /// Transforms the string into a list of single characters
   ///
-  /// Example:
-  /// ```dart
-  /// 'hello'.toList(); // ['h', 'e', 'l', 'l', 'o']
-  /// ''.toList();      // [ ]
-  /// ```
-  List<String> toList() {
-    // TODO => get characters
-    return split('');
-  }
-
-  /// De-string-ifies a JSON string back into a JSON object
-  ///
-  /// You can optionally set a [reviver] function to deserialize non-basic types.
-  /// See [jsonDecode].
-  ///
-  /// Example:
-  /// ```dart
-  /// jsonString.parseJSON();
-  /// '[1, 2, 3]'.parseJSON(); // [1, 2, 3]
-  /// ```
-  dynamic parseJSON({Object? Function(Object? key, Object? value)? reviver}) {
-    // TODO remove
-    return jsonDecode(this, reviver: reviver);
-  }
+  /// Example: <string/chars>
+  List<String> get chars => split('');
 
   /// Searches the string for the first occurrence of a [pattern] and returns
   /// everything after that occurrence.
@@ -129,38 +107,43 @@ extension StringSC on String {
   }
 
   /// Parses string and returns integer value.
-  ///
-  /// You can set an optional [radix] to specify the numeric base.
-  /// If no [radix] is set, it will use the decimal system (10).
-  ///
   /// Returns `null` if parsing fails.
   ///
-  /// Example:
+  /// Example: <!-- string/asint -->
   /// ```dart
-  /// '42'.toDouble();      // 42
-  /// 'invalid'.toDouble(); // null
-  int? toInt({int radix = 10}) {
+  /// '42'.intOrNull; // 42
+  /// 'invalid'.intOrNull; // null
+  /// ```
+  int? get intOrNull {
     try {
-      return int.parse(this, radix: radix);
+      return int.parse(this, radix: 10);
     } catch (error) {
       return null;
     }
   }
 
-  /// Parses string and return double value.
-  ///
+  /// Parses string and returns double value.
   /// Returns `null` if parsing fails.
   ///
-  /// Example:
+  /// Example: <!-- string/asdouble -->
   /// ```dart
-  /// '2.1'.toDouble();     // 2.1
-  /// 'invalid'.toDouble(); // null
+  /// '2.1'.doubleOrNull; // 2.1
+  /// 'invalid'.doubleOrNull; // null
   /// ```
-  double? toDouble() {
+  double? get doubleOrNull {
     try {
       return double.parse(this);
     } catch (error) {
       return null;
     }
   }
+
+  /// Returns `true` if this consists solely of whitespace characters.
+  ///
+  /// Example: <!-- string/isblank -->
+  /// ```dart
+  /// '  '.isBlank; // true
+  /// ' hi '.isBlank; // false
+  /// ```
+  bool get isBlank => isNotEmpty && trim().isEmpty;
 }

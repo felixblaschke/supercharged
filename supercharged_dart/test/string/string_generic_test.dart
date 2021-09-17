@@ -20,8 +20,8 @@ void main() {
     expect(''.reverse, equals(''));
   });
 
-  test('string toList', () {
-    expect(''.toList(), equals(<int>[]));
-    expect('hello'.toList(), equals(['h', 'e', 'l', 'l', 'o']));
+  test('string chars', () {
+    expect(''.chars, equals(<int>[]));
+    expect('hello'.chars, equals(['h', 'e', 'l', 'l', 'o']));
   });
 }
