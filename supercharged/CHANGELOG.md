@@ -1,3 +1,7 @@
+## 2.1.1
+
+- Updated `README.md`.
+
 ## 2.1.0+1
 
 - **Update**: Use `flutter_lints` instead of `pedantic`
