@@ -1,174 +1,51 @@
-# ⚡️ Supercharged
+# Supercharged
 
-[![Pub](https://img.shields.io/pub/v/supercharged.svg)](https://pub.dartlang.org/packages/supercharged)
-[![Tests](https://github.com/felixblaschke/supercharged/workflows/Tests/badge.svg)](https://github.com/felixblaschke/supercharged/actions?query=workflow%3ATests)
+Supercharged is a Flutter package with extension methods.
 
-__________
-**Important for upgraders:** If you are upgrading from version `1.x.x` the [migration guide](https://github.com/felixblaschke/supercharged/blob/master/migration_v2.md) will help you.
-__________
+## Development discontinued
 
-**Supercharged** brings **all the comfort features** from languages like Kotlin to **all Flutter developers**.
+- There are **no new features planed** for Supercharged.
 
-- 💪 **fully tested**
-- 📝 **well documented**
-- 💼 **enterprise-ready**
+- You can still use it in your current project and the **well-tested code will continue to work** for maybe years.
 
-For non-Flutter projects you can use [⚡ Supercharged Dart](https://pub.dev/packages/supercharged_dart).
+### Why?
 
-## ⛏️ Getting started
+The collection handling - one of Supercharged biggest features - is now adapted by Dart's own [collection](https://pub.dev/packages/collection) package. To avoid fragmentation, I'll point to the official solution.
 
-Add **Supercharged** to your project by following the instructions on the [install page](https://pub.dev/packages/supercharged/install).
+Other features like `Duration` or `Color` handling are ineffecient, because they can not be used with `const` constructors.
 
-&nbsp;
+### What should I do?
 
-💡 *Hint: You can type **Superch** and press **CTRL + Space** for code completion to trigger auto-import:*
+#### Stay
 
-![](https://miro.medium.com/max/390/1*2uKbrlnG-YZZ1xl19-ocJg.gif)
+You can stay on the lastest version of Supercharged, as it is well written and test covered. If you stumble on bugs you can adopt the code in your codebase or fork the project.
 
-## 🌞 Highlights
+The code is MIT licenced, so you can take out certain extensions you like.
 
-Transform any `String` to colors
+#### Go
+
+As I mentioned the [package collection](https://pub.dev/packages/collection) will take the lead in collection-related extension methods.
+
+If you insist on `Duration` extensions, you might want to look at [package time](https://pub.dev/packages/time). But I strongly recommend using `const` constructors:
+
 ```dart
-"#ff00ff".toColor(); // painless hex to color
-"red".toColor(); // supports all web color names
+var twoSeconds = const Duration(seconds: 2);
 ```
 
-Helpful string functions:
+For substring extraction it's always a good invest to learn [regex](https://regexr.com/):
+
 ```dart
-"mode:production".allAfter(":"); // "production"
-"<html>".allBetween("<", ">"); // "html"`
-"flutter is cool".allBefore(" is"); // "flutter"
+var input = "this:bee";
+var result = RegExp(r'.*:(.+)').firstMatch(input)?.group(1);
+
+print(result); // "bee"
 ```
 
-Handle user input:
+Take the time to create compile-time constant color values:
+
 ```dart
-"2.1".toDouble();  // 2.1
-"42".toInt();      // 42
-12.between(0, 30); // true
+// pattern:  const Color(0xAARRGGBB)
+var red    = const Color(0xFFFF0000);
+var green  = const Color(0xFF00FF00);
+var yellow = const Color(0xFF0000FF);
 ```
-
-Effortless aggregation for `Iterable<int>` and `Iterable<double>`:
-```dart
-[1, 2, 3].sum;     // 6 (now supported by Dart collection package)
-[1, 2, 3].average; // 2 (now supported by Dart collection package)
-[1, 2, 3].min();   // 1
-[1, 2, 3].max();   // 3
-```
-
-Advanced aggregation for any `Iterable`:
-```dart
-var persons = [Person(age: 20), Person(age: 30), Person(age: 40)];
-persons.sumBy((p) => p.age);      // 90
-persons.averageBy((p) => p.age);  // 30
-persons.count((p) => p.age < 35); // 2
-persons.minBy((a,b) => a.age.compareTo(b.age)); // Person(age: 20)
-persons.maxBy((a,b) => a.age.compareTo(b.age)); // Person(age: 40)
-```
-
-Safely access `Iterable`:
-```dart
-[].firstOrNull; // (now supported by Dart collection package)
-[].lastOrNull;  // (now supported by Dart collection package)
-
-[].firstOrElse(() => Placeholder()); // Produce default values
-[].lastOrElse(() => Placeholder());  // on the fly
-
-[1, 2, 3].elementAtOrNull(4); // Never go out of bounds
-[1, 2, 3].elementAtOrElse(4, () => 0);
-
-[1, 2, 3].pickOne();   // Get a random item
-[1, 2, 3].pickSome(2); // or multiple random items
-```
-
-Group up data to match view:
-```dart
-var persons = [
-    Person(name: "John", age: 21),
-    Person(name: "Carl", age: 18),
-    Person(name: "Peter", age: 56),
-    Person(name: "Sarah", age: 61)
-];
-
-persons.groupBy(
-    (p) => p.age < 40 ? "young" : "old",
-    valueTransform: (p) => p.name
-); // {"young": ["John", "Carl"], "old": ["Peter", "Sarah"]}
-```
-
-Chunking for easy pagination:
-```dart
-["a", "b", "c", "d", "e"].chunked(3); // [ ["a", "b", "c"], ["d", "e"] ]
-["a", "b", "c"].chunked(2, fill: () => ""); // [ ["a", "b"], ["c", ""] ]
-```
-
-More natural durations and dates:
-```dart
-var duration = 5.minutes + 30.seconds;
-duration += 0.5.hours;
-
-var future = 2.days.fromNow() + 20.minutes;
-var past = 15.minutes.ago();
-
-var allDaysOf2020 = DateTime(2020).until(DateTime(2021));
-var allFullHoursOfFirstJanuary2020 =
-  DateTime(2020, 1, 1).until(DateTime(2020, 1, 2), by: 1.hours);
-
-await 2.seconds.delay; // waits for 2 seconds
-```
-
-Simplified data sorting:
-```dart
- persons = [
-    Person(name: "John", age: 21),
-    Person(name: "Carl", age: 18),
-    Person(name: "Peter", age: 56),
-    Person(name: "Sarah", age: 61)
-  ];
-
-  persons.sortedBy<num>((p) => p.age);     // (now supported by Dart
-  persons.sortedBy<String>((p) => p.name); //     collection package)
-
-  persons
-      .where((p) => p.name.length < 5)
-      .sortedBy<num>((p) => p.age)
-      .onEach(print)
-      .map((p) => p.name)
-      .toList();
-```
-
-Solid tween shortcuts for animations:
-```dart
-100.0.tweenTo(200.0); // Tween(begin: 100.0, end: 200.0)
-Colors.red.tweenTo(Colors.blue); // ColorTween(...)
-0.0.tweenTo(100.0).curved(Curves.easeInOut); // Apply acceleration
-Offset(50, 50).tweenTo(Offset.zero); // Offset-Tween
-Size(400, 300).tweenTo(Size.square(50)) // Size-Tween
-Rect.zero.tweenTo(Rect.fromLTWH(50, 50, 400, 300)) // Rect-Tween
-```
-
-Replace your classic for-loop:
-```dart
-0.rangeTo(5); // [0, 1, 2, 3, 4, 5]
-3.rangeTo(1); // [3, 2, 1]
-
-var list = ["dog", "cat", "mouse"];
-0.until(list.length); // [0, 1, 2]
-
-list.forEachIndexed((index, value) { // (now supported by Dart collection package)
-    // index: 0, value: "dog"
-    // index: 1, value: "cat"
-    // index: 2, value: "mouse"
-});
-```
-
-## 📑 API documentation
-
-You can discover all features in the [API documentation](https://pub.dev/documentation/supercharged/latest/supercharged/supercharged-library.html).
-Each feature is **well documented** with an **example**.
-
-## 📈 Improve
-
-Supercharged will **improve** in future updates. Help me by reporting bugs, **submit new ideas** for features or anything else that you want to share.
-
-- Just [write an issue](https://github.com/felixblaschke/supercharged/issues) on GitHub. ✏️
-- And don't forget to hit the **like button** for this package ✌️
