@@ -20,6 +20,7 @@ part 'animation/animation.dart';
 part 'color/color.dart';
 part 'double/double.dart';
 part 'int/int.dart';
+part 'offset/delta_offset.dart';
 part 'offset/offset.dart';
 part 'rect/rect.dart';
 part 'size/size.dart';
