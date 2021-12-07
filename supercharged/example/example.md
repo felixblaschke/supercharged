@@ -84,6 +84,17 @@ main() {
 
   var list = ["dog", "cat", "mouse"];
   0.until(list.length); // [0, 1, 2]
+
+  // [DeltaOffset] example to position a [BoxShadow]
+  Container(
+    decoration: BoxDecoration(
+      boxShadow: [
+        BoxShadow(
+          offset: DeltaOffset.rightBottom(7.5, 5.0),
+        )
+      ]
+    ),
+  );
 }
 
 class Person {
