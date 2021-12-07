@@ -84,6 +84,13 @@ main() {
 
   var list = ["dog", "cat", "mouse"];
   0.until(list.length); // [0, 1, 2]
+
+  // Sort order helpers
+  final list = [1, 3, 2, 4]..sortAsc(); // Results int [1, 2, 3, 4]
+  final list = [1, 3, 2, 4]..sort((a, b) => sortAsc(a, b)); // Results int [1, 2, 3, 4]
+
+  final list = [1, 3, 2, 4]..sortDesc(); // Results in [4, 3, 2, 1]
+  final list = [1, 3, 2, 4]..sort((a, b) => sortDesc(a, b)); // Results in [4, 3, 2, 1]
 }
 
 class Person {

@@ -23,4 +23,5 @@ part 'int/int.dart';
 part 'offset/offset.dart';
 part 'rect/rect.dart';
 part 'size/size.dart';
+part 'sorting/sorting_order.dart';
 part 'string/string.dart';
